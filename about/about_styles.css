@@ -1,6 +1,7 @@
 html, body{
     height: 100%;
     margin: none;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -62,10 +63,19 @@ a:hover{
 }
 
 .border{
+    /*
+    opacity: 0;
+    transition: all 0.5s;
+    */
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     margin: 50px;
     box-shadow: 5px 5px 10px;
+    transition-delay: 3s;
+}
+
+.show{
+    opacity: 1;
 }
 
 .title{
