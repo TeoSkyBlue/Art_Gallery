@@ -9,19 +9,12 @@ body{
 }
 
 
-.text-fade {
-    
-    height: 0.2em; /* exactly three lines */
-    overflow:hidden;
-  }
-  
-  .text-fade::after {
-    content: ""; 
-    text-align: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.text-truncate-container {
     width: 80%;
-    height: 1.2em;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
-  }
+}
+.text-truncate-container p {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
