@@ -12,17 +12,20 @@
     list-style: none;
 }
 */
-
+/*
 body{
     background-color: #f3dbb1;
 
-}
+}*/
+
+
+
 
 .header-item-divider{
-    background-color: rgb(255, 255, 255);
-    border-style:solid;
-    border-color: rgb(7, 7, 7);
-    border-radius: 10px 60px;
-    width: 6px;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: rgb(7, 0, 0);
+    border-radius: 1rem 40rem;
+    width: 0.3rem;
 }
-
