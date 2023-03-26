@@ -1,0 +1,20 @@
+
+
+body{
+    background-color: rgb(4, 80, 61);
+}
+
+.card-text-extras{
+    overflow-y: scroll;
+}
+
+
+.text-truncate-container {
+    width: 80%;
+}
+.text-truncate-container p {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
