@@ -10,11 +10,28 @@ body{
 
 
 .text-truncate-container {
-    width: 80%;
+    width: 90%;
 }
-.text-truncate-container p {
+.text-truncate-container p{
     -webkit-line-clamp: 3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.text-truncate-container-focused {
+    height: 6.5em;
+    margin-top: 0.8em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow-y:scroll;
+    width: 90%;
+}
+
+.focused-content{
+    z-index: 6;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, bisque , rgb(202, 141, 67));
+
+
 }
