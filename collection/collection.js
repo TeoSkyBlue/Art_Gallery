@@ -1,6 +1,7 @@
 
 
 
+
 const cards = document.querySelectorAll(".card");
 //cards.addEventListener("mouseover", bring_to_focus);
 const card_texts = document.querySelectorAll(".text-truncate-container");
@@ -55,4 +56,5 @@ function get_txt_out_of_focus(event){
     }
     item.firstElementChild.classList.remove("text-truncate-container-focused");
     item.classList.add("text-truncate-container");
-    }
+}
+

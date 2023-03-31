@@ -15,6 +15,7 @@ body{
 .text-truncate-container p{
     height: 4.6em;
     -webkit-line-clamp: 3;
+    
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -24,6 +25,7 @@ body{
     height: 4.6em;
     -webkit-box-orient: vertical;
     overflow-y:scroll;
+    scroll-behavior: smooth;
     width: 90%;
 }
 
@@ -31,6 +33,25 @@ body{
     z-index: 6;
     justify-content: center;
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 141, 67));
-
-
 }
+/*
+ //hover now works through Js because 
+this type of solution has text-truncate-container webkit-box
+visual bug.("..." after text on hover).
+
+
+.card-body>p:hover{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-line-clamp: none;
+    
+}
+
+.card:hover{
+    background-image: linear-gradient(to bottom right, bisque , rgb(202, 141, 67));
+    text-shadow: 0.5px 1px 1px #585858;
+    
+    
+} 
+
+*/
