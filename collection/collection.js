@@ -5,7 +5,7 @@
 const cards = document.querySelectorAll(".card");
 //cards.addEventListener("mouseover", bring_to_focus);
 const card_texts = document.querySelectorAll(".text-truncate-container");
-console.log(card_texts)
+
 
 
 for (card of cards){
