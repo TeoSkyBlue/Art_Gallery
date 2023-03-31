@@ -2,11 +2,14 @@
 
 div.album{
     background-image: linear-gradient(to top left, rgb(26, 15, 0), rgb(150, 131, 102));
+    
 }
 
 .card-text-extras{
     overflow-y: scroll;
 }
+
+
 
 
 .text-truncate-container {
@@ -19,6 +22,7 @@ div.album{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
 }
 
 .text-truncate-container-focused {
@@ -27,13 +31,22 @@ div.album{
     overflow-y:scroll;
     scroll-behavior: smooth;
     width: 90%;
+    padding: 0.5em;
+    
 }
 
 .focused-content{
     z-index: 6;
     justify-content: center;
+    
+    
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
+
+
+
+
+
 /*
  //hover now works through Js because 
 this type of solution has text-truncate-container webkit-box

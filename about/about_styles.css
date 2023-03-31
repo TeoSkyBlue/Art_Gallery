@@ -31,12 +31,13 @@ body{
     width: 150px;
     margin: 20px;
     padding: 10px;
+    border-radius:10px;
     background-color: rgba(90, 216, 111, 0.4);
 }
 
 .menu_bar>ul>li:hover{
     background: rgb(35, 158, 66);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 a:link{
