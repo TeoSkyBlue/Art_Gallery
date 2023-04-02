@@ -1,6 +1,6 @@
 
 
-const header_pages = document.querySelectorAll(".nav-link.link-dark.shadow-sm, #home");
+const header_pages = document.querySelectorAll(".nav-link.link-dark.shadow-lg, #home");
 
 
 for (header_page of header_pages){
