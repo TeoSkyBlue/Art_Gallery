@@ -1,6 +1,6 @@
 
 
-const header_pages = document.querySelectorAll(".nav-link.link-dark.shadow-sm, #visit");
+const header_pages = document.querySelectorAll(".nav-link.link-dark.shadow-sm, #home");
 
 
 for (header_page of header_pages){
@@ -16,8 +16,8 @@ function change_frame(e){
     if(source =="#"){
         return
     }
-    if(source === "visit"){
-        source = "visit/visit.html"
+    if(source === "home"){
+        source = "home/home.html"
     }
     let iframe_item = document.querySelector("iframe");
     
