@@ -5,39 +5,10 @@ html, body{
 }
 
 body{
-    background-image: url("images/museum.png");
+    background-image: url("images/background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-.menu_bar{
-    background-color: rgba(255, 255, 255, 0);
-    text-align: center;
-    position: sticky;
-    width: 100%;
-    height: auto;
-    top: 0px;
-}
-
-.menu_bar>ul{
-    padding: 0px;
-    justify-content: start;
-}
-
-.menu_bar>ul>li{
-    display: inline-flex;
-    justify-content: space-evenly;
-    width: 150px;
-    margin: 20px;
-    padding: 10px;
-    border-radius:10px;
-    background-color: rgba(90, 216, 111, 0.4);
-}
-
-.menu_bar>ul>li:hover{
-    background: rgb(35, 158, 66);
-    border-radius: 20px;
 }
 
 a:link{
@@ -88,3 +59,15 @@ a:hover{
     height: 30px;
     margin: 20px;
 }
+
+
+.header-item-divider{
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: rgb(7, 0, 0);
+    border-radius: 1rem 40rem;
+    width: 0.3rem;
+}
+
+
