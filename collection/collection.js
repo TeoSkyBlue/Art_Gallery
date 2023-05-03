@@ -58,3 +58,34 @@ function get_txt_out_of_focus(event){
     item.classList.add("text-truncate-container");
 }
 
+
+let searchBox = document.querySelector('#search-box');
+let images = document.querySelectorAll('.card img');
+
+searchBox.oninput = () =>{
+    images.forEach(hide => hide.style.display = 'none');
+    let value = searchBox.value;
+    images.forEach(filter =>{
+        let title = images.alt
+        if(value == title){
+            filter.style.display = 'block';
+        }
+        if(searchBox.value == ''){
+            filter.style.display = 'block';
+        }
+    });
+};
+
+const optionMenu = document.querySelector(".select-menu"),
+       selectBtn = optionMenu.querySelector(".select-btn"),
+       options = optionMenu.querySelectorAll(".option"),
+       sBtn_text = optionMenu.querySelector(".sBtn-text");
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));   
+    
+options.forEach(option =>{
+    option.addEventListener("click", ()=>{
+        let selectedOption = option.querySelector(".option-text").innerText;
+        sBtn_text.innerText = selectedOption;
+        optionMenu.classList.remove("active");
+    });
+});

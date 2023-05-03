@@ -43,8 +43,73 @@ div.album{
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
 
-
-
+.search-box{
+    font-size: 30px;
+    text-align: center
+}
+  
+.search-box #search-box{
+    width: 400px;
+    border:3px solid lightgray;
+    padding:12px 15px;
+    font-size: 20px;
+    border-radius: 100px;
+    margin: auto;
+}
+  
+.select-menu{
+    width: 70px;
+}
+.select-menu .select-btn{
+    display: flex;
+    height: 55px;
+    background: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius:200px;
+    align-items: center;
+    cursor: pointer;
+    border:3px solid lightgray;
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+.select-menu.active .options{
+    display: block;
+}
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.options .option:hover{
+    background: #F2F2F2;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
 
 
 /*
