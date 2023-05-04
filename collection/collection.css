@@ -36,10 +36,8 @@ div.album{
 }
 
 .focused-content{
-    z-index: 6;
+    z-index: 1;
     justify-content: center;
-    
-    
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
 
@@ -58,8 +56,9 @@ div.album{
 }
   
 .select-menu{
-    width: 70px;
+    width: fit-content;
 }
+
 .select-menu .select-btn{
     display: flex;
     height: 55px;
@@ -86,10 +85,14 @@ div.album{
     background: #fff;
     box-shadow: 0 0 3px rgba(0,0,0,0.1);
     display: none;
+    width: fit-content;
 }
 .select-menu.active .options{
     display: block;
+    position: absolute; 
+    z-index: 2;
 }
+
 .options .option{
     display: flex;
     height: 55px;
@@ -98,6 +101,7 @@ div.album{
     border-radius: 8px;
     align-items: center;
     background: #fff;
+
 }
 .options .option:hover{
     background: #F2F2F2;
@@ -110,6 +114,7 @@ div.album{
     font-size: 18px;
     color: #333;
 }
+
 
 
 /*
