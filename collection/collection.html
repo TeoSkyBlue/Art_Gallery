@@ -10,18 +10,50 @@
     rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
     crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="collection.js" defer></script>
     <link rel = "stylesheet" href = "collection.css">
     <title>Document</title>
 </head>
 <body>
+
+    <div class="container search">
+      <div class="row">
+        <div class="col">
+          <div class="search-box row">
+            <div class=""><input type="text" placeholder="search collection" id="search-box"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="select-menu">
+            <div class="select-btn">
+              <span class="sBtn-text">Filters</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                  <span class="option-text">Github</span>
+              </li>
+              <li class="option">
+                  <span class="option-text">Instagram</span>
+              </li>
+              <li class="option">
+                <span class="option-text">Linkedin</span>
+              </li>
+              <li class="option">
+                  <span class="option-text">Facebook</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="album py-5 bg-light">
         <div class="container">
-
           <div class="row">
             <div class="col-md-4 d-flex align-items-stretch">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
                 <div class="card-body text-truncate-container">
                   <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -36,7 +68,7 @@
             </div>
             <div class="col-md-4 d-flex align-items-stretch">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 2">
                 <div class="card-body text-truncate-container">
                   <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center mt-auto mx-auto">
@@ -51,7 +83,7 @@
             </div>
             <div class="col-md-4 d-flex align-items-stretch">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="mary">
                 <div class="card-body text-truncate-container">
                   <!-- <a href="https://www.vecteezy.com/free-vector/mark-zuckerberg">Mark Zuckerberg Vectors by Vecteezy</a>-->
                   <p class="card-text mb-4">
@@ -68,8 +100,10 @@
                 </div>
               </div>
             </div>
-
-
+          </div>
+        </div>
+    </div>
+        
 
 </body>
 </html>
