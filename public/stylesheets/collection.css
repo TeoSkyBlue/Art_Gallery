@@ -1,0 +1,140 @@
+
+
+div.album{
+    background-image: linear-gradient(to top left, rgb(26, 15, 0), rgb(150, 131, 102));
+    
+}
+
+.card-text-extras{
+    overflow-y: scroll;
+}
+
+
+
+
+.text-truncate-container {
+    width: 90%;
+}
+.text-truncate-container p{
+    height: 4.6em;
+    -webkit-line-clamp: 3;
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+
+.text-truncate-container-focused {
+    height: 4.6em;
+    -webkit-box-orient: vertical;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+    width: 90%;
+    padding: 0.5em;
+    
+}
+
+.focused-content{
+    z-index: 1;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
+}
+
+.search-box{
+    font-size: 30px;
+    text-align: center
+}
+  
+.search-box #search-box{
+    width: 400px;
+    border:3px solid lightgray;
+    padding:12px 15px;
+    font-size: 20px;
+    border-radius: 100px;
+    margin: auto;
+}
+  
+.select-menu{
+    width: fit-content;
+}
+
+.select-menu .select-btn{
+    display: flex;
+    height: 55px;
+    background: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius:200px;
+    align-items: center;
+    cursor: pointer;
+    border:3px solid lightgray;
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+    width: fit-content;
+}
+.select-menu.active .options{
+    display: block;
+    position: absolute; 
+    z-index: 2;
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+
+}
+.options .option:hover{
+    background: #F2F2F2;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+/*
+ //hover now works through Js because 
+this type of solution has text-truncate-container webkit-box
+visual bug.("..." after text on hover).
+
+
+.card-body>p:hover{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-line-clamp: none;
+    
+}
+
+.card:hover{
+    background-image: linear-gradient(to bottom right, bisque , rgb(202, 141, 67));
+    text-shadow: 0.5px 1px 1px #585858;
+    
+    
+} 
+
+*/
