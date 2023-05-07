@@ -9,6 +9,7 @@ const card_texts = document.querySelectorAll(".text-truncate-container");
 
 
 for (card of cards){
+    
     card.addEventListener("mouseover", bring_img_in_focus);
     card.addEventListener("mouseout", get_img_out_of_focus);
 }
