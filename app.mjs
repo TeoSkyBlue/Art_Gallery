@@ -29,23 +29,22 @@ app.set('views', path.join(__dirname, 'views'));
 // From here on below we should add the Routes Folder.
 app.get('/', (req, res)=>{
     res.render('home');
-})
+});
 
 app.get('/collection', (req, res) =>{
     res.render('collection');
-})
+});
 
 
 app.get('/about', (req, res) =>{
     res.render('about');
-})
+});
 
 app.get('/login', (req, res) =>{
     res.render('login');
-})
+});
 
 
 app.listen(port, ()=>{
     console.log(`The server is listening on port ${port}...`);
-
-})
+});
