@@ -19,9 +19,6 @@ function change_frame(e){
     if(source === "home"){
         source = "home/home.html"
     }
-    let iframe_item = document.querySelector("iframe");
-    
-    iframe_item.src = source;
     
 }
 

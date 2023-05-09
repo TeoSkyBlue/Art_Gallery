@@ -1,0 +1,4 @@
+Make Layout Functional
+Routes file
+Collection sizing fix
+Images and Database integration
