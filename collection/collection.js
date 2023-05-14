@@ -128,7 +128,11 @@ $(function(){
   var paginationSize = 7; //How many page elements visible in the pagination
   var currentPage;
 
+
   function showPage(whichPage){
+
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+
     if(whichPage < 1 || whichPage > totalPages) return false;
 
     currentPage = whichPage;
