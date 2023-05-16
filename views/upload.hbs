@@ -1,6 +1,20 @@
-
+<link rel="stylesheet" href="upload.css">
     <h1> Upload Image</h1>
     <form method = "post" action = "/upload" enctype="multipart/form-data">
+        <label for="artist-name">Artist Name:</label>
+        <input type="text" id="artist-name" name="artist-name">
+
+        <label for="artwork-name">Artwork Name:</label>
+        <input type="text" id="artwork-name" name="artwork-name">
+
+        <label for="year">Creation Date:</label>
+        <input type="date" id="year" name="year">
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre">
+
+        <label for="summary">Short Summary:</label>
+        <textarea id="summary" name="summary"></textarea>
         <input type = 'file' name = 'imageName'>
         <input type = 'submit'>
     </form>

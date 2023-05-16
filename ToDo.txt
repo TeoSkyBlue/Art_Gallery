@@ -1,4 +1,6 @@
-Make Layout Functional
-Routes file
-Collection sizing fix
+Change multer work
+Make and insert proper artwork with all its details and join it.
+Image resizing and compression?
+Reconfigure Routes file with async/await logic
 Images and Database integration
+Collection sizing fix
