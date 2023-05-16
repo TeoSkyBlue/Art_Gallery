@@ -1,21 +1,19 @@
 
-<header class="row w-auto justify-content-center sticky-top">
+<header class="row w-auto justify-content-center sticky-top bg-light">
           <ul class="menu nav nav-pills header-bg py-1 column-gap-2 justify-content-center shadow-lg d-none d-md-inline-flex"  id = "header-container">
-            <li class="nav-item m-0" id = "home_li_item"><button id="home" class="nav-link  m-auto" aria-current="page">
-            <img src = "logo_circle.png" class = "logo" alt = "Logo"/></button></li>
-            <li class="nav-item "><button id="#" class="nav-link link-dark shadow-lg">EXHIBITIONS & EVENTS </button></li>
-            <div class="header-item-divider py-2"></div>
-            <li class="nav-item"><button id="#" class="nav-link link-dark shadow-lg">ARTICLES</button></li>
-            <div class="header-item-divider py-2"></div>
-            <li class="nav-item"><button id="collection/collection.html" class="nav-link link-dark shadow-lg">COLLECTION</a></li>
-            <div class="header-item-divider py-2"></div>
-            <li class="nav-item"><button id = "#" class="nav-link link-dark shadow-lg">ANNOUNCEMENTS</button></li>
+            <li class="nav-item m-0" id = "home_li_item"><button id="home" class="nav-link  m-auto py-1" aria-current="page" onclick="redirectToHome()">
+            <img src = "logo_circle.png" class = "logo py-0" alt = "Logo"/></button></li>
+            <li class="nav-item "><button id="#" class="nav-link link-dark shadow-lg" onclick="redirectToExhibits()">EXHIBITIONS & EVENTS </button></li>
             <div class="header-item-divider py-3"></div>
-            <li class="nav-item"><button class="nav-link link-dark shadow-lg" id = "about/about.html">ABOUT</button></li>
+            <li class="nav-item"><button id="collection/collection.html" class="nav-link link-dark shadow-lg" onclick="redirectToCollection()">COLLECTION</a></li>
+            <div class="header-item-divider py-3"></div>
+            <li class="nav-item"><button id = "#" class="nav-link link-dark shadow-lg" onclick="redirectToAnnouncements()">ANNOUNCEMENTS</button></li>
+            <div class="header-item-divider py-3"></div>
+            <li class="nav-item"><button class="nav-link link-dark shadow-lg" onclick="redirectToAbout()" id = "about/about.html">ABOUT</button></li>
            
           </ul>
          <nav class="navbar navbar-dark bg-dark bg-gradient w-100 p-3 d-md-none d-md-flex">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-container" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#header-container" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <img src = "logo_circle.png" class = "logo" alt = "Logo"/></button>
             
           </button>

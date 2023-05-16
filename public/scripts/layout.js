@@ -22,3 +22,27 @@ function change_frame(e){
     
 }
 
+//redirect functions of header.
+function redirectToHome(){
+    window.location.href = '/';
+}
+
+//path doesnt exist yet
+function redirectToExhibits(){
+    window.location.href = '/exhibits';
+}
+
+
+function redirectToCollection(){
+    window.location.href = '/collection';
+}
+
+//path doesnt exist yet
+function redirectToAbout(){
+    window.location.href = '/about';
+}
+
+
+function redirectToAnnouncements(){
+    window.location.href = '/announcements';
+}

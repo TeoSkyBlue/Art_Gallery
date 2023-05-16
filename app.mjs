@@ -7,16 +7,18 @@ import collection_router from './routes/collection_r.mjs';
 import about_router from './routes/about_r.mjs';
 import login_router from './routes/login_r.mjs';
 import mongoose from 'mongoose';
+import fs from 'fs';
 import multer from 'multer';
 import galleryModel from "./models/art_gallery_schema.mjs";
+// import db from './models/mongo_conn.mjs';
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/ArtGallery', {useNewUrlParser: true});
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, 'connection error'));
-db.once('open', function() {
-    console.log("Opened succesfully");
-});
+// mongoose.connect('mongodb://127.0.0.1:27017/ArtGallery', {useNewUrlParser: true});
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, 'connection error'));
+// db.once('open', function() {
+//     console.log("Opened succesfully");
+// });
 
 
 
@@ -49,6 +51,7 @@ app.set('view engine', '.hbs');
 
 app.use(express.static(path.join(__dirname, '/public/stylesheets'), { type: 'text/css', }));
 app.use(express.static(path.join(__dirname, 'public/scripts'), { type: 'text/javascript', }));
+app.use(express.static(path.join(__dirname, 'public/images'), { type: 'image/png', }));
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -76,9 +79,11 @@ app.post("/upload", (req, res) => {
             console.log(err);
         }
         else{
+            let img = fs.readFileSync(req.file.path);
+            let encoded_img = img.toString('base64');
             const newImage = new galleryModel.image({name: req.file.originalname,
                  image: {
-                data:req.file.filename, contentType: 'image/png'
+                data: Buffer(encoded_img, 'base64'), contentType: req.file.mimetype
                 }
         });
             newImage
@@ -98,4 +103,3 @@ app.post("/upload", (req, res) => {
 app.listen(port, ()=>{
     console.log(`The server is listening on port ${port}...`);
 });
-

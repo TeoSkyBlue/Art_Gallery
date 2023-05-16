@@ -35,58 +35,27 @@
     </div>
 
 
-    <div class=" h-100 w-auto album height-auto py-5 bg-light">
+    <div class=" h-100 w-auto album height-auto overflow-y-scroll py-5 bg-light">
         <div class="container">
           <div class="row">
-            <div class="col-md-4 d-flex align-items-stretch">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
-                <div class="card-body text-truncate-container">
-                  <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            {{#each artworks}}
+              <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="data:{{type}};base64,{{ img }}" alt="{{ type }}">
+                  <div class="card-body text-truncate-container">
+                    <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
                     </div>
-                    <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 d-flex align-items-stretch">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 2">
-                <div class="card-body text-truncate-container">
-                  <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center mt-auto mx-auto">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 d-flex align-items-stretch">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="mary">
-                <div class="card-body text-truncate-container">
-                  <!-- <a href="https://www.vecteezy.com/free-vector/mark-zuckerberg">Mark Zuckerberg Vectors by Vecteezy</a>-->
-                  <p class="card-text mb-4">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.This content is a little bit longer. Or 
-                    Waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaay Longer.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+              {{/each}}
+
           </div>
         </div>
     </div>
