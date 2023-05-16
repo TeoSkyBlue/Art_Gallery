@@ -22,7 +22,7 @@ a:hover{
 }
 
 
-/* .image{
+.image{
     overflow: hidden;
 }
 
@@ -32,14 +32,11 @@ a:hover{
 
  .image:hover img{
     transform: scale(1.2);
-} */
+}
 
 .border{
-    /*
-    opacity: 0;
-    transition: all 0.5s;
-    */
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8);

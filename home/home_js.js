@@ -61,7 +61,7 @@ var repeat = function(activeClass){
       return;
     }
     repeater();
-  }, 2000);
+  }, 5000);
   }
   repeater();
 }
