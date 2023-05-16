@@ -41,6 +41,8 @@ div.album{
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
 
+/* search bar */
+
 .search-box{
     font-size: 30px;
     text-align: center;
@@ -121,6 +123,8 @@ div.album{
     color: #333;
 }
 
+/* pagination */
+
 .pagination{
     text-align: center;
     user-select: none;
@@ -155,6 +159,36 @@ div.album{
 }
 
 
+/* card preview */
+
+.preview-container{
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    align-items: center;
+   justify-content: center;
+}
+ 
+.card-preview{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active{
+   display: inline-block;
+}
+
+.products-preview img{
+   height: 30rem;
+}
       
 /*
  //hover now works through Js because 
