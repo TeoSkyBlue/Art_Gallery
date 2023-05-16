@@ -16,6 +16,7 @@ borderElements.forEach((el)=> observer.observe(el));
 var slides = document.querySelectorAll('.slide');
 var btns = document.querySelectorAll('.btn');
 let currentSlide = 1;
+let active_i = 1;
 
 // Javascript for image slider manual navigation
 var manualNav = function(manual){
@@ -35,13 +36,13 @@ btns.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     manualNav(i);
     currentSlide = i;
+    active_i = i;
   });
 });
 
 // Javascript for image slider autoplay navigation
 var repeat = function(activeClass){
   let active = document.getElementsByClassName('active');
-  let i = 1;
 
   var repeater = () => {
     setTimeout(function(){
@@ -49,18 +50,18 @@ var repeat = function(activeClass){
         activeSlide.classList.remove('active');
       });
 
-    slides[i].classList.add('active');
-    btns[i].classList.add('active');
-    i++;
+    slides[active_i].classList.add('active');
+    btns[active_i].classList.add('active');
+    active_i++;
 
-    if(slides.length == i){
-      i = 0;
+    if(slides.length == active_i){
+      active_i = 0;
     }
-    if(i >= slides.length){
+    if(active_i >= slides.length){
       return;
     }
     repeater();
-  }, 10000);
+  }, 2000);
   }
   repeater();
 }
