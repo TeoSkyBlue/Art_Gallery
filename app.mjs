@@ -6,10 +6,12 @@ import home_router from './routes/home_r.mjs';
 import collection_router from './routes/collection_r.mjs';
 import about_router from './routes/about_r.mjs';
 import login_router from './routes/login_r.mjs';
+import upload_router from './routes/upload_r.mjs';
 import mongoose from 'mongoose';
 import fs from 'fs';
 import multer from 'multer';
 import galleryModel from "./models/art_gallery_schema.mjs";
+import {body, validationResult} from 'express-validator';
 // import db from './models/mongo_conn.mjs';
 
 
@@ -19,20 +21,6 @@ import galleryModel from "./models/art_gallery_schema.mjs";
 // db.once('open', function() {
 //     console.log("Opened succesfully");
 // });
-
-
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) =>{
-        cb(null, './public/images');
-    }, 
-    filename: (req, file, cb) => {
-        console.log(file);
-        cb(null, Date.now() + path.extname(file.originalname));
-    },
-});
-
-
 
 
 //ES6 Can be annoying at times.
@@ -62,15 +50,28 @@ app.use(home_router);
 app.use(collection_router);
 app.use(about_router);
 app.use(login_router);
+app.use(upload_router);
 
 // UPLOAD-DB TESTS /////////
 
-const upload = multer({storage: storage});
 
-
-app.get("/upload", (req, res) => {
-    res.render("upload");
+// Needs changing.
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null, './public/images');
+    }, 
+    filename: (req, file, cb) => {
+        console.log(file);
+        cb(null, Date.now() + path.extname(file.originalname));
+    },
 });
+
+export const upload = multer({storage: storage});
+
+
+// app.get("/upload", (req, res) => {
+//     res.render("upload");
+// });
 
 
 app.post("/upload", (req, res) => {
@@ -79,6 +80,7 @@ app.post("/upload", (req, res) => {
             console.log(err);
         }
         else{
+            
             let img = fs.readFileSync(req.file.path);
             let encoded_img = img.toString('base64');
             const newImage = new galleryModel.image({name: req.file.originalname,
@@ -93,6 +95,21 @@ app.post("/upload", (req, res) => {
         }
     });
 });
+
+
+//Conflict between these two (above and below) because response is already sent.
+//Need to stack the middleware here.
+
+// app.post('/upload', [
+//     body('year').isInt().withMessage('Year must be a valid number')
+//   ], (req, res) => {
+//     const errors = validationResult(req);
+//     if (!errors.isEmpty()) {
+//       return res.status(400).json({ errors: errors.array() });
+//     }
+  
+//     // Handle form submission
+//   });
     
 // END OF TEST CODE ///////
 
