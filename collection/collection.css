@@ -9,7 +9,9 @@ div.album{
     overflow-y: scroll;
 }
 
-
+.card-img-top:hover{
+    cursor: pointer;
+}
 
 
 .text-truncate-container {
