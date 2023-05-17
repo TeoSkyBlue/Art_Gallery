@@ -29,19 +29,15 @@ a:hover{
     overflow: hidden;
 }
 
- .image img{
+.image img{
     transition: transform .3s;
 }
 
- .image:hover img{
+.image:hover img{
     transform: scale(1.2);
 }
 
 .border{
-    /*
-    opacity: 0;
-    transition: all 0.5s;
-    */
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     margin: 50px;
