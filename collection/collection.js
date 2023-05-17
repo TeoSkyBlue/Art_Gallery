@@ -132,7 +132,7 @@ function show(){
 
   function showPage(whichPage){
 
-    $("html, body").animate({ scrollTop: 0 }, "fast");
+    $("html, body").animate({ scrollTop: 0 }, 10);
 
     if(whichPage < 1 || whichPage > totalPages) return false;
 
