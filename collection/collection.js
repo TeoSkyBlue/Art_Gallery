@@ -58,29 +58,29 @@ function get_txt_out_of_focus(event){
 
 // search bar
 
-let searchBox = document.querySelector('#search-box');
-let images = document.querySelectorAll('.card img');
+// let searchBox = document.querySelector('#search-box');
+// let images = document.querySelectorAll('.card img');
 
-searchBox.oninput = () =>{
-    images.forEach(hide => hide.style.display = 'none');
-    let value = searchBox.value;
-    images.forEach(filter =>{
-        let title = images.alt
-        if(value == title){
-            filter.style.display = 'block';
-        }
-        if(searchBox.value == ''){
-            filter.style.display = 'block';
-        }
-    });
-};
+// searchBox.oninput = () =>{
+//     images.forEach(hide => hide.style.display = 'none');
+//     let value = searchBox.value;
+//     images.forEach(filter =>{
+//         let title = images.alt
+//         if(value == title){
+//             filter.style.display = 'block';
+//         }
+//         if(searchBox.value == ''){
+//             filter.style.display = 'block';
+//         }
+//     });
+// };
 
 // search filter
 
-const optionMenu = document.querySelector(".select-menu"),
-       selectBtn = optionMenu.querySelector(".select-btn"),
-       options = optionMenu.querySelectorAll(".option"),
-       sBtn_text = optionMenu.querySelector(".sBtn-text");
+const optionMenu = document.querySelector(".filter-menu"),
+       selectBtn = optionMenu.querySelector(".filter-btn"),
+       options = optionMenu.querySelectorAll(".filter-option"),
+       sBtn_text = optionMenu.querySelector(".filter-sBtn-text");
 selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));   
     
 options.forEach(option =>{
@@ -92,7 +92,10 @@ options.forEach(option =>{
 });
 
 
+
 // pagination
+
+let art_per_page=9;
 
 function getPageList(totalPages, page, maxLength){
     function range(start, end){
@@ -118,9 +121,10 @@ function getPageList(totalPages, page, maxLength){
     return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
 }
   
-$(function(){
+function show(){
   var numberOfItems = $(".card-content .card").length;
-  var limitPerPage = 9; //How many card items visible per a page
+
+  var limitPerPage = art_per_page; //How many card items visible per a page
   var totalPages = Math.ceil(numberOfItems / limitPerPage);
   var paginationSize = 7; //How many page elements visible in the pagination
   var currentPage;
@@ -168,8 +172,28 @@ $(function(){
   $(".previous-page").on("click", function(){
     return showPage(currentPage - 1);
   });
+};
+show();
+
+// show art cards per page filter
+
+const showMenu = document.querySelector(".show-menu"),
+      showBtn = showMenu.querySelector(".show-btn"),
+      show_options = showMenu.querySelectorAll(".show-option"),
+      show_sBtn_text = showMenu.querySelector(".show-sBtn-text");
+showBtn.addEventListener("click", () => showMenu.classList.toggle("active"));   
+    
+show_options.forEach(option =>{
+    option.addEventListener("click", ()=>{
+      art_per_page = option.querySelector(".option-text").innerText;
+      show_sBtn_text.innerText = art_per_page;
+      showMenu.classList.remove("active");
+      show();
+    });
 });
 
+
+// preview cards 
 
 let cardBox = document.querySelectorAll('.card-content');
 let previewBox = document.querySelectorAll('.card-preview');
@@ -179,7 +203,6 @@ cardBox.forEach(card => {
   cards.forEach(card_img => {
     card_img.addEventListener('click', () => {
       let name = card_img.getAttribute('alt');
-      console.log(name);
       previewBox.forEach(preview => {
         const previews = preview.querySelectorAll('.card-img-top');
         previews.forEach(preview_img => {
@@ -195,17 +218,10 @@ cardBox.forEach(card => {
   });
 });
 
-// previewBox.forEach(preview =>{
-//   preview.classList.remove('active');
-//   let closest_preview_container = preview.closest('.preview-container');
-//   closest_preview_container.classList.remove('active');
-//   closest_preview_container.style.display = 'none';
-// });
-
-
-// previewBox.forEach(close =>{
-//   close.querySelector('.fa-times').onclick = () =>{
-//     close.classList.remove('active');
-//     preveiwContainer.style.display = 'none';
-//   };
-// });
+previewBox.forEach(preview =>{
+  preview.querySelector('.close').onclick = () =>{
+    preview.classList.remove('active');
+    let closest_preview_container = preview.closest('.preview-container');
+    closest_preview_container.classList.remove('active');
+  };
+});

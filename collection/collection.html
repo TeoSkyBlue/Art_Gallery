@@ -18,31 +18,52 @@
 </head>
 <body>
 
-  <div class="album py-5 bg-light">
+  <div class="album py-4 bg-light">
 
-    <div class="row mb-4">
-      <div class="col">
+    <div class="row mb-4 justify-content-center">
+      <div class=" col-md-6 col-sm-6">
         <div class="search-box row">
           <input type="text" placeholder="search collection" id="search-box">
         </div>
       </div>
-      <div class="col">
-        <div class="select-menu">
-          <div class="select-btn">
-            <span class="sBtn-text">Filters</span>
+      <div class="col-md-2 col-sm-2">
+        <div class="select-menu filter-menu">
+          <div class="select-btn filter-btn">
+            <span class="filter-sBtn-text m-2">Filters</span>
           </div>
           <ul class="options">
-            <li class="option">
-                <span class="option-text">Github</span>
+            <li class="option filter-option">
+                <span class="option-text">All</span>
             </li>
-            <li class="option">
-                <span class="option-text">Instagram</span>
+            <li class="option filter-option">
+                <span class="option-text">Recent</span>
             </li>
-            <li class="option">
-              <span class="option-text">Linkedin</span>
+            <li class="option filter-option">
+              <span class="option-text">Cultural Movement</span>
             </li>
-            <li class="option">
-                <span class="option-text">Facebook</span>
+            <li class="option filter-option">
+                <span class="option-text">...</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <div class="select-menu show-menu">
+          <div class="select-btn show-btn">
+            <span class="show-sBtn-text m-2">No of artworks</span>
+          </div>
+          <ul class="options">
+            <li class="option show-option">
+                <span class="option-text">9</span>
+            </li>
+            <li class="option show-option">
+                <span class="option-text">15</span>
+            </li>
+            <li class="option show-option">
+              <span class="option-text">30</span>
+            </li>
+            <li class="option show-option">
+                <span class="option-text">45</span>
             </li>
           </ul>
         </div>
@@ -70,8 +91,8 @@
         </div>
         <div class="preview-container">
           <div class="card-preview">
-            <!-- <i class="fas fa-times"></i> -->
             <div class="card box-shadow">
+              <button class="close">X</button>
               <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
               <div class="card-body text-truncate-container">
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -97,8 +118,8 @@
         </div>
         <div class="preview-container">
           <div class="card-preview">
-            <!-- <i class="fas fa-times"></i> -->
             <div class="card box-shadow">
+              <button class="close">X</button>
               <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 2">
               <div class="card-body text-truncate-container">
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -127,8 +148,8 @@
         </div>
         <div class="preview-container">
           <div class="card-preview">
-            <!-- <i class="fas fa-times"></i> -->
             <div class="card box-shadow">
+              <button class="close">X</button>
               <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="mary">
               <div class="card-body text-truncate-container">
                 <p class="card-text">Text mary</p>
@@ -137,7 +158,37 @@
           </div>
         </div>
 
-        <!-- <div class="card-content col-md-4 d-flex align-items-stretch">
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
           <div class="card mb-4 box-shadow">
             <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
             <div class="card-body text-truncate-container">
@@ -197,7 +248,277 @@
             </div>
           </div>
         </div>
-      </div> -->
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content col-md-4 d-flex align-items-stretch">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
 
       <div class="pagination">

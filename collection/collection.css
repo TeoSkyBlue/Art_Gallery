@@ -186,10 +186,22 @@ div.album{
    display: inline-block;
 }
 
-.products-preview img{
+.card-preview img{
    height: 30rem;
 }
-      
+
+.card-preview .close{
+    position: absolute;
+    top:0rem; right:0rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+ }
+
+ .card-preview .close:hover{
+    background-color: rgb(231, 150, 56);
+ }
+ 
 /*
  //hover now works through Js because 
 this type of solution has text-truncate-container webkit-box
