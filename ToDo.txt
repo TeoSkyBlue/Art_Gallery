@@ -1,5 +1,5 @@
 Change multer work
-Make and insert proper artwork with all its details and join it.
+Create Artist form and then make Artwork Synergize with Artist form.
 Image resizing and compression?
 Reconfigure Routes file with async/await logic
 Images and Database integration
