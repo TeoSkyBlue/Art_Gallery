@@ -1,25 +1,12 @@
-const observer=new IntersectionObserver((entries)=> {
-    entries.forEach((entry) => {
-        
-        if (entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-const borderElements=document.querySelectorAll('.border');
-borderElements.forEach((el)=> observer.observe(el));
-
-
 // slider 
 
-let slides = document.querySelectorAll('.slide');
-let btns = document.querySelectorAll('.btn');
+var slides = document.querySelectorAll('.slide');
+var btns = document.querySelectorAll('.btn');
 let currentSlide = 1;
 let active_i = 1;
 
 // Javascript for image slider manual navigation
-let manualNav = function(manual){
+var manualNav = function(manual){
   slides.forEach((slide) => {
     slide.classList.remove('active');
 
@@ -41,10 +28,10 @@ btns.forEach((btn, i) => {
 });
 
 // Javascript for image slider autoplay navigation
-let repeat = function(activeClass){
+var repeat = function(activeClass){
   let active = document.getElementsByClassName('active');
 
-  let repeater = () => {
+  var repeater = () => {
     setTimeout(function(){
       [...active].forEach((activeSlide) => {
         activeSlide.classList.remove('active');

@@ -9,7 +9,9 @@ div.album{
     overflow-y: scroll;
 }
 
-
+.card-img-top:hover{
+    cursor: pointer;
+}
 
 
 .text-truncate-container {
@@ -41,18 +43,25 @@ div.album{
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
 
+/* search bar */
+
 .search-box{
     font-size: 30px;
-    text-align: center
+    text-align: center;
+}
+
+.search-box ::placeholder{
+    color: #fff;
 }
   
 .search-box #search-box{
     width: 400px;
-    border:3px solid lightgray;
+    border:1px solid rgb(255, 255, 255);
     padding:12px 15px;
     font-size: 20px;
     border-radius: 100px;
     margin: auto;
+    background-color: rgb(138, 102, 62);
 }
   
 .select-menu{
@@ -62,19 +71,20 @@ div.album{
 .select-menu .select-btn{
     display: flex;
     height: 55px;
-    background: #fff;
+    background:rgb(138, 102, 62);
     padding: 10px;
     font-size: 18px;
     border-radius:200px;
     align-items: center;
     cursor: pointer;
-    border:3px solid lightgray;
+    border:1px solid rgb(255, 255, 255);
+    color:#fff
 }
 .select-btn i{
     font-size: 25px;
     transition: 0.3s;
 }
-.select-menu.active .select-btn i{
+.select-menu .active .select-btn i{
     transform: rotate(-180deg);
 }
 .select-menu .options{
@@ -115,8 +125,85 @@ div.album{
     color: #333;
 }
 
+/* pagination */
+
+.pagination{
+    text-align: center;
+    user-select: none;
+}
+
+.pagination li{
+    display: inline-block;
+    margin: 5px;
+    border-radius: 35px;
+}
+
+.pagination li a{
+    color: #ffffff;
+    font-size: 1.0em;
+    border-radius: 35px;
+    line-height: 35px;
+    background-color: rgba(138, 102, 62, 0.6)
+}
+
+.previous-page, .next-page{
+    width: 80px;
+    cursor: pointer;  
+}
+
+.current-page, .dots{
+    width: 45px;
+    cursor: pointer;
+}
+
+.on{
+    background: #af9f11;
+}
 
 
+/* card preview */
+
+.preview-container{
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    align-items: center;
+   justify-content: center;
+}
+ 
+.card-preview{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active{
+   display: inline-block;
+}
+
+.card-preview img{
+   height: 30rem;
+}
+
+.card-preview .close{
+    position: absolute;
+    top:0rem; right:0rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+ }
+
+ .card-preview .close:hover{
+    background-color: rgb(231, 150, 56);
+ }
+ 
 /*
  //hover now works through Js because 
 this type of solution has text-truncate-container webkit-box

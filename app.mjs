@@ -7,6 +7,7 @@ import collection_router from './routes/collection_r.mjs';
 import about_router from './routes/about_r.mjs';
 import login_router from './routes/login_r.mjs';
 import upload_router from './routes/upload_r.mjs';
+import exhibition_router from './routes/exhibition_r.mjs';
 import mongoose from 'mongoose';
 import fs from 'fs';
 import multer from 'multer';
@@ -51,6 +52,7 @@ app.use(collection_router);
 app.use(about_router);
 app.use(login_router);
 app.use(upload_router);
+app.use(exhibition_router);
 
 // UPLOAD-DB TESTS /////////
 

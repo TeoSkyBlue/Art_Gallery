@@ -29,7 +29,7 @@ function redirectToHome(){
 
 //path doesnt exist yet
 function redirectToExhibits(){
-    window.location.href = '/exhibits';
+    window.location.href = '/exhibition';
 }
 
 
@@ -41,6 +41,7 @@ function redirectToCollection(){
 function redirectToAbout(){
     window.location.href = '/about';
 }
+
 
 
 function redirectToAnnouncements(){

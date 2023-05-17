@@ -4,8 +4,8 @@ import db from '../models/mongo_conn.mjs';
 
 export async function displayImages(req, res){
     try{
-        const docs =  await db.collection('images').find().limit(9).toArray();
-        console.log(docs);
+        const docs =  await db.collection('images').find().toArray();
+        // console.log(docs);
         const artworks = docs.map(doc => ({img: doc.image.data.toString('base64'), type: doc.name}));
         res.render('collection', { artworks });
     }catch(err){

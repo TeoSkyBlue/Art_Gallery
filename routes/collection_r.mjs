@@ -18,7 +18,7 @@ const collection_router = express.Router();
 // });
 
 
-collection_router.get('/collection', collectionController.displayArtworks);
+collection_router.get('/collection', collectionController.displayImages);
 
 
 export default collection_router;
