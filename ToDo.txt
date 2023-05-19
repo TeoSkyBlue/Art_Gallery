@@ -1,6 +1,18 @@
+Sessions.
+Post, Room Forms
+Edits.
+Pagination
+Aspect Ratios
+oneDrive hosting?
+Artwork - Room Relationship(?)
+Artist - Artwork Insertions.
+What exactly is room capacity? Define it.
+
+
 Change multer work
 Create Artist form and then make Artwork Synergize with Artist form.
 Image resizing and compression?
 Reconfigure Routes file with async/await logic
 Images and Database integration
 Collection sizing fix
+

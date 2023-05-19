@@ -19,9 +19,9 @@ const upload_router = express.Router();
 // const upload = multer({storage: storage});
 
 
-upload_router.get("/upload", (req, res) => {
-    res.render("upload");
+upload_router.get("/upload_art", (req, res) => {
+    res.render("upload_artwork");
 });
-upload_router.post("/upload", saveArtwork);
+upload_router.post("/upload_art", saveArtwork);
 
 export default upload_router;

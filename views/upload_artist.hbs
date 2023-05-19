@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="upload.css">
+    <h1 class="justify-content-center"> Upload Artist</h1>
+    <form method = "post" action = "/upload" enctype="multipart/form-data">
+        <label for="artist-fname">Artist First Name:</label>
+        <input type="text" id="artist-fname" name="artist-fname">
+
+        <label for="artist-lname">Artist Last Name:</label>
+        <input type="text" id="artist-lname" name="artist-lname">
+        {{!-- Nickname? --}}
+
+        <label for="birthyear">Date of Birth:</label>
+        <input type="date" id="birthyear" name="birthyear">
+
+        <label for="deathyear">Date of Passing:</label>
+        <input type="date" id="deathyear" name="deathyear">
+
+
+        <label for="summary">Bio/info:</label>
+        <textarea id="summary" name="summary"></textarea>
+
+        <label for="artist-image">Artist Profile Picture:</label>
+        <input type = 'file' name = 'artistImageName'>
+        <input type = 'submit'>
+    </form>
+

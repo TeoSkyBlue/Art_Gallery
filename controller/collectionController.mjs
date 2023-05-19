@@ -31,7 +31,7 @@ export async function displayArtworks(req, res){
         ])
         .limit(9)
         .toArray();
-        console.log(docs[0].art_image[0].length);
+        // console.log(docs[0].art_image[0].length);
         // const artworks = [];
         // for (let document of docs){
         //     artworks.push(document.art_image[0].map(doc => ({img: doc.art_image.image.data.toString('base64'), type: doc.name})));

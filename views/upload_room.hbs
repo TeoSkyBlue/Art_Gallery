@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="upload.css">
+    <h1> Add Exhibition Room</h1>
+    <form method = "post" action = "/upload" enctype="multipart/form-data">
+        <label for="room-name">Room Name:</label>
+        <input type="text" id="room-name" name="roomName">
+
+        <label for="room-num">Room Number:</label>
+        <input type="number" id="room-num" name="roomNum">
+
+        <label for="genre">Genre/Style:</label>
+        <input type="text" id="genre" name="genre">
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre">
+
+        <label for ='max-cap'> Room Capacity </label>
+        <input type = 'number' id = 'max-cap' name = 'roomMaxCap'>
+        
+
+        <label for="room-description">Description:</label>
+        <textarea id="room-description" name="roomDescription"></textarea>
+        
+        <label for = "room-image">Room Photo</label>
+        <input type = 'file' id = 'room-image' name = 'roomImageName'>
+        <input type = 'submit'>
+    </form>
