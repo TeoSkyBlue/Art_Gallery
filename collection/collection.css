@@ -15,12 +15,11 @@ div.album{
 
 
 .text-truncate-container {
-    width: 90%;
+    width: none;
 }
 .text-truncate-container p{
     height: 4.6em;
     -webkit-line-clamp: 3;
-    
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -32,10 +31,14 @@ div.album{
     -webkit-box-orient: vertical;
     overflow-y:scroll;
     scroll-behavior: smooth;
-    width: 90%;
-    padding: 0.5em;
-    
+    width: none;
+    scrollbar-width: none;    
 }
+
+.text-truncate-container-focused::-webkit-scrollbar {
+    display: none;
+}
+
 
 .focused-content{
     z-index: 1;
@@ -43,6 +46,20 @@ div.album{
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
 
+.card .edit{
+    position: absolute;
+    top:0rem; right:0rem;
+    cursor: pointer;
+    font-size: 1.0rem;
+    border-radius: 5px;
+ }
+
+ .card .edit:hover{
+    background-color: rgb(231, 150, 56);
+ }
+.card .hide{
+    display: none;
+}
 /* search bar */
 
 .search-box{
