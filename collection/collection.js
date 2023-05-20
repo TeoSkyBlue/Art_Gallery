@@ -95,7 +95,7 @@ options.forEach(option =>{
 
 // pagination
 
-let art_per_page=9;
+let art_per_page=12;
 
 function getPageList(totalPages, page, maxLength){
     function range(start, end){
