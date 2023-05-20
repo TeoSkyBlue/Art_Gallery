@@ -1,11 +1,8 @@
 
-
-
-Collection values pass Correction (Populate empty fields)
-
-{Edits == pass mongo id of artwork to editor form.
+{Edits: Images(!)
+Update, set -> Go!
 dates: are fucked
-no image no fun}
+}
 
 Post, Room Forms
 

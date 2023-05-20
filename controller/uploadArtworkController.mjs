@@ -84,7 +84,7 @@ export async function fillArtFields(req, res){
         const artists = docs.map(doc => (
             {first_name: doc.first_name, last_name:doc.last_name, id: doc._id}));
         const piece = await galleryModel.art
-        .findById('64689181d074ef752136a6d6')
+        .findById(req.query['id'])
         .populate('image');//(req.body['id']);
         
 

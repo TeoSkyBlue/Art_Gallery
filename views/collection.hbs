@@ -94,13 +94,13 @@
             {{#each artworks}}
               <div class="card-content col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="data:{{type}};base64,{{ img }}" alt="{{ type }}">
+                  <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
                   <div class="card-body text-truncate-container">
-                    <p class="card-text mb-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text mb-4">{{artsum}}</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <a type="button" class="btn btn-sm btn-outline-secondary" href = '/edit_artwork?id={{artid}}'>Edit</a>
                       </div>
             
                     </div>
@@ -111,9 +111,9 @@
                 <div class="card-preview">
                   <div class="card box-shadow">
                     <button class="close">X</button>
-                    <img class="card-img-top" src="data:{{type}};base64,{{ img }}" alt="{{ type }}">
+                    <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
                     <div class="card-body text-truncate-container">
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">{{summary}}</p>
                     </div>
                   </div>
                 </div>
