@@ -106,6 +106,71 @@ export async function fillArtFields(req, res){
 
 
 
+export function updateArtwork(req, res){
+    try{
+        upload.single('imageName')(req, res, (err)=>{
+            if (err){
+                console.log(err);
+            }
+            else{
+                if(res.file){
+                sharp(req.file.path)
+                .metadata()
+                .then((metadata) => {
+                    const { width, height } = metadata;
+                    const aspectRatio = width / height;
+                    console.log(`Aspect ratio: ${aspectRatio}`);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        });
+                
+                let img = fs.readFileSync(req.file.path);
+                let encoded_img = img.toString('base64');
+                const newImg = new galleryModel.image({name: req.file.originalname,
+            image: {
+           data: Buffer(encoded_img, 'base64'), contentType: req.file.mimetype
+           }
+        
+            });
+
+            const artPiece =  galleryModel.art.updateOne(
+                { _id: req.params.id },
+                {
+                    name: req.body['artwork-name'],
+                    genre: req.body['genre'],
+                    creation_date: req.body['year'],
+                    summary: req.body['summary'],
+                    image: newImg._id,
+                    creator: req.body['artist']
+            });
+            newImg.save();
+        }
+        else{
+            const artPiece =  galleryModel.art.updateOne(
+                { _id: req.params.id },
+                {
+                    name: req.body['artwork-name'],
+                    genre: req.body['genre'],
+                    creation_date: req.body['year'],
+                    summary: req.body['summary'],
+                    creator: req.body['artist']
+            });
+        }
+        
+        res.redirect('..');
+    }
+});
+
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+
+}
+
+
+
 //sharp usage example
 
 // const sharp = require('sharp');
