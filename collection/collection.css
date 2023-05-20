@@ -5,10 +5,6 @@ div.album{
     
 }
 
-.card-text-extras{
-    overflow-y: scroll;
-}
-
 .card-img-top:hover{
     cursor: pointer;
 }
@@ -69,6 +65,23 @@ div.album{
 .card  .card-img-top{
     max-height: 300px;
     max-width: fit-content;
+}
+
+.card{
+    font-size: small;
+}
+
+.info .author, .card-title{
+    font-size: medium;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: blue;
+    text-decoration: underline;
 }
 
 /* card preview */
