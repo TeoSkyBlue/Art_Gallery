@@ -14,7 +14,7 @@ h1{
     margin-bottom: 10px;
   }
 
-  input[type="text"],input[type='date'], textarea, select {
+  input[type="text"],input[type='date'], textarea, select, #artwork {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;

@@ -18,7 +18,10 @@
 
         <label for="summary">Short Summary:</label>
         <textarea id="summary" name="summary">{{summary}}</textarea>
-        {{!-- Somehow show preselected image.
-        <input type = 'file' name = 'imageName'> --}}
+        
+        <label for = 'oldImage'>Existing Artwork Image</label>
+        <img id = 'artwork' class="card-img-top" src="data:{{img_type}};base64,{{ img_data }}" alt="{{ name }}">
+        
+        <input type = 'file' name = 'imageName'>
         <input type = 'submit'> 
     </form>

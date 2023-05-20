@@ -1,7 +1,8 @@
 
-Header needs to be anchors.
+
 
 Collection values pass Correction (Populate empty fields)
+
 {Edits == pass mongo id of artwork to editor form.
 dates: are fucked
 no image no fun}

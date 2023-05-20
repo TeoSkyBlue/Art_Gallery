@@ -84,7 +84,9 @@ export async function fillArtFields(req, res){
         const artists = docs.map(doc => (
             {first_name: doc.first_name, last_name:doc.last_name, id: doc._id}));
         const piece = await galleryModel.art
-        .findById('64689181d074ef752136a6d6');//(req.body['id']);
+        .findById('64689181d074ef752136a6d6')
+        .populate('image');//(req.body['id']);
+        
 
         res.render('edit_artwork', {artists,
             creator: piece.creator,
@@ -92,6 +94,9 @@ export async function fillArtFields(req, res){
             date: piece.creation_date,
             genre: piece.genre,
             summary: piece.summary,
+            img_data: piece.image.image.data.toString('base64'),
+            img_type: piece.image.image.contentType,
+
         });
     }catch(err){
         console.log(err);
