@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="upload.css">
     <h1 class="justify-content-center"> Upload Artist</h1>
-    <form method = "post" action = "/upload" enctype="multipart/form-data">
+    <form method = "post" action = "/upload_artist" enctype="multipart/form-data">
         <label for="artist-fname">Artist First Name:</label>
         <input type="text" id="artist-fname" name="artist-fname">
 
@@ -18,8 +18,8 @@
         <label for="summary">Bio/info:</label>
         <textarea id="summary" name="summary"></textarea>
 
-        <label for="artist-image">Artist Profile Picture:</label>
-        <input type = 'file' name = 'artistImageName'>
+        <label for="artistImageName">Artist Profile Picture:</label>
+        <input type = 'file' name = 'artistImage'>
         <input type = 'submit'>
     </form>
 

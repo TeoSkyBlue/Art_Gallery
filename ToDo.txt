@@ -1,11 +1,15 @@
+
+aspect Ratios
+Collection values pass(double join)
 Sessions.
 Post, Room Forms
 Edits.
 Pagination
-Aspect Ratios
-oneDrive hosting?
 Artwork - Room Relationship(?)
-Artist - Artwork Insertions.
+
+
+Date of artwork needs to be cohesive with life of artist.
+
 What exactly is room capacity? Define it.
 
 

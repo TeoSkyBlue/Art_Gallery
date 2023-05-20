@@ -79,27 +79,27 @@ export const upload = multer({storage: storage});
 // });
 
 
-app.post("/upload", (req, res) => {
-    upload.single('imageName')(req, res, (err) =>{
-        if (err){
-            console.log(err);
-        }
-        else{
+// app.post("/upload", (req, res) => {
+//     upload.single('imageName')(req, res, (err) =>{
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
             
-            let img = fs.readFileSync(req.file.path);
-            let encoded_img = img.toString('base64');
-            const newImage = new galleryModel.image({name: req.file.originalname,
-                 image: {
-                data: Buffer(encoded_img, 'base64'), contentType: req.file.mimetype
-                }
-        });
-            newImage
-            .save()
-            .then(() => res.send('successfully uploaded'))
-            .catch(err=>console.log(err));
-        }
-    });
-});
+//             let img = fs.readFileSync(req.file.path);
+//             let encoded_img = img.toString('base64');
+//             const newImage = new galleryModel.image({name: req.file.originalname,
+//                  image: {
+//                 data: Buffer(encoded_img, 'base64'), contentType: req.file.mimetype
+//                 }
+//         });
+//             newImage
+//             .save()
+//             .then(() => res.send('successfully uploaded'))
+//             .catch(err=>console.log(err));
+//         }
+//     });
+// });
 
 
 //Conflict between these two (above and below) because response is already sent.

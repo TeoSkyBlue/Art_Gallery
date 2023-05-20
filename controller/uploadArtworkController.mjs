@@ -31,7 +31,8 @@ export function saveArtwork(req, res){
             genre: req.body['genre'],
             creation_date: req.body['year'],
             summary: req.body['summary'],
-            image: newImg._id
+            image: newImg._id,
+            creator: req.body['artist']
         });
     
         artPiece.save();
@@ -46,3 +47,39 @@ export function saveArtwork(req, res){
     }
 
 }
+
+export async function availableArtists(req, res){
+    try{
+        const docs = await db.collection('artists')
+        .find()
+        .toArray();
+        // console.log(docs[0].first_name + ' ' + docs[0].last_name);
+        const artists = docs.map(doc => (
+            {first_name: doc.first_name, last_name:doc.last_name, id: doc._id}));
+        res.render('upload_artwork', {artists});
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+};
+
+
+
+//Backend side pagination example.
+
+
+// const mongoose = require('mongoose');
+// const mongoosePaginate = require('mongoose-paginate-v2');
+
+// const schema = new mongoose.Schema({
+//   // Your schema definition here
+// });
+
+// schema.plugin(mongoosePaginate);
+
+// const Model = mongoose.model('Model', schema);
+
+// // Example usage
+// Model.paginate({}, { page: 1, limit: 10 }, function(err, result) {
+//   // Your code here
+// });

@@ -35,7 +35,7 @@ const postSchema = new mongoose.Schema({
     post_type: Boolean, //looks and feels off. Will re-evaluate later.
     authors: [{  //refers to editors too, author is editor[0].
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Admin',
+        ref: 'Admins',
         required: true
     }]
 });
@@ -86,6 +86,10 @@ const artSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Images'
     },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Artists'
+    }
 });
 
 const artistSchema = new mongoose.Schema({

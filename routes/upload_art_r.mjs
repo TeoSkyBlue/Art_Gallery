@@ -2,7 +2,7 @@ import multer from 'multer';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { saveArtwork } from '../controller/uploadController.mjs';
+import { saveArtwork, availableArtists } from '../controller/uploadArtworkController.mjs';
 //TO BE FILLED, logic needs to be on a controller, here only routing.
 const upload_router = express.Router();
 // //Needs changing.
@@ -19,9 +19,8 @@ const upload_router = express.Router();
 // const upload = multer({storage: storage});
 
 
-upload_router.get("/upload_art", (req, res) => {
-    res.render("upload_artwork");
-});
+upload_router.get("/upload_art", availableArtists);
+
 upload_router.post("/upload_art", saveArtwork);
 
 export default upload_router;
