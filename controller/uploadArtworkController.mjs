@@ -2,6 +2,7 @@
 import db from '../models/mongo_conn.mjs';
 import galleryModel from '../models/art_gallery_schema.mjs';
 import fs from 'fs';
+import sharp from 'sharp';
 import { upload } from '../app.mjs';
 
 
@@ -16,6 +17,17 @@ export function saveArtwork(req, res){
                 console.log(err);
             }
             else{
+                sharp(req.file.path)
+                .metadata()
+                .then((metadata) => {
+                    const { width, height } = metadata;
+                    const aspectRatio = width / height;
+                    console.log(`Aspect ratio: ${aspectRatio}`);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        });
+                
                 let img = fs.readFileSync(req.file.path);
                 let encoded_img = img.toString('base64');
                 const newImg = new galleryModel.image({name: req.file.originalname,
@@ -63,6 +75,26 @@ export async function availableArtists(req, res){
     }
 };
 
+
+
+//sharp usage example
+
+// const sharp = require('sharp');
+
+// app.post('/upload', upload.single('image'), (req, res) => {
+//   const { path } = req.file;
+
+//   sharp(path)
+//     .metadata()
+//     .then((metadata) => {
+//       const { width, height } = metadata;
+//       const aspectRatio = width / height;
+//       console.log(`Aspect ratio: ${aspectRatio}`);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// });
 
 
 //Backend side pagination example.

@@ -22,7 +22,7 @@ const postSchema = new mongoose.Schema({
     }],
     images: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Images'
+        ref: 'Image'
     }],   // schema pic has 1 cardinality, needs update.
     content: { 
         type: String,
@@ -35,7 +35,7 @@ const postSchema = new mongoose.Schema({
     post_type: Boolean, //looks and feels off. Will re-evaluate later.
     authors: [{  //refers to editors too, author is editor[0].
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Admins',
+        ref: 'Admin',
         required: true
     }]
 });
@@ -45,7 +45,8 @@ const imagesSchema = new mongoose.Schema({
     name: String,
     image: {
         data: Buffer,
-        contentType: String
+        contentType: String,
+        aspectRatio: Number,
     }
 });
 
@@ -73,7 +74,7 @@ const roomSchema = new mongoose.Schema({
 
     images: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Images'
+        ref: 'Image'
     }],
 });
 
@@ -84,11 +85,11 @@ const artSchema = new mongoose.Schema({
     name: String,
     image: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Images'
+        ref: 'Image'
     },
     creator: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Artists'
+        ref: 'Artist'
     }
 });
 
@@ -96,7 +97,7 @@ const artistSchema = new mongoose.Schema({
     info: String,
     profile_pic: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Images'
+        ref: 'Image'
     },
     born: Date,
     died: Date,
