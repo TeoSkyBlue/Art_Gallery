@@ -1,11 +1,17 @@
 
-aspect Ratios
-Collection values pass(double join)
-Sessions.
+Header needs to be anchors.
+
+Collection values pass Correction (Populate empty fields)
+{Edits == pass mongo id of artwork to editor form.
+dates: are fucked
+no image no fun}
+
 Post, Room Forms
-Edits.
+
 Pagination
 Artwork - Room Relationship(?)
+Make multer work from Memory instead of local.
+Sessions.
 
 
 Date of artwork needs to be cohesive with life of artist.

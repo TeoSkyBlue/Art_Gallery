@@ -8,6 +8,7 @@ import about_router from './routes/about_r.mjs';
 import login_router from './routes/login_r.mjs';
 import upload_router from './routes/upload_art_r.mjs';
 import exhibition_router from './routes/exhibition_r.mjs';
+import edit_artwork_router from './routes/edit_artwork_r.mjs';
 import upload_artist_router from './routes/upload_artist.mjs';
 import upload_room_router from './routes/upload_room_r.mjs';
 import mongoose from 'mongoose';
@@ -57,6 +58,8 @@ app.use(upload_router);
 app.use(exhibition_router);
 app.use(upload_artist_router);
 app.use(upload_room_router);
+app.use(edit_artwork_router);
+
 // UPLOAD-DB TESTS /////////
 
 

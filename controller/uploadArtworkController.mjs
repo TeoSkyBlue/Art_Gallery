@@ -75,6 +75,30 @@ export async function availableArtists(req, res){
     }
 };
 
+export async function fillArtFields(req, res){
+    try{
+        const docs = await db.collection('artists')
+        .find()
+        .toArray();
+        // console.log(docs[0].first_name + ' ' + docs[0].last_name);
+        const artists = docs.map(doc => (
+            {first_name: doc.first_name, last_name:doc.last_name, id: doc._id}));
+        const piece = await galleryModel.art
+        .findById('64689181d074ef752136a6d6');//(req.body['id']);
+
+        res.render('edit_artwork', {artists,
+            creator: piece.creator,
+            name: piece.name,
+            date: piece.creation_date,
+            genre: piece.genre,
+            summary: piece.summary,
+        });
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+}
+
 
 
 //sharp usage example
