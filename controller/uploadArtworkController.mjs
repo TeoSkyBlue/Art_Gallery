@@ -97,6 +97,9 @@ export async function fillArtFields(req, res){
             }
         }
         req.artwork_id = req.query['artwork_id'];
+        //get artwork id from query of collection
+        //hold the id for the form-post submition
+        //image id can be had through here.
         res.render('edit_artwork', {artists,
             creator: piece.creator,
             name: piece.name,
@@ -107,6 +110,7 @@ export async function fillArtFields(req, res){
             img_type: piece.image.image.contentType,
             // creator_id: creator_id,
             artwork_id: piece._id,
+            image_id: piece.image._id,
             
 
         });
@@ -147,6 +151,17 @@ export async function updateArtwork(req, res){
            }
         
             });
+            
+            // const artPiece = galleryModel.art.pre(
+            //     'remove', function(next){
+
+            //     }
+            // )
+            console.log(req.query);
+            const previous_image = galleryModel.image.deleteOne({
+                _id: req.query['image_id']
+            });
+            
 
             const artPiece = galleryModel.art.findOneAndUpdate(
                 { _id: req.query['artwork_id'] },

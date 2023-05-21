@@ -71,19 +71,21 @@ export async function displayArtworks(req, res){
         .populate('image')
         .populate('creator');
         
-        // console.log(docs);
+        // console.log(docs[0].image._id);
         
         
         const artworks = docs.map(doc => (
             {
                 artpiece: doc.image.image.data.toString('base64'),
                 art_type: doc.image.image.contentType,
+                image_id: doc.image._id,
                 artname: doc.name,
                 artist_fname: doc.creator.first_name,
                 artist_lname: doc.creator.last_name,
                 artsum: doc.summary,
                 artdate: doc.creation_date,
-                artid: doc._id
+                artid: doc._id,
+                
 
 
             }));

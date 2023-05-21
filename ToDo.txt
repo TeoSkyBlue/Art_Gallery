@@ -1,7 +1,5 @@
 
-{Edits: Images(!)
-Update, set -> Go!
-dates: are fucked
+{Edits: Delete old image?
 }
 
 Post, Room Forms

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="upload.css">
     <h1> Upload Image</h1>
-    <form method = "post" action = "/edit_artwork?artwork_id={{artwork_id}}" enctype="multipart/form-data">
+    <form method = "post" action = "/edit_artwork?artwork_id={{artwork_id}}&image_id={{image_id}}" enctype="multipart/form-data">
         <label for="artist-name">Artist:</label>
         <select type="radio" id = 'artist' name="artist">
         {{#each artists}}
