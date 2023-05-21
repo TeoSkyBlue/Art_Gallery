@@ -219,6 +219,14 @@ cardBox.forEach(card => {
 });
 
 previewBox.forEach(preview =>{
+  
+  let closest_preview_container = preview.closest('.preview-container');
+
+  closest_preview_container.onclick = () =>{
+    preview.classList.remove('active');
+    let closest_preview_container = preview.closest('.preview-container');
+    closest_preview_container.classList.remove('active');
+  };
   preview.querySelector('.close').onclick = () =>{
     preview.classList.remove('active');
     let closest_preview_container = preview.closest('.preview-container');
