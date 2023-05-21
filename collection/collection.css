@@ -55,15 +55,15 @@ div.album{
     display: none;
 }
 
-.card-img-container{
+.card-content .card-img-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: 200px;
 }
 
-.card  .card-img-top{
-    max-height: 300px;
+.card-content .card  .card-img-top{
+    max-height: 200px;
     max-width: fit-content;
 }
 
@@ -96,16 +96,24 @@ a:hover{
     height: 100%;
     z-index: 99;
     align-items: center;
-   justify-content: center;
+    justify-content: center;
 }
  
 .card-preview{
-    display: none;
+    display: inline-block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.card-preview .card-img-container{
+    display: flex;
+}
+
+/* .card-preview .card-img-top{
+    height: 100px;
+} */
 
 .active{
    display: inline-block;
