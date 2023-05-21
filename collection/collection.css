@@ -62,7 +62,7 @@ div.album{
     height: 200px;
 }
 
-.card-content .card  .card-img-top{
+.card-content  .card-img-top{
     max-height: 200px;
     max-width: fit-content;
 }
@@ -96,7 +96,7 @@ a:hover{
     height: 100%;
     z-index: 99;
     align-items: center;
-    justify-content: center;
+   justify-content: center;
 }
  
 .card-preview{
@@ -105,18 +105,19 @@ a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 10px;
-    /* height: 50%; */
 }
 
 .card-preview .card-img-container{
     display: flex;
-    /* max-height: 80%; */
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
 }
 
-/* .card-preview .card-img-top{
-    height: 100px;
-} */
+.card-preview  .card-img-top{
+    max-height: 70vh;
+    max-width: fit-content;
+}
 
 .active{
    display: inline-block;
@@ -133,6 +134,7 @@ a:hover{
  .card-preview .close:hover{
     background-color: rgb(231, 150, 56);
  }
+
 
 /* search bar */
 
