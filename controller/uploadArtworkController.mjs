@@ -4,6 +4,7 @@ import galleryModel from '../models/art_gallery_schema.mjs';
 import fs from 'fs';
 import sharp from 'sharp';
 import { upload } from '../app.mjs';
+import { displayArtworks } from './collectionController.mjs';
 
 
 
@@ -82,12 +83,20 @@ export async function fillArtFields(req, res){
         .toArray();
         // console.log(docs[0].first_name + ' ' + docs[0].last_name);
         const artists = docs.map(doc => (
-            {first_name: doc.first_name, last_name:doc.last_name, id: doc._id}));
+            {first_name: doc.first_name, last_name:doc.last_name, id: doc._id, selected: false}));
         const piece = await galleryModel.art
-        .findById(req.query['id'])
+        .findById(req.query['artwork_id'])
         .populate('image');//(req.body['id']);
         
-
+        // let creator_id = false;
+        for (let artist of artists){
+            // JS SUCKS.
+            if (artist.id.toString() === piece.creator.toString()){
+                artist.selected = true;
+                break;
+            }
+        }
+        req.artwork_id = req.query['artwork_id'];
         res.render('edit_artwork', {artists,
             creator: piece.creator,
             name: piece.name,
@@ -96,8 +105,12 @@ export async function fillArtFields(req, res){
             summary: piece.summary,
             img_data: piece.image.image.data.toString('base64'),
             img_type: piece.image.image.contentType,
+            // creator_id: creator_id,
+            artwork_id: piece._id,
+            
 
         });
+       
     }catch(err){
         console.log(err);
         res.send(err);
@@ -106,14 +119,15 @@ export async function fillArtFields(req, res){
 
 
 
-export function updateArtwork(req, res){
+export async function updateArtwork(req, res){
+    
     try{
         upload.single('imageName')(req, res, (err)=>{
             if (err){
                 console.log(err);
             }
             else{
-                if(res.file){
+                if (req.file){
                 sharp(req.file.path)
                 .metadata()
                 .then((metadata) => {
@@ -134,8 +148,8 @@ export function updateArtwork(req, res){
         
             });
 
-            const artPiece =  galleryModel.art.updateOne(
-                { _id: req.params.id },
+            const artPiece = galleryModel.art.findOneAndUpdate(
+                { _id: req.query['artwork_id'] },
                 {
                     name: req.body['artwork-name'],
                     genre: req.body['genre'],
@@ -143,22 +157,24 @@ export function updateArtwork(req, res){
                     summary: req.body['summary'],
                     image: newImg._id,
                     creator: req.body['artist']
-            });
-            newImg.save();
+            }).then(newImg.save());
+            res.redirect('..');
+            // newImg.save();
         }
         else{
-            const artPiece =  galleryModel.art.updateOne(
-                { _id: req.params.id },
+            const artPiece = galleryModel.art.findOneAndUpdate(
+                { _id: req.query['artwork_id'] },
                 {
-                    name: req.body['artwork-name'],
+                    name: req.body['artwork_name'],
                     genre: req.body['genre'],
                     creation_date: req.body['year'],
                     summary: req.body['summary'],
                     creator: req.body['artist']
-            });
+            },
+            {new: true})
+            .then(res.redirect('..'));
         }
         
-        res.redirect('..');
     }
 });
 

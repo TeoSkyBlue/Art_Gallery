@@ -1,5 +1,5 @@
 import express from 'express';
-import { saveArtwork, fillArtFields, updateArtwork } from '../controller/uploadArtworkController.mjs';
+import { fillArtFields, updateArtwork } from '../controller/uploadArtworkController.mjs';
 
 
 const edit_artwork_router = express.Router();

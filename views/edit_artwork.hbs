@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="upload.css">
     <h1> Upload Image</h1>
-    <form method = "post" action = "/edit_artwork" enctype="multipart/form-data">
-        {{!-- <label for="artist-name">Artist:</label>
+    <form method = "post" action = "/edit_artwork?artwork_id={{artwork_id}}" enctype="multipart/form-data">
+        <label for="artist-name">Artist:</label>
         <select type="radio" id = 'artist' name="artist">
         {{#each artists}}
-        <option value = "{{id}}" {{#if id === creator}} selected {{/if}}>{{first_name}} {{last_name}}</option>
-        {{/each}} --}}
+        <option value = "{{id}}" {{#if selected}} selected {{/if}}>{{first_name}} {{last_name}}</option>
+        {{/each}}
 
         <label for="artwork-name">Artwork Name:</label>
-        <input type="text" id="artwork-name" name="artwork-name" value = "{{name}}">
+        <input type="text" id="artwork-name" name="artwork_name" value = '{{name}}'>
 
         <label for="year">Creation Date:</label>
         <input type="date" id="year" name="year" value = {{date}}>
