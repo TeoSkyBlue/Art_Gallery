@@ -5,22 +5,14 @@ div.album{
     
 }
 
-.card-text-extras{
-    overflow-y: scroll;
-}
-
 .card-img-top:hover{
     cursor: pointer;
 }
 
-
-.text-truncate-container {
-    width: 90%;
-}
 .text-truncate-container p{
+    
     height: 4.6em;
     -webkit-line-clamp: 3;
-    
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -32,16 +24,116 @@ div.album{
     -webkit-box-orient: vertical;
     overflow-y:scroll;
     scroll-behavior: smooth;
-    width: 90%;
-    padding: 0.5em;
-    
+    width: none;
+    scrollbar-width: none;    
 }
+
+.text-truncate-container-focused::-webkit-scrollbar {
+    display: none;
+}
+
 
 .focused-content{
     z-index: 1;
     justify-content: center;
     background-image: linear-gradient(to bottom right, bisque , rgb(202, 133, 54));
 }
+
+.card .edit{
+    position: absolute;
+    top:0rem; right:0rem;
+    cursor: pointer;
+    font-size: 1.0rem;
+    border-radius: 5px;
+ }
+
+ .card .edit:hover{
+    background-color: rgb(231, 150, 56);
+ }
+
+.card .hide{
+    display: none;
+}
+
+.card-content .card-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.card-content  .card-img-top{
+    max-height: 200px;
+    max-width: fit-content;
+}
+
+.card-content .card{
+    font-size: small;
+}
+
+.info .author, .card-title{
+    font-size: medium;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+/* card preview */
+
+.preview-container{
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    align-items: center;
+   justify-content: center;
+}
+ 
+.card-preview{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-preview .card-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.card-preview  .card-img-top{
+    max-height: 70vh;
+    max-width: fit-content;
+}
+
+.active{
+   display: inline-block;
+}
+
+.card-preview .close{
+    position: absolute;
+    top:0rem; right:0rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+ }
+
+ .card-preview .close:hover{
+    background-color: rgb(231, 150, 56);
+ }
+
 
 /* search bar */
 
@@ -160,68 +252,3 @@ div.album{
     background: #af9f11;
 }
 
-
-/* card preview */
-
-.preview-container{
-    display: none;
-    position: fixed;
-    background: rgba(0,0,0,.8);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    align-items: center;
-   justify-content: center;
-}
- 
-.card-preview{
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.active{
-   display: inline-block;
-}
-
-.card-preview img{
-   height: 30rem;
-}
-
-.card-preview .close{
-    position: absolute;
-    top:0rem; right:0rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 5px;
- }
-
- .card-preview .close:hover{
-    background-color: rgb(231, 150, 56);
- }
- 
-/*
- //hover now works through Js because 
-this type of solution has text-truncate-container webkit-box
-visual bug.("..." after text on hover).
-
-
-.card-body>p:hover{
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    -webkit-line-clamp: none;
-    
-}
-
-.card:hover{
-    background-image: linear-gradient(to bottom right, bisque , rgb(202, 141, 67));
-    text-shadow: 0.5px 1px 1px #585858;
-    
-    
-} 
-
-*/

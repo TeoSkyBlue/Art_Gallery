@@ -96,7 +96,7 @@ options.forEach(option =>{
 
 // pagination
 
-let art_per_page=9;
+let art_per_page=12;
 
 function getPageList(totalPages, page, maxLength){
     function range(start, end){
@@ -208,9 +208,7 @@ cardBox.forEach(card => {
         const previews = preview.querySelectorAll('.card-img-top');
         previews.forEach(preview_img => {
           if (name == preview_img.getAttribute('alt')){
-              let closest_preview = preview_img.closest('.card-preview');
               let closest_preview_container = preview_img.closest('.preview-container');
-              closest_preview.classList.add('active');
               closest_preview_container.classList.add('active');
           }
         });
@@ -220,8 +218,14 @@ cardBox.forEach(card => {
 });
 
 previewBox.forEach(preview =>{
+  
+  let closest_preview_container = preview.closest('.preview-container');
+
+  closest_preview_container.onclick = () =>{
+    let closest_preview_container = preview.closest('.preview-container');
+    closest_preview_container.classList.remove('active');
+  };
   preview.querySelector('.close').onclick = () =>{
-    preview.classList.remove('active');
     let closest_preview_container = preview.closest('.preview-container');
     closest_preview_container.classList.remove('active');
   };

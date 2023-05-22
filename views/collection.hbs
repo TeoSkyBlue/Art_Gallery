@@ -2,41 +2,12 @@
 <link rel="stylesheet" href="collection.css">
 <script src="collection.js" defer></script>
 
-{{!-- 
-<div class="container search py-2 w-auto">
-      <div class="row">
-        <div class="col">
-          <div class="search-box row">
-            <div class=""><input type="text" placeholder="search collection" id="search-box"></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="select-menu">
-            <div class="select-btn">
-              <span class="sBtn-text">Filters</span>
-            </div>
-            <ul class="options">
-              <li class="option">
-                  <span class="option-text">Github</span>
-              </li>
-              <li class="option">
-                  <span class="option-text">Instagram</span>
-              </li>
-              <li class="option">
-                <span class="option-text">Linkedin</span>
-              </li>
-              <li class="option">
-                  <span class="option-text">Facebook</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
- --}}
+{{!-- h-100? --}}
 
-    <div class=" h-100 w-auto album height-auto overflow-y-scroll py-5 bg-light">
+    <div class="album py-4 bg-light h-100">
+      <div class = 'container'>
           <div class="row mb-4 justify-content-center">
+
       <div class=" col-md-6 col-sm-6">
         <div class="search-box row">
           <input type="text" placeholder="search collection" id="search-box">
@@ -68,20 +39,21 @@
           <div class="select-btn show-btn">
             <span class="show-sBtn-text m-2">No of artworks</span>
           </div>
-          <ul class="options">
-            <li class="option show-option">
-                <span class="option-text">9</span>
-            </li>
-            <li class="option show-option">
-                <span class="option-text">15</span>
-            </li>
-            <li class="option show-option">
-              <span class="option-text">30</span>
-            </li>
-            <li class="option show-option">
-                <span class="option-text">45</span>
-            </li>
-          </ul>
+              <ul class="options">
+                <li class="option show-option">
+                    <span class="option-text">9</span>
+                </li>
+                <li class="option show-option">
+                    <span class="option-text">15</span>
+                </li>
+                <li class="option show-option">
+                  <span class="option-text">30</span>
+                </li>
+                <li class="option show-option">
+                    <span class="option-text">45</span>
+                </li>
+              </ul>
+          </div>  
         </div>
       </div>
     </div>
@@ -92,26 +64,38 @@
         <div class="container">
           <div class="row">
             {{#each artworks}}
-              <div class="card-content col-md-4 d-flex align-items-stretch">
+              <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
-                  <div class="card-body text-truncate-container">
-                    <p class="card-text mb-4">{{artsum}}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        
-                        <a type="button" class="btn btn-sm btn-outline-secondary" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
-                      </div>
-            
+                  <a type="button" class="btn btn-sm btn-outline-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
+                  <div class = 'row d-flex justify-content-center card-title'>
+                    {{artname}}
+                  </div>
+                  <div class = 'card-img-container'>
+                    <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
+                  </div>
+                  <div class="row justify-content-center info m-1">
+                    <a href="/creator?creatorid={{creatorid}}" class="col-12 author">
+                      {{artist_fname}} {{artist_lname}}
+                    </a>
+                    <div class="col genre-year">
+                      {{artgenre}} {{artdate}}
                     </div>
                   </div>
+                  <div class="card-body text-truncate-container">
+                    <p class="card-text mb-4">{{artsum}}</p>
+                  </div>                          
                 </div>
               </div>
               <div class="preview-container">
                 <div class="card-preview">
                   <div class="card box-shadow">
                     <button class="close">X</button>
-                    <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
+                    <div class="row d-flex justify-content-center card-title">
+                      {{artname}}
+                    </div>
+                    <div class="card-img-container">
+                      <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
+                    </div>
                     <div class="card-body text-truncate-container">
                       <p class="card-text">{{artsum}}</p>
                     </div>
@@ -124,8 +108,10 @@
           <div class="pagination">
             <div class="list mx-auto">
           </div>
+      
         </div>
 
         
     </div>
+  </div>
   
