@@ -55,7 +55,7 @@ const roomSchema = new mongoose.Schema({
     number: {
         type: Number,
         unique: true,
-        required: true
+        required: true,
     },
     name: String,
     genre: String,

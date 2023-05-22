@@ -152,32 +152,9 @@ export async function updateArtwork(req, res){
         
             });
             
-            // const artPiece = galleryModel.art.pre(
-            //     'remove', function(next){
-
-            //     }
-            // )
-            console.log(req.query);
-            // const previous_image = galleryModel.image.deleteOne({
-            //     _id: req.query['image_id']
-            // });
             
-
-            // const artPiece = galleryModel.art.findOneAndUpdate(
-            //     { _id: req.query['artwork_id'] },
-            //     {
-            //         name: req.body['artwork-name'],
-            //         genre: req.body['genre'],
-            //         creation_date: req.body['year'],
-            //         summary: req.body['summary'],
-            //         image: newImg._id,
-            //         creator: req.body['artist']
-            // }).then(newImg.save());
-            // res.redirect('..');
-                // newImg.save();
-
-
-                //The following is what we in the Biz call, "Callback Hell".
+            console.log(req.query);
+            
             deleteImgAndUpdate(req, res, newImg);
         }
         else{

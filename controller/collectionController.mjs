@@ -2,7 +2,7 @@
 import db from '../models/mongo_conn.mjs';
 import galleryModel from '../models/art_gallery_schema.mjs';
 
-
+//Deprecated, used only for testing.
 export async function displayImages(req, res){
     try{
         const docs =  await db.collection('images').find().toArray();
