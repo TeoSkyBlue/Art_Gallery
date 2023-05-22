@@ -35,3 +35,18 @@ export function saveArtist(req, res){
         res.send(err);
     }
 }
+
+
+export async function showcaseArtist(req, res){
+    try{
+        const artist_docs = await galleryModel.artist.find({
+            _id: req.query['creatorid']
+        });
+        res.render('artist', {artist: artist_docs});
+
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+};
+

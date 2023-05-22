@@ -1,9 +1,12 @@
 
-{Edits: Delete old image?
+{Edits: 
 Dates are fucked.
 }
 
-Artist page
+Deletes?
+
+Artist page-join all artworks of artist
+
 Post, Room Forms
 
 Pagination
