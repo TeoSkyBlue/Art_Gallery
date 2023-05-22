@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="upload.css">
     <h1> Upload Image</h1>
     <form method = "post" action = "/edit_artwork?artwork_id={{artwork_id}}&image_id={{image_id}}" enctype="multipart/form-data">
-        <label for="artist-name">Artist:</label>
+        <label for="artist">Artist:</label>
         <select type="radio" id = 'artist' name="artist">
         {{#each artists}}
         <option value = "{{id}}" {{#if selected}} selected {{/if}}>{{first_name}} {{last_name}}</option>
@@ -19,7 +19,7 @@
         <label for="summary">Short Summary:</label>
         <textarea id="summary" name="summary">{{summary}}</textarea>
         
-        <label for = 'oldImage'>Existing Artwork Image</label>
+        <p>Existing Artwork Image</p>
         <img id = 'artwork' class="card-img-top" src="data:{{img_type}};base64,{{ img_data }}" alt="{{ name }}">
         
         <input type = 'file' name = 'imageName'>

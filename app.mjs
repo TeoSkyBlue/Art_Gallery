@@ -77,52 +77,6 @@ const storage = multer.diskStorage({
 export const upload = multer({storage: storage});
 
 
-// app.get("/upload", (req, res) => {
-//     res.render("upload");
-// });
-
-
-// app.post("/upload", (req, res) => {
-//     upload.single('imageName')(req, res, (err) =>{
-//         if (err){
-//             console.log(err);
-//         }
-//         else{
-            
-//             let img = fs.readFileSync(req.file.path);
-//             let encoded_img = img.toString('base64');
-//             const newImage = new galleryModel.image({name: req.file.originalname,
-//                  image: {
-//                 data: Buffer(encoded_img, 'base64'), contentType: req.file.mimetype
-//                 }
-//         });
-//             newImage
-//             .save()
-//             .then(() => res.send('successfully uploaded'))
-//             .catch(err=>console.log(err));
-//         }
-//     });
-// });
-
-
-//Conflict between these two (above and below) because response is already sent.
-//Need to stack the middleware here.
-
-// app.post('/upload', [
-//     body('year').isInt().withMessage('Year must be a valid number')
-//   ], (req, res) => {
-//     const errors = validationResult(req);
-//     if (!errors.isEmpty()) {
-//       return res.status(400).json({ errors: errors.array() });
-//     }
-  
-//     // Handle form submission
-//   });
-    
-// END OF TEST CODE ///////
-
-
-
 
 
 app.listen(port, ()=>{

@@ -158,23 +158,27 @@ export async function updateArtwork(req, res){
             //     }
             // )
             console.log(req.query);
-            const previous_image = galleryModel.image.deleteOne({
-                _id: req.query['image_id']
-            });
+            // const previous_image = galleryModel.image.deleteOne({
+            //     _id: req.query['image_id']
+            // });
             
 
-            const artPiece = galleryModel.art.findOneAndUpdate(
-                { _id: req.query['artwork_id'] },
-                {
-                    name: req.body['artwork-name'],
-                    genre: req.body['genre'],
-                    creation_date: req.body['year'],
-                    summary: req.body['summary'],
-                    image: newImg._id,
-                    creator: req.body['artist']
-            }).then(newImg.save());
-            res.redirect('..');
-            // newImg.save();
+            // const artPiece = galleryModel.art.findOneAndUpdate(
+            //     { _id: req.query['artwork_id'] },
+            //     {
+            //         name: req.body['artwork-name'],
+            //         genre: req.body['genre'],
+            //         creation_date: req.body['year'],
+            //         summary: req.body['summary'],
+            //         image: newImg._id,
+            //         creator: req.body['artist']
+            // }).then(newImg.save());
+            // res.redirect('..');
+                // newImg.save();
+
+
+                //The following is what we in the Biz call, "Callback Hell".
+            deleteImgAndUpdate(req, res, newImg);
         }
         else{
             const artPiece = galleryModel.art.findOneAndUpdate(
@@ -202,41 +206,27 @@ export async function updateArtwork(req, res){
 
 
 
-//sharp usage example
-
-// const sharp = require('sharp');
-
-// app.post('/upload', upload.single('image'), (req, res) => {
-//   const { path } = req.file;
-
-//   sharp(path)
-//     .metadata()
-//     .then((metadata) => {
-//       const { width, height } = metadata;
-//       const aspectRatio = width / height;
-//       console.log(`Aspect ratio: ${aspectRatio}`);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//     });
-// });
-
-
-//Backend side pagination example.
-
-
-// const mongoose = require('mongoose');
-// const mongoosePaginate = require('mongoose-paginate-v2');
-
-// const schema = new mongoose.Schema({
-//   // Your schema definition here
-// });
-
-// schema.plugin(mongoosePaginate);
-
-// const Model = mongoose.model('Model', schema);
-
-// // Example usage
-// Model.paginate({}, { page: 1, limit: 10 }, function(err, result) {
-//   // Your code here
-// });
+async function deleteImgAndUpdate(req, res, newImg) {
+    try {
+      const previous_image = await galleryModel.image.deleteOne({
+        _id: req.query['image_id']
+      });
+      const artPiece = await galleryModel.art.findOneAndUpdate(
+        { _id: req.query['artwork_id'] },
+        {
+          name: req.body['artwork-name'],
+          genre: req.body['genre'],
+          creation_date: req.body['year'],
+          summary: req.body['summary'],
+          image: newImg._id,
+          creator: req.body['artist']
+        }
+      );
+      await newImg.save();
+      res.redirect('..');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
+  

@@ -1,9 +1,9 @@
 
 {Edits: Delete old image?
-Deletions.
 Dates are fucked.
 }
 
+Artist page
 Post, Room Forms
 
 Pagination
