@@ -17,6 +17,8 @@ let slides = document.querySelectorAll('.slide');
 let btns = document.querySelectorAll('.btn');
 let currentSlide = 1;
 let active_i = 1;
+slides[0].classList.add('active');
+btns[0].classList.add('active');
 
 // Javascript for image slider manual navigation
 let manualNav = function(manual){

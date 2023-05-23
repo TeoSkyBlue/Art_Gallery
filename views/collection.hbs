@@ -65,7 +65,7 @@
           <div class="row">
             {{#each artworks}}
               <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
-                <div class="card mb-4 box-shadow">
+                <div class="card mb-4 w-100">
                   <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
                   <div class = 'row d-flex justify-content-center card-title'>
                     {{artname}}
@@ -73,7 +73,7 @@
                   <div class = 'card-img-container'>
                     <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
                   </div>
-                  <div class="row justify-content-center info m-1">
+                  <div class="row info m-1">
                     <a href="/artist?creatorid={{creatorid}}" class="col-12 author">
                       {{artist_fname}} {{artist_lname}}
                     </a>
@@ -88,7 +88,7 @@
               </div>
               <div class="preview-container">
                 <div class="card-preview">
-                  <div class="card box-shadow">
+                  <div class="card">
                     <button class="close">X</button>
                     <div class="row d-flex justify-content-center card-title">
                       {{artname}}
