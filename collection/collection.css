@@ -5,6 +5,8 @@ div.album{
     
 }
 
+/* card element */
+
 .card-img-top:hover{
     cursor: pointer;
 }
