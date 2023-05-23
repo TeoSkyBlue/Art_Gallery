@@ -25,7 +25,7 @@ const adminSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    
+
 });
 
 const postSchema = new mongoose.Schema({
@@ -73,16 +73,6 @@ const roomSchema = new mongoose.Schema({
     name: String,
     genre: String,
 
-    capacity: {
-        max: {
-            type: Number,
-            required: true
-        },
-        current: {
-            type: Number
-        }
-    },
-
     description: String,
 
     images: [{
@@ -100,6 +90,7 @@ const artSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image'
     },
+
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist'

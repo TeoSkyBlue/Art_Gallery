@@ -41,9 +41,6 @@ export async function addRoom(req, res){
             const roomInstance = new galleryModel.room({
                 number: req.body['roomNum'],
                 genre: req.body['genre'],
-                capacity: {
-                    max: req.body['roomMaxCap']
-                },
                 description: req.body['roomDescription'],
                 images: imageIDs
                 
