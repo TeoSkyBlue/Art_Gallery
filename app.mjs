@@ -6,6 +6,7 @@ import home_router from './routes/home_r.mjs';
 import collection_router from './routes/collection_r.mjs';
 import about_router from './routes/about_r.mjs';
 import login_router from './routes/login_r.mjs';
+import register_router from './routes/register_r.mjs';
 import upload_router from './routes/upload_art_r.mjs';
 import exhibition_router from './routes/exhibition_r.mjs';
 import edit_artwork_router from './routes/edit_artwork_r.mjs';
@@ -17,6 +18,7 @@ import fs from 'fs';
 import multer from 'multer';
 import galleryModel from "./models/art_gallery_schema.mjs";
 import {body, validationResult} from 'express-validator';
+
 
 // import db from './models/mongo_conn.mjs';
 
@@ -44,11 +46,12 @@ app.use(express.static(path.join(__dirname, 'public/images'), { type: 'image/png
 app.set('views', path.join(__dirname, 'views'));
 
 
-
+app.use(express.urlencoded({extended: true}));
 app.use(home_router);
 app.use(collection_router);
 app.use(about_router);
 app.use(login_router);
+app.use(register_router);
 app.use(upload_router);
 app.use(exhibition_router);
 app.use(upload_artist_router);

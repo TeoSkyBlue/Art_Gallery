@@ -2,8 +2,16 @@ import mongoose from 'mongoose';
 
 
 const adminSchema = new mongoose.Schema({
-    first_name: String,
-    last_name: String,
+    first_name: {
+        type: String,
+        required:true
+    },
+
+    last_name: {
+        type: String,
+        required:true
+    },
+
     email: {
         type: String,
         required: true,
@@ -12,7 +20,12 @@ const adminSchema = new mongoose.Schema({
     password: {
         type: String,
         required:true
-    }
+    },
+    adminStatus: {
+        type: Boolean,
+        default: false,
+    },
+    
 });
 
 const postSchema = new mongoose.Schema({

@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="login.css"> 
+
+ 
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
+        Launch Modal Form
+    </button>
+
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="myform bg-dark">
+                    <h1 class="text-center">Registration Form</h1>
+
+                    <form method = "post" action="/register">
+                        <div class="mb-3 mt-4">
+
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email"  name ="email">
+                        
+                        </div>
+
+                        <div class="mb-3 mt-4">
+
+                            <label for="firstname" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstname"  name ="firstname">
+                        
+                        </div>
+
+                        <div class="mb-3 mt-4">
+
+                            <label for="lastname" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastname"  name ="lastname">
+                        
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label for="user_password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="user_password" name = 'user_password'>
+                        
+                        </div>
+                        <input type="submit" class="btn btn-light mt-3" value = "Create Account">
+                    
+                    </form>
+
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
