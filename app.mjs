@@ -14,11 +14,12 @@ import edit_room_router from './routes/edit_room_r.mjs';
 import upload_artist_router from './routes/upload_artist.mjs';
 import upload_room_router from './routes/upload_room_r.mjs';
 import artist_router from './routes/artist_r.mjs';
-import mongoose from 'mongoose';
-import fs from 'fs';
 import multer from 'multer';
-import galleryModel from "./models/art_gallery_schema.mjs";
-import {body, validationResult} from 'express-validator';
+import { my_session } from './models/mongo_conn.mjs';
+// import db from './models/mongo_conn.mjs';
+
+
+
 
 
 
@@ -48,7 +49,11 @@ app.use(express.static(path.join(__dirname, 'public/images'), { type: 'image/png
 app.set('views', path.join(__dirname, 'views'));
 
 
+
+
 app.use(express.urlencoded({extended: true}));
+
+app.use(my_session);
 app.use(home_router);
 app.use(collection_router);
 app.use(about_router);
@@ -104,3 +109,6 @@ export const multi_upload = multer({
 app.listen(port, ()=>{
     console.log(`The server is listening on port ${port}...`);
 });
+
+
+export default app;

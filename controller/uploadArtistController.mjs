@@ -10,6 +10,7 @@ export function saveArtist(req, res){
                 console.log(err);
             }
             else{
+                if (req.file){
                 let img = fs.readFileSync(req.file.path);
                 let encoded_img = img.toString('base64');
                 const newImg = new galleryModel.image({name: req.file.originalname,
@@ -25,8 +26,22 @@ export function saveArtist(req, res){
                     first_name: req.body['artist-fname'],
                     last_name: req.body['artist-lname'],
                 });
-                artistInstance.save();
                 newImg.save();
+                artistInstance.save();
+            }
+            else{
+                const artistInstance = new galleryModel.artist({
+                    info: req.body['summary'],
+                    // profile_pic: Default pic(?),
+                    born: req.body['birthyear'],
+                    died: req.body['deathyear'],
+                    // nationality: req.body['nationality'],
+                    first_name: req.body['artist-fname'],
+                    last_name: req.body['artist-lname'],
+                });
+                artistInstance.save();
+            }
+                
                 res.redirect('..');
             }
         });

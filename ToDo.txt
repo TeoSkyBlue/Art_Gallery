@@ -1,4 +1,7 @@
 Registration/Sessions.
+If session, Get login is automatic.
+
+ADMIN Middlewares Pipeline!!!
 
 ->Validations Non Existant.
 
@@ -12,7 +15,9 @@ Deletes?
 Collection search OMEGALUL.
 
 Artist page-join all artworks of artist(?).
+updateArtist.
 Artist page defense like Artwork(!).
+Artist default profile pic(?).
 
 Artwork - Room Relationship on artwork edit.
 
