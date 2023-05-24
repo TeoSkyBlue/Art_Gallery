@@ -62,7 +62,7 @@
         <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
           <div class="card mb-4 w-100">
             <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
-            <a type="button" onclick="document.getElementById('delete-modal').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
+            <a type="button" onclick="document.getElementById('{{artname}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
 
             <div class = 'row d-flex justify-content-center card-title'>
               {{artname}}
@@ -99,13 +99,13 @@
             </div>
           </div>
         </div>
-        <div id="delete-modal" class="modal">
+        <div id="{{artname}}" class="modal">
           <div class="container">
-              <button onclick="document.getElementById('delete-modal').style.display='none'" class="close-modal d-flex" title="Close Modal">&times;</button>  
+              <button onclick="document.getElementById('{{artname}}').style.display='none'" class="close-modal d-flex" title="Close Modal">&times;</button>  
               <h1>Delete Art</h1>
               <p>Are you sure you want to delete {{ artname }}?</p>
               <div class="clearfix">
-                <button type="button" onclick="document.getElementById('delete-modal').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('{{artname}}').style.display='none'" class="cancelbtn">Cancel</button>
                 <button type="button" class="deletebtn">Delete</button>
               </div>
           </div>

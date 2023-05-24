@@ -20,6 +20,10 @@ body{
 
 
 
+body{
+    background-color: #000000;
+    background-image: url("default_background.jpg");
+}
 
 .header-item-divider{
     background-color: #ffffff;

@@ -1,7 +1,8 @@
 
 div.album{
-    background-image: linear-gradient(to top left, rgb(207, 175, 131), rgb(216, 172, 106));
-    
+    background-image: url("default_background.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .card-img-top:hover{
@@ -19,7 +20,8 @@ div.album{
 }
 
 .card{
-    background-image: linear-gradient(to bottom right, rgb(255, 186, 186), rgb(255, 254, 172));
+    background: rgba(236, 235, 235, 0.9);
+    border:2px solid rgb(252,116,68);
 }
 
 .text-truncate-container-focused {
@@ -39,7 +41,7 @@ div.album{
 .focused-content{
     z-index: 1;
     justify-content: center;
-    background-image: linear-gradient(to top left, rgb(71, 46, 0) , rgb(233, 143, 41));
+    background-image: linear-gradient(to top left, rgb(255,188,156), rgb(255, 255, 255));
 }
 
 .card .edit{
@@ -60,7 +62,7 @@ div.album{
  }
 
 .card .edit:hover{
-    background-color: rgb(231, 150, 56);
+    background-color: rgb(187, 187, 185);
  }
 
 .card .delete:hover{
@@ -147,7 +149,7 @@ a:hover{
  }
 
  .card-preview .close:hover{
-    background-color: rgb(231, 150, 56);
+    background-color: rgb(212, 171, 151);
  }
 
 
@@ -159,17 +161,18 @@ a:hover{
 }
 
 .search-box ::placeholder{
-    color: #fff;
+    color: #000000;
 }
   
 .search-box #search-box{
     width: 400px;
-    border:1px solid rgb(255, 255, 255);
+    border:2px solid rgb(252,116,68);
     padding:12px 15px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 100px;
     margin: auto;
-    background-color: rgb(138, 102, 62);
+    background-color: rgb(236, 235, 235);;
 }
   
 .select-menu{
@@ -179,17 +182,18 @@ a:hover{
 .select-menu .select-btn{
     display: flex;
     height: 55px;
-    background:rgb(138, 102, 62);
+    background:rgb(236, 235, 235);;
     padding: 10px;
-    font-size: 18px;
+    font-size: 15px;
     border-radius:200px;
     align-items: center;
     cursor: pointer;
-    border:1px solid rgb(255, 255, 255);
-    color:#fff
+    border:2px solid rgb(252,116,68);
+    font-weight: bold;
+    color:#000000
 }
 .select-btn i{
-    font-size: 25px;
+    font-size: 18px;
     transition: 0.3s;
 }
 .select-menu .active .select-btn i{
@@ -200,7 +204,7 @@ a:hover{
     padding: 20px;
     margin-top: 10px;
     border-radius: 8px;
-    background: #fff;
+    background: rgb(236, 235, 235);
     box-shadow: 0 0 3px rgba(0,0,0,0.1);
     display: none;
     width: fit-content;
@@ -218,19 +222,19 @@ a:hover{
     padding: 0 16px;
     border-radius: 8px;
     align-items: center;
-    background: #fff;
+    background: rgb(236, 235, 235);
 
 }
 .options .option:hover{
-    background: #F2F2F2;
+    background: rgb(212, 171, 151);
 }
 .option i{
-    font-size: 25px;
+    font-size: 18px;
     margin-right: 12px;
 }
 .option .option-text{
     font-size: 18px;
-    color: #333;
+    color: #2e2c2c;
 }
 
 /* pagination */
@@ -247,11 +251,13 @@ a:hover{
 }
 
 .pagination li a{
-    color: #ffffff;
+    color: #080808;
     font-size: 1.0em;
     border-radius: 35px;
     line-height: 35px;
-    background-color: rgba(138, 102, 62, 0.6)
+    background-color: rgba(236, 235, 235, 0.6);
+    border:2px solid rgb(252,116,68);
+    font-weight: bold;
 }
 
 .previous-page, .next-page{
@@ -265,7 +271,7 @@ a:hover{
 }
 
 .on{
-    background: #af9f11;
+    background: #dad6ba;
 }
 
 /* modal */
