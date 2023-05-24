@@ -1,5 +1,4 @@
 
-
 div.album{
     background-image: linear-gradient(to top left, rgb(207, 175, 131), rgb(216, 172, 106));
     
@@ -47,7 +46,7 @@ div.album{
     position: absolute;
     top:0rem; right:0rem;
     cursor: pointer;
-    font-size: 1.0rem;
+    font-size: 0.5rem;
     border-radius: 5px;
  }
 
@@ -55,17 +54,18 @@ div.album{
     position: absolute;
     top:0rem; left:0rem;
     cursor: pointer;
-    font-size: 1.0rem;
+    font-size: 0.5rem;
     border-radius: 5px;
+    background-color: rgb(216, 118, 118);
  }
 
- .card .edit:hover{
+.card .edit:hover{
     background-color: rgb(231, 150, 56);
  }
 
-  .card .delete:hover{
-    background-color: red;
- }
+.card .delete:hover{
+   background-color: red;
+}
 
 .card .hide{
     display: none;
@@ -126,11 +126,11 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70vh;
+    height: 60vh;
 }
 
 .card-preview  .card-img-top{
-    max-height: 70vh;
+    max-height: 60vh;
     max-width: fit-content;
 }
 
@@ -142,7 +142,7 @@ a:hover{
     position: absolute;
     top:0rem; right:0rem;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 5px;
  }
 
@@ -283,24 +283,37 @@ a:hover{
 .modal .container{
     
     background-color: #fefefe;
-    margin: 5% auto 15% auto;
-    border: 1px solid #888;
     text-align: center;
     width: fit-content;
-    margin-top: 30%;
+    margin-top: 40vh;
     border-radius: 10px;
 }
 
 .close-modal{
-    position: relative;
-    margin-right: 0px;
-    font-size: 40px;
     font-weight: bold;
     color: #7a7a7a;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
 .close-modal:hover,
 .close-modal:focus {
-  color: #000000;
+  color: #363434;
   cursor: pointer;
+}
+
+.modal .deletebtn {
+    background-color: rgb(216, 118, 118);
+    border-radius: 5px;
+}
+
+.modal .cancelbtn {
+    border-radius: 5px;
+}
+
+.modal .deletebtn:hover {
+    background-color: red;
 }
