@@ -5,7 +5,7 @@ html, body{
 }
 
 body{
-    background-image: url("logo_circle.png");
+    background-image: url("../images/default_background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

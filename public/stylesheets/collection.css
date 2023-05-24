@@ -51,8 +51,20 @@ div.album{
     border-radius: 5px;
  }
 
+.card .delete{
+    position: absolute;
+    top:0rem; left:0rem;
+    cursor: pointer;
+    font-size: 1.0rem;
+    border-radius: 5px;
+ }
+
  .card .edit:hover{
     background-color: rgb(231, 150, 56);
+ }
+
+  .card .delete:hover{
+    background-color: red;
  }
 
 .card .hide{
@@ -256,3 +268,39 @@ a:hover{
     background: #af9f11;
 }
 
+/* modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal .container{
+    
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    text-align: center;
+    width: fit-content;
+    margin-top: 30%;
+    border-radius: 10px;
+}
+
+.close-modal{
+    position: relative;
+    margin-right: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #7a7a7a;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #000000;
+  cursor: pointer;
+}

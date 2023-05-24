@@ -1,13 +1,13 @@
 html, body{
-    height: 100%;
+    height: 50%;
     margin: none;
     scroll-behavior: smooth;
     
    
 }
 
-body{
-    background-image: url("images/background.jpg");
+.body{
+    background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
