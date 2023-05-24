@@ -12,8 +12,9 @@ Deletes?
 Collection search OMEGALUL.
 
 Artist page-join all artworks of artist(?).
+Artist page defense like Artwork(!).
 
-Artwork - Room Relationship.
+Artwork - Room Relationship on artwork edit.
 
 Room edit Form.
 

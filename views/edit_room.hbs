@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="upload.css">
+    <h1> Edit Exhibition Room</h1>
+    <form method = "post" action = "/edit_room?roomid={{roomid}}" enctype="multipart/form-data">
+        <label for="room-name">Room Name:</label>
+        <input type="text" id="room-name" name="roomName" value = '{{roomName}}'>
+
+        <label for="room-num">Room Number:</label>
+        <input type="number" id="room-num" name="roomNum" value = {{roomNum}}>
+
+        <label for="genre">Genre/Style:</label>
+        <input type="text" id="genre" name="genre" value = '{{genre}}'>
+        
+        <label for="room-description">Description:</label>
+        <textarea id="room-description" name="roomDescription">{{Description}}</textarea>
+        {{!-- INSERT EXISTING ROOM IMAGERY --}}
+        <label for='file'>Room photos:</label>
+        <input type='file' multiple='multiple' accept='image/*' name='uploadedImages' id='file'>
+        <p class='hint'>Supported files: jpg, jpeg, png.</p>
+
+        <input type = 'submit'>
+    </form>
