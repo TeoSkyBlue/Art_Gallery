@@ -8,17 +8,14 @@
           <div class="row mb-4 justify-content-center">
 
       <div class=" col-md-6 col-sm-6">
-        <div class="search-box row">
+        <div class="search-box">
           <form method = 'post', action = '/collection'>
-          <input type="text" placeholder="search collection" id="search-box" name= "userQuery">
+          <input class = 'w-100' type="text" placeholder="search collection" id="search-box" name= "userQuery">
           </form>
         </div>
       </div>
       <div class="col-md-2 col-sm-2">
         <div class="select-menu filter-menu">
-          <div class="select-btn filter-btn">
-            <span class="filter-sBtn-text m-2">Filters</span>
-          </div>
           <div class="col-md-2 col-sm-2">
             <div class="select-menu filter-menu">
               <div class="select-btn filter-btn">
@@ -68,8 +65,10 @@
       {{#each artworks}}
         <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
           <div class="card mb-4 w-100">
+            {{#if authenticated}}
             <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
             <a type="button" onclick="document.getElementById('{{artname}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
+            {{/if}}
             <div class = 'row d-flex justify-content-center card-title'>
               {{artname}}
             </div>
@@ -123,5 +122,8 @@
       <div class="list mx-auto"></div>
     </div>
   </div>
+    </div>
+  </div>
 </div>
+
   
