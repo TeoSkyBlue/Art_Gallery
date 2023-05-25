@@ -1,7 +1,7 @@
 import express from 'express'
-import db from '../models/mongo_conn.mjs';
 
-const collectionController = await import(`../controller/collectionController.mjs`);
+import { SearchAndDisplay, displayArtworks } from '../controller/collectionController.mjs';
+
 
 
 const collection_router = express.Router();
@@ -18,8 +18,9 @@ const collection_router = express.Router();
 // });
 
 
-collection_router.get('/collection', collectionController.displayArtworks);
+collection_router.get('/collection', displayArtworks);
 
+collection_router.post('/collection', SearchAndDisplay);
 
 export default collection_router;
 

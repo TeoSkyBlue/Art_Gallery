@@ -97,6 +97,8 @@ const artSchema = new mongoose.Schema({
     }
 });
 
+
+
 const artistSchema = new mongoose.Schema({
     info: String,
     profile_pic: {
@@ -116,6 +118,12 @@ const artistSchema = new mongoose.Schema({
 });
 
 
+//Indexes:
+artSchema.index({name: 'text', genre: 'text', summary: 'text'},
+     {name: 'artworks_search_index',
+ weights: {name: 2, genre: 1, summary: 1}});
+
+
 const galleryModel = 
 {
     admin: mongoose.model("Admin", adminSchema),
@@ -126,6 +134,10 @@ const galleryModel =
     room: mongoose.model("Room", roomSchema)
 
 };
+
+
+
+
 
 export default galleryModel;
 

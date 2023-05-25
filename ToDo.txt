@@ -1,14 +1,7 @@
-Registration/Sessions.
-Can I kill Session of user leaves the website?
-(or, inversely, can I 'keep alive' cookie for as
-long as user requests my website?)
 
 Reminder: Cookie ONLY ON https setting!
 
-When I logout, req.session.destroy needs to be called
-to cull session from my db.
-
-
+Categories go from rooms.
 
 ->Validations Non Existant.
 
@@ -19,18 +12,21 @@ Edits: Dates are fucked.
 
 Deletes?
 
-Collection search OMEGALUL.
+
 
 Artist page-join all artworks of artist(?).
 updateArtist.
 Artist page defense like Artwork(!).
 Artist default profile pic(?).
 
+
+Collection search OMEGALUL.
+
 Artwork - Room Relationship on artwork edit.
-
 Rooms -> Collection -> Filters
-
 Room edit Form.
+
+Catch errors->return to front page.
 
 One day room 1 will be active.
 
@@ -45,14 +41,6 @@ Make multer work from Memory instead of local(?)
 
 Date of artwork needs to be cohesive with life of artist.
 
-What exactly is room capacity? Define it.: IT IS NOTHING
-AND DOES NOT EXIST.
 
-
-
-
-
-Image resizing and compression?
-Reconfigure Routes file with async/await logic
 
 
