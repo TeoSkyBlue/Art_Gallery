@@ -61,8 +61,10 @@ function get_txt_out_of_focus(event){
 
 let searchBox = document.querySelector('#search-box');
 let images = document.querySelectorAll('.card-img-top');
+let removedCards = [];
 
 searchBox.oninput = () =>{
+  
     images.forEach(image => {
       let card = image.closest(".card");
       card.style.display = 'none';
@@ -81,12 +83,20 @@ searchBox.oninput = () =>{
 
         }
     });
+    
     // let value = searchBox.value;
     // images.forEach(filter =>{
     //     let title = filter.alt;
     //     if(!title.includes(value)){
     //       let card = filter.closest(".card-content");
+    //       removedCards.push(card);
     //       card.remove();
+    //     }
+    //     if(searchBox.value == ''){
+    //       let row = filter.closest(".row");
+    //       removedCards.forEach(card => {
+    //         row.appendChild(card);
+    //       });
     //     }
     // });
 };
