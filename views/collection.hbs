@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="collection.css">
 <script src="collection.js" defer></script>
 
-{{!-- h-100? --}}
 
     <div class="album py-4 bg-light h-auto">
       <div class = 'container'>
@@ -20,27 +19,32 @@
           <div class="select-btn filter-btn">
             <span class="filter-sBtn-text m-2">Filters</span>
           </div>
-          <ul class="options">
-            <li class="option filter-option">
-                <span class="option-text">All</span>
-            </li>
-            <li class="option filter-option">
-                <span class="option-text">Recent</span>
-            </li>
-            <li class="option filter-option">
-              <span class="option-text">Cultural Movement</span>
-            </li>
-            <li class="option filter-option">
-                <span class="option-text">...</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <div class="select-menu show-menu">
-          <div class="select-btn show-btn">
-            <span class="show-sBtn-text m-2">No of artworks</span>
+          <div class="col-md-2 col-sm-2">
+            <div class="select-menu filter-menu">
+              <div class="select-btn filter-btn">
+                <span class="filter-sBtn-text m-2">Filters</span>
+              </div>
+              <ul class="options">
+                <li class="option filter-option">
+                    <span class="option-text">All</span>
+                </li>
+                <li class="option filter-option">
+                    <span class="option-text">Recent</span>
+                </li>
+                <li class="option filter-option">
+                  <span class="option-text">Cultural Movement</span>
+                </li>
+                <li class="option filter-option">
+                    <span class="option-text">...</span>
+                </li>
+              </ul>
+            </div>
           </div>
+          <div class="col-md-2 col-sm-2">
+            <div class="select-menu show-menu">
+              <div class="select-btn show-btn">
+                <span class="show-sBtn-text m-2">No of artworks</span>
+              </div>
               <ul class="options">
                 <li class="option show-option">
                     <span class="option-text">9</span>
@@ -55,67 +59,69 @@
                     <span class="option-text">45</span>
                 </li>
               </ul>
-          </div>  
-        </div>
+            </div>  
+          </div>
       </div>
-    </div>
-
-
-
-
-        <div class="container">
-          <div class="row">
-            {{#each artworks}}
-              <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
-                <div class="card mb-4 box-shadow">
-                  {{#if authenticated}}
-                  <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
-                  {{/if}}
-                  <div class = 'row d-flex justify-content-center card-title'>
-                    {{artname}}
-                  </div>
-                  <div class = 'card-img-container'>
-                    <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
-                  </div>
-                  <div class="row justify-content-center info m-1">
-                    <a href="/artist?creatorid={{creatorid}}" class="col-12 author">
-                      {{artist_fname}} {{artist_lname}}
-                    </a>
-                    <div class="col genre-year">
-                      {{artgenre}} {{artdate}}
-                    </div>
-                  </div>
-                  <div class="card-body text-truncate-container">
-                    <p class="card-text mb-4">{{artsum}}</p>
-                  </div>                          
-                </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {{#each artworks}}
+        <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
+          <div class="card mb-4 w-100">
+            <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
+            <a type="button" onclick="document.getElementById('{{artname}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
+            <div class = 'row d-flex justify-content-center card-title'>
+              {{artname}}
+            </div>
+            <div class = 'card-img-container'>
+              <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
+            </div>
+            <div class="row info m-1">
+              <a href="/artist?creatorid={{creatorid}}" class="col-12 author">
+                {{artist_fname}} {{artist_lname}}
+              </a>
+              <div class="col genre-year">
+                {{artgenre}} {{artdate}}
               </div>
-              <div class="preview-container">
-                <div class="card-preview">
-                  <div class="card box-shadow">
-                    <button class="close">X</button>
-                    <div class="row d-flex justify-content-center card-title">
-                      {{artname}}
-                    </div>
-                    <div class="card-img-container">
-                      <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
-                    </div>
-                    <div class="card-body text-truncate-container">
-                      <p class="card-text">{{artsum}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {{/each}}
-
+            </div>
+            <div class="card-body text-truncate-container">
+              <p class="card-text mb-4">{{artsum}}</p>
+            </div>                          
           </div>
-          <div class="pagination">
-            <div class="list mx-auto">
-          </div>
-      
         </div>
-
-        
+        <div class="preview-container">
+          <div class="card-preview">
+            <div class="card">
+              <button class="close">&times;</button>
+              <div class="row d-flex justify-content-center card-title">
+                {{artname}}
+              </div>
+              <div class="card-img-container">
+                <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
+              </div>
+              <div class="card-body text-truncate-container">
+                <p class="card-text">{{artsum}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="{{artname}}" class="modal">
+          <div class="container">
+              <button onclick="document.getElementById('{{artname}}').style.display='none'" class="close-modal d-flex" title="Close Modal">&times;</button>  
+              <h1>Delete Art</h1>
+              <p>Are you sure you want to delete {{ artname }}?</p>
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('{{artname}}').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" class="deletebtn">Delete</button>
+              </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    
+    <div class="pagination">
+      <div class="list mx-auto"></div>
     </div>
   </div>
+</div>
   

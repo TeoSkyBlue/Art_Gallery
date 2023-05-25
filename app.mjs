@@ -14,9 +14,12 @@ import edit_room_router from './routes/edit_room_r.mjs';
 import upload_artist_router from './routes/upload_artist.mjs';
 import upload_room_router from './routes/upload_room_r.mjs';
 import artist_router from './routes/artist_r.mjs';
+import announcements_router from './routes/announcements_r.mjs';
 import multer from 'multer';
 import { my_session } from './models/mongo_conn.mjs';
 // import db from './models/mongo_conn.mjs';
+// import galleryModel from "./models/art_gallery_schema.mjs";
+// import {body, validationResult} from 'express-validator';
 
 
 
@@ -66,6 +69,7 @@ app.use(upload_room_router);
 app.use(edit_artwork_router);
 app.use(edit_room_router);
 app.use(artist_router);
+app.use(announcements_router);
 
 
 

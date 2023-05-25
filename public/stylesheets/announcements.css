@@ -1,8 +1,8 @@
 
 .album{
-    background-image: url("about_background.jpg");
-    background-position: center;
+    background-image: url("announcements_background.jpg");
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -30,17 +30,20 @@ a:hover{
 }
 
 .border{
-    /*
-    opacity: 0;
-    transition: all 0.5s;
-    */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 25px;
-    margin: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     box-shadow: 5px 5px 10px;
     transition-delay: 3s;
 }
 
+.info{
+    margin: 20px;
+}
 .show{
     opacity: 1;
 }
@@ -55,15 +58,3 @@ a:hover{
     height: 30px;
     margin: 20px;
 }
-
-
-.header-item-divider{
-    background-color: #ffffff;
-    border-style: solid;
-    border-width: 0.1rem;
-    border-color: rgb(7, 0, 0);
-    border-radius: 1rem 40rem;
-    width: 0.3rem;
-}
-
-
