@@ -17,6 +17,7 @@ import fs from 'fs';
 import multer from 'multer';
 import galleryModel from "./models/art_gallery_schema.mjs";
 import {body, validationResult} from 'express-validator';
+import announcements_router from './routes/announcements_r.mjs';
 
 // import db from './models/mongo_conn.mjs';
 
@@ -55,6 +56,7 @@ app.use(upload_artist_router);
 app.use(upload_room_router);
 app.use(edit_artwork_router);
 app.use(artist_router);
+app.use(announcements_router);
 
 
 // UPLOAD-DB TESTS /////////
