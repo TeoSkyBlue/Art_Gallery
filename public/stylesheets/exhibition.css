@@ -23,13 +23,12 @@ body{
 }
 
 /* slider */
-
 .img-slider{
-    position:relative;
-    width: 80%;
-    height: 500px;
-    margin: 10px;
-    background: #1D212B;
+  position:relative;
+  width: 60%;
+  height: 500px;
+  margin: 10px;
+  background: #1D212B;
 }
 
 .img-slider .slide{
@@ -40,9 +39,9 @@ body{
 }
 
 .img-slider .slide.active{
- clip-path: circle(150% at 0 50%);
- transition: 2s;
- transition-property: clip-path;
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  transition-property: clip-path;
 }
 
 .img-slider .slide img{
@@ -66,7 +65,17 @@ body{
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.img-slider .slide .info p{
+  color: #000000;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  width: 60%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .img-slider .navigation{

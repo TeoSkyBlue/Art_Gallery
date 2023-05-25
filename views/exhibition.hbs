@@ -8,68 +8,36 @@
                 <div class="slide">
                     <img src="data:{{rimg_type}};base64,{{ rimg }}" alt="{{rimg_name}}">
                     <div class="info">
-                        <h2>{{room_name}}</h2>
+                        <h2>ROOM {{room_num}}</h2>
+                        <p>{{room_sum}}</p>
                     </div>
                 </div>
-                
                 {{/each}}
+
                 <div class="navigation">
-                    {{#each room}}
-                
+                    {{#each rooms}}
                     <div class="btn"></div>
-                
                     {{/each}}
                 </div>
-                {{!-- <div class="slide">
-                    <img src="images/announcements.jpg" alt="" height="100%" width="100%">
-                    <div class="info">
-                        <h2>TITLE 02</h2>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/Zuck_sketch.jpg" alt="">
-                    <div class="info">
-                        <h2>TITLE 03</h2>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/background.jpg" alt="">
-                    <div class="info">
-                        <h2>TITLE 04</h2>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/Zuck_sketch.jpg" alt="">
-                    <div class="info">
-                        <h2>Room 05</h2>
-                    </div>
-                </div> --}}
-                
-                {{!-- <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div> --}}
                 
             </div>
         </div>
-    </span>
+</span>
 
-    <div class="border">
-        <div class="row d-flex align-items-center m-3">
-            {{#each rooms}}
-            <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
-                <div class="card box-shadow">
-                    <div class="card-image">
-                        {{#if authenticated}}
-                        <a class="btn btn-secondary edit" href = "./edit_room?roomid={{rid}}">Edit</a>
-                        {{/if}}
-                        <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
-                    </div>
-                    <div class="room-text d-flex m-3">[Room {{room_num}}] {{room_genre}}: {{room_sum}} </div>
+<div class="border">
+    <div class="row d-flex align-items-center m-3">
+        {{#each rooms}}
+        <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
+            <div class="card box-shadow">
+                <div class="card-image">
+                    {{#if authenticated}}
+                    <a class="btn btn-secondary edit" href = "./edit_room?roomid={{rid}}">Edit</a>
+                    {{/if}}
+                    <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
                 </div>
+                <div class="room-text d-flex m-3">[Room {{room_num}}] {{room_genre}}: {{room_sum}} </div>
             </div>
-            {{/each}}
-            
         </div>
-        
-    </div>
+        {{/each}}
+    </div>   
+</div>

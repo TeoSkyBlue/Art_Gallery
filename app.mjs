@@ -16,6 +16,7 @@ import upload_room_router from './routes/upload_room_r.mjs';
 import artist_router from './routes/artist_r.mjs';
 import multer from 'multer';
 import { my_session } from './models/mongo_conn.mjs';
+import announcements_router from './routes/announcements_r.mjs';
 // import db from './models/mongo_conn.mjs';
 
 
