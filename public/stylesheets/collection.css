@@ -1,8 +1,9 @@
 
-div.album{
-    background-image: url("default_background.jpg");
+.album{
+    background-image: url("collection_background.jpg");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .card-img-top:hover{

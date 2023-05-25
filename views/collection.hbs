@@ -3,59 +3,58 @@
 <script src="collection.js" defer></script>
 
 
-  <div class="album py-4 bg-light h-100">
-    <div class = 'container'>
-        <div class="row mb-4 justify-content-center">
-    <div class=" col-md-6 col-sm-6">
-      <div class="search-box row">
-        <input type="text" placeholder="search collection" id="search-box">
+<div class="album py-4">
+  <div class = 'container'>
+      <div class="row mb-4 justify-content-center">
+          <div class=" col-md-4 col-sm-4">
+            <div class="search-box row">
+              <input type="text" placeholder="search collection" id="search-box">
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2">
+            <div class="select-menu filter-menu">
+              <div class="select-btn filter-btn">
+                <span class="filter-sBtn-text m-2">Filters</span>
+              </div>
+              <ul class="options">
+                <li class="option filter-option">
+                    <span class="option-text">All</span>
+                </li>
+                <li class="option filter-option">
+                    <span class="option-text">Recent</span>
+                </li>
+                <li class="option filter-option">
+                  <span class="option-text">Cultural Movement</span>
+                </li>
+                <li class="option filter-option">
+                    <span class="option-text">...</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2">
+            <div class="select-menu show-menu">
+              <div class="select-btn show-btn">
+                <span class="show-sBtn-text m-2">No of artworks</span>
+              </div>
+              <ul class="options">
+                <li class="option show-option">
+                    <span class="option-text">9</span>
+                </li>
+                <li class="option show-option">
+                    <span class="option-text">15</span>
+                </li>
+                <li class="option show-option">
+                  <span class="option-text">30</span>
+                </li>
+                <li class="option show-option">
+                    <span class="option-text">45</span>
+                </li>
+              </ul>
+            </div>  
+          </div>
       </div>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="select-menu filter-menu">
-        <div class="select-btn filter-btn">
-          <span class="filter-sBtn-text m-2">Filters</span>
-        </div>
-        <ul class="options">
-          <li class="option filter-option">
-              <span class="option-text">All</span>
-          </li>
-          <li class="option filter-option">
-              <span class="option-text">Recent</span>
-          </li>
-          <li class="option filter-option">
-            <span class="option-text">Cultural Movement</span>
-          </li>
-          <li class="option filter-option">
-              <span class="option-text">...</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="select-menu show-menu">
-        <div class="select-btn show-btn">
-          <span class="show-sBtn-text m-2">No of artworks</span>
-        </div>
-            <ul class="options">
-              <li class="option show-option">
-                  <span class="option-text">9</span>
-              </li>
-              <li class="option show-option">
-                  <span class="option-text">15</span>
-              </li>
-              <li class="option show-option">
-                <span class="option-text">30</span>
-              </li>
-              <li class="option show-option">
-                  <span class="option-text">45</span>
-              </li>
-            </ul>
-        </div>  
-      </div>
-    </div>
   </div>
-
   <div class="container">
     <div class="row">
       {{#each artworks}}
@@ -63,7 +62,6 @@
           <div class="card mb-4 w-100">
             <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
             <a type="button" onclick="document.getElementById('{{artname}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
-
             <div class = 'row d-flex justify-content-center card-title'>
               {{artname}}
             </div>
@@ -110,14 +108,12 @@
               </div>
           </div>
         </div>
-        {{/each}}
+      {{/each}}
     </div>
+    
     <div class="pagination">
-      <div class="list mx-auto">
+      <div class="list mx-auto"></div>
     </div>
-
-  </div>
-      
   </div>
 </div>
   

@@ -1,16 +1,11 @@
-html, body{
-    height: 100%;
-    margin: none;
-    scroll-behavior: smooth;
+
+.album{
+  background-image: url("home_background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-body{
-    background-image: url("../images/default_background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow-x: hidden;
-}
 a:link{
     color: black;
     text-decoration: none;
@@ -53,6 +48,7 @@ a:hover{
 }
 
 .title{
+  width: 100%;
     font-weight: bold;
     text-align: center;
     font-size: 20px;
@@ -71,10 +67,10 @@ a:hover{
     width: 0.3rem;
 }
 
-
+/* slider */
 .img-slider{
   position:relative;
-  width: 80%;
+  width: 60%;
   height: 500px;
   margin: 10px;
   background: #1D212B;
