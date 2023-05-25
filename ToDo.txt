@@ -8,29 +8,24 @@ Categories go from rooms.
 
 {
 Edits: Dates are fucked.
+Artist Edits.
+Deletes?
+}
+Artist default profile pic(?).
+Artwork - Room Relationship on artwork edit.
+{Posts:Everything.}
+Collection search{
+Should probably have names of creators stored in artwork anyways.(!)
+Group by, filter by functionalities.
 }
 
-Deletes?
 
-
-
-Artist page-join all artworks of artist(?).
-updateArtist.
-Artist page defense like Artwork(!).
-Artist default profile pic(?).
-
-
-Collection search OMEGALUL.
-
-Artwork - Room Relationship on artwork edit.
 Rooms -> Collection -> Filters
 Room edit Form.
 
+
 Catch errors->return to front page.
 
-One day room 1 will be active.
-
-{Posts:Everything.}
 
 I choose Thee as thy admin.
 

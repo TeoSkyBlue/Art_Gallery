@@ -103,7 +103,8 @@ const artistSchema = new mongoose.Schema({
     info: String,
     profile_pic: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Image'
+        ref: 'Image',
+        default: '646b3fcf7ad7900b3a7c785b'
     },
     born: Date,
     died: Date,
@@ -118,7 +119,8 @@ const artistSchema = new mongoose.Schema({
 });
 
 
-//Indexes:
+//Pre defined Indexes:
+//Should probably have names of creators stored in artwork anyways.(!)
 artSchema.index({name: 'text', genre: 'text', summary: 'text'},
      {name: 'artworks_search_index',
  weights: {name: 2, genre: 1, summary: 1}});
