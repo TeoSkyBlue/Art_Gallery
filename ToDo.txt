@@ -1,26 +1,33 @@
-Registration/Sessions.
+
+Reminder: Cookie ONLY ON https setting!
+
+Categories go from rooms.
 
 ->Validations Non Existant.
 
 
 {
 Edits: Dates are fucked.
+Artist Edits.
+Deletes?
+}
+Artist default profile pic(?).
+Artwork - Room Relationship on artwork edit.
+{Posts:Everything.}
+Collection search{
+Should probably have names of creators stored in artwork anyways.(!)
+Group by, filter by functionalities.
 }
 
-Deletes?
 
-Collection search OMEGALUL.
-
-Artist page-join all artworks of artist(?).
-
-Artwork - Room Relationship.
-
+Rooms -> Collection -> Filters
 Room edit Form.
 
-One day room 1 will be active.
 
-{Posts:Everything.}
+Catch errors->return to front page.
 
+
+I choose Thee as thy admin.
 
 Pagination
 
@@ -29,14 +36,6 @@ Make multer work from Memory instead of local(?)
 
 Date of artwork needs to be cohesive with life of artist.
 
-What exactly is room capacity? Define it.: IT IS NOTHING
-AND DOES NOT EXIST.
 
-
-
-
-
-Image resizing and compression?
-Reconfigure Routes file with async/await logic
 
 

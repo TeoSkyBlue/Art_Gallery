@@ -41,9 +41,6 @@ export async function addRoom(req, res){
             const roomInstance = new galleryModel.room({
                 number: req.body['roomNum'],
                 genre: req.body['genre'],
-                capacity: {
-                    max: req.body['roomMaxCap']
-                },
                 description: req.body['roomDescription'],
                 images: imageIDs
                 
@@ -66,13 +63,16 @@ export async function displayRooms(req, res){
 
         // console.log(rooms_doc[0]);
         const rooms = rooms_doc.map(doc =>(
-            {
+            {   
+                rid : doc._id,
                 rimg: doc.images[0].image.data.toString('base64'),
                 rimg_type: doc.images[0].image.contentType,
                 rimg_name: "photo for :" + doc.genre + " room",
                 room_genre: doc.genre,
                 room_num: doc.number,
                 room_sum: doc.description,
+                authenticated: req.session.rights,
+                
 
 
         }));
@@ -83,3 +83,23 @@ export async function displayRooms(req, res){
         res.send(err);
     }
 };
+
+
+
+export async function fillRoom(req, res){
+    try{
+        const doc = await galleryModel.room
+        .findById(req.query['roomid']);
+        res.render('edit_room', {
+            roomName: doc.name,
+            roomNum: doc.number,
+            genre: doc.genre,
+            Description : doc.description,
+            room_id : req.query['roomid'],
+
+        })
+
+    }catch(err){
+        console.log(err);
+    }
+}

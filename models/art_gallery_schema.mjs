@@ -2,8 +2,16 @@ import mongoose from 'mongoose';
 
 
 const adminSchema = new mongoose.Schema({
-    first_name: String,
-    last_name: String,
+    first_name: {
+        type: String,
+        required:true
+    },
+
+    last_name: {
+        type: String,
+        required:true
+    },
+
     email: {
         type: String,
         required: true,
@@ -12,7 +20,12 @@ const adminSchema = new mongoose.Schema({
     password: {
         type: String,
         required:true
-    }
+    },
+    adminStatus: {
+        type: Boolean,
+        default: false,
+    },
+
 });
 
 const postSchema = new mongoose.Schema({
@@ -60,16 +73,6 @@ const roomSchema = new mongoose.Schema({
     name: String,
     genre: String,
 
-    capacity: {
-        max: {
-            type: Number,
-            required: true
-        },
-        current: {
-            type: Number
-        }
-    },
-
     description: String,
 
     images: [{
@@ -87,17 +90,21 @@ const artSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image'
     },
+
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist'
     }
 });
 
+
+
 const artistSchema = new mongoose.Schema({
     info: String,
     profile_pic: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Image'
+        ref: 'Image',
+        default: '646b3fcf7ad7900b3a7c785b'
     },
     born: Date,
     died: Date,
@@ -112,6 +119,13 @@ const artistSchema = new mongoose.Schema({
 });
 
 
+//Pre defined Indexes:
+//Should probably have names of creators stored in artwork anyways.(!)
+artSchema.index({name: 'text', genre: 'text', summary: 'text'},
+     {name: 'artworks_search_index',
+ weights: {name: 2, genre: 1, summary: 1}});
+
+
 const galleryModel = 
 {
     admin: mongoose.model("Admin", adminSchema),
@@ -122,6 +136,10 @@ const galleryModel =
     room: mongoose.model("Room", roomSchema)
 
 };
+
+
+
+
 
 export default galleryModel;
 
