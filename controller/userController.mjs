@@ -9,7 +9,7 @@ const saltRounds = 12; //always ahead of the curve.
 export async function confirmLogin(req, res){
     try{
         if(req.session.authenticated){
-            console.log(req.session);
+            // console.log(req.session);
             res.redirect('..');
         }
         else{
@@ -20,18 +20,23 @@ export async function confirmLogin(req, res){
                     let validation = await bcrypt.compare(req.body['user_password'], user.password);
                     if (validation){
                         req.session.authenticated = true;
-                        const salt = await bcrypt.genSalt(4);
-                        const session_hash = await bcrypt.hash(req.body.user_password, salt);
-                        req.session.user = session_hash;
-                            console.log(req.session);
-                            console.log(bcrypt.compare(toString(user._id), session_hash));
+                        req.session.userId = user._id;
+                        req.session.rights = user.adminStatus;
+                        if(req.session.lastURL){
+                            res.redirect(req.session.lastURL);
+                        }
+                        else{
                             res.redirect('..');
+                        }
                     }    
                     
                     else{
                         res.redirect('./login');
                     }
                 }
+            else{
+                res.redirect('./login');
+            }
         }
     }catch(err){
         console.log(err);
@@ -42,12 +47,22 @@ export async function confirmLogin(req, res){
 
 
 
-export function checkAuthenticated(req, res, next){
-    if(authenticated){ next();}
+export function checkAuthenticatedStrict(req, res, next){
+    if(req.session.rights){ next();}
     else{
-        res.redirect('/login');
+        req.session.lastURL = req.originalUrl;
+        res.redirect('./login');
     }
 };
+
+
+
+// export function checkAuthenticatedSoft(req, res, next){
+//     if(req.session.authenticated){ next();}
+//     else{
+//         res.redirect('./login');
+//     }
+// };
 
 
 export async function registerUser(req, res){

@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import { saveArtwork, availableArtists } from '../controller/uploadArtworkController.mjs';
+import { checkAuthenticatedStrict } from '../controller/userController.mjs';
 //TO BE FILLED, logic needs to be on a controller, here only routing.
 const upload_router = express.Router();
 // //Needs changing.
@@ -19,8 +20,8 @@ const upload_router = express.Router();
 // const upload = multer({storage: storage});
 
 
-upload_router.get("/upload_art", availableArtists);
+upload_router.get("/upload_art", checkAuthenticatedStrict, availableArtists);
 
-upload_router.post("/upload_art", saveArtwork);
+upload_router.post("/upload_art",checkAuthenticatedStrict, saveArtwork);
 
 export default upload_router;

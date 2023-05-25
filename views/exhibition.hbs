@@ -60,49 +60,16 @@
             <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
                 <div class="card box-shadow">
                     <div class="card-image">
+                        {{#if authenticated}}
                         <a class="btn btn-secondary edit" href = "./edit_room?roomid={{rid}}">Edit</a>
+                        {{/if}}
                         <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
                     </div>
                     <div class="room-text d-flex m-3">[Room {{room_num}}] {{room_genre}}: {{room_sum}} </div>
                 </div>
             </div>
             {{/each}}
-            {{!-- <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
-                <div class="card box-shadow">
-                    <div class="card-image">
-                        <button class="edit">Edit</button>
-                        <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
-                    </div>
-                    <div class="room-text d-flex m-3">Room 2 : words words words words words words wordswordswordswordsword swordswords </div>
-                </div>
-            </div>
-            <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
-                <div class="card box-shadow">
-                    <div class="card-image">
-                        <button class="edit">Edit</button>
-                        <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
-                    </div>
-                    <div class="room-text d-flex m-3">Room 3 : words words words words words words wordswordswordswordsword swordswords </div>
-                </div>
-            </div>
-            <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
-                <div class="card box-shadow">
-                    <div class="card-image">
-                        <button class="edit">Edit</button>
-                        <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
-                    </div>
-                    <div class="room-text d-flex m-3">Room 4 : wordswordswordsword swordswords </div>
-                </div>
-            </div>
-            <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
-                <div class="card box-shadow">
-                    <div class="card-image">
-                        <button class="edit">Edit</button>
-                        <img class="card-img-top" src="images/Zuck_sketch.jpg" alt="zuck 1">
-                    </div>
-                    <div class="room-text d-flex m-3">Room 5 : words words words words words words wordswordswordswordsword swordswords </div>
-                </div>
-            </div> --}}
+            
         </div>
         
     </div>

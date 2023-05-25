@@ -1,5 +1,5 @@
 import express from 'express'
-import { confirmLogin } from '../controller/userController.mjs';
+import { checkAuthenticatedStrict, confirmLogin } from '../controller/userController.mjs';
 
 const login_router = express.Router();
 

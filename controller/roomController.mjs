@@ -71,6 +71,8 @@ export async function displayRooms(req, res){
                 room_genre: doc.genre,
                 room_num: doc.number,
                 room_sum: doc.description,
+                authenticated: req.session.rights,
+                
 
 
         }));

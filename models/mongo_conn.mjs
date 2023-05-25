@@ -17,9 +17,11 @@ export const my_session = session({
     saveUninitialized: false,
     store: new MongoStore({ 
         mongoUrl: 'mongodb://127.0.0.1:27017/ArtGallery',
-        ttl: 60 * 22, //22 mins cookie
-     })
+        ttl: 60 * 26, //26 mins cookie within db
+        
+    }), 
 });
+
 
 
 export default db;

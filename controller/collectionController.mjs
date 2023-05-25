@@ -42,6 +42,7 @@ export async function displayArtworks(req, res){
                 artsum: doc.summary,
                 artdate: doc.creation_date,
                 artid: doc._id,
+                authenticated: req.session.rights
                 
 
 
