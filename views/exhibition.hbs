@@ -1,7 +1,8 @@
 <script src="exhibition.js" defer></script>
 <link rel = "stylesheet" href = "exhibition.css">
 
-<span class="rooms_slider" id="rooms_slider_id">
+<div class="album py-4">
+    <span class="rooms_slider" id="rooms_slider_id">
         <div class="border">
             <div class="img-slider">
                 {{#each rooms}}
@@ -9,7 +10,6 @@
                     <img src="data:{{rimg_type}};base64,{{ rimg }}" alt="{{rimg_name}}">
                     <div class="info">
                         <h2>ROOM {{room_num}}</h2>
-                        <p>{{room_sum}}</p>
                     </div>
                 </div>
                 {{/each}}
@@ -22,22 +22,46 @@
                 
             </div>
         </div>
-</span>
+    </span>
 
-<div class="border">
-    <div class="row d-flex align-items-center m-3">
-        {{#each rooms}}
-        <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
-            <div class="card box-shadow">
-                <div class="card-image">
-                    {{#if authenticated}}
-                    <a class="btn btn-secondary edit" href = "./edit_room?roomid={{rid}}">Edit</a>
-                    {{/if}}
-                    <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
+    <div class="border">
+        <div class="row d-flex align-items-center m-3">
+            {{#each rooms}}
+            <div class="card-content col-md-6 col-sm-6 mb-3 d-flex align-items-stretch">
+                <div class="card box-shadow w-100">
+                    <div class="card-image">
+                        {{#if authenticated}}
+                        <a class="btn btn-secondary edit" href = "./edit_room?roomid={{rid}}">Edit</a>
+                        <a type="button" onclick="document.getElementById('{{rid}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
+                        {{/if}}
+                        <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
+                    </div>
+                    <div class="room-text d-flex m-3">Room {{room_num}} : {{room_genre}} . {{room_sum}} </div>
                 </div>
-                <div class="room-text d-flex m-3">[Room {{room_num}}] {{room_genre}}: {{room_sum}} </div>
             </div>
-        </div>
-        {{/each}}
-    </div>   
+            {{#if authenticated}}
+            <div id="{{rid}}" class="modal">
+                <div class="container">
+                    <button onclick="document.getElementById('{{rid}}').style.display='none'" class="close-modal d-flex" title="Close Modal">&times;</button>  
+                    <h1>Delete Art</h1>
+                    <p>Are you sure you want to delete {{ rid }}?</p>
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('{{rid}}').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="button" class="deletebtn">Delete</button>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+
+            {{!-- {{#if authenticated}} --}}
+            <div class="card-content col-md-6 col-sm-6 mb-3 d-flex justify-content-center">
+                <div class="card box-shadow">
+                    <a class="btn" href = "./upload_room">Add Room</a>
+                </div>
+            </div>
+            {{!-- {{/if}} --}}
+
+        </div>   
+    </div>
 </div>

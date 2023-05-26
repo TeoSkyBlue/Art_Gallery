@@ -2,66 +2,39 @@
 <script src="home_js.js" defer></script>
 
 <div class="album py-4">
-    <span class="exhibits_section" id="exhibits_id">
+    <span class="rooms_slider" id="rooms_slider_id">
         <div class="border">
             <div class="img-slider">
+                {{#each rooms}}
                 <div class="slide">
-                    <img src="logo_circle.png" alt="">
+                    <img src="data:{{rimg_type}};base64,{{ rimg }}" alt="{{rimg_name}}">
                     <div class="info">
-                        <h2>Room 01</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h2>ROOM {{room_num}}</h2>
                     </div>
                 </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="" height="100%" width="100%">
-                <div class="info">
-                    <h2>Room 02</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="">
-                <div class="info">
-                    <h2>Room 03</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="">
-                <div class="info">
-                    <h2>Room 04</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="">
-                <div class="info">
-                    <h2>Room 05</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
+                {{/each}}
+
                 <div class="navigation">
-                <div class="btn active"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
+                    {{#each rooms}}
+                    <div class="btn"></div>
+                    {{/each}}
                 </div>
+                
             </div>
         </div>
     </span>
     <span class="announcements_section">
         <div class="border">
-            <div class="row title">Urgent announcements</div>
+            <div class="row title">announcement 1</div>
             <div class="row w-100">
-                <div class="col-lg-5 col-md-12 p-2">
+                <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
                     <div class="image">
                         <img src="logo_circle.png" alt="Announcements photo" width="100%">
+                        {{!-- μονη διαφορα με το announcement element ειναι η αποκατω γραμμη --}}
+                        <div class="row p-3"><a href="/announcements">See more →</a></div>
                     </div>
-                    <div class="row p-3"><a href="/announcements">See more →</a></div>
-
                 </div>
-                <div class="col-lg-7 col-md-12 p-4">
+                <div class="col-lg-9 col-md-9 p-4">
                     <div class="info">Historians have done very well at</div>
                 </div>
             </div>
