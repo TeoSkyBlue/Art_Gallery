@@ -5,14 +5,16 @@
     <span class="exhibits_section" id="exhibits_id">
         <div class="border">
             <div class="img-slider">
+                {{#each rooms}}
                 <div class="slide active">
-                <img src="logo_circle.png" alt="">
+                <img class="card-img-top" src="data:{{rimagetype}};base64,{{ rimage }}" alt='Display of room {{rname}}'>
                 <div class="info">
-                    <h2>Room 01</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h2>Room {{rnum}} {{rgenre}}</h2>
+                    <p>{{rdesc}}</p>
                 </div>
                 </div>
-                <div class="slide">
+                {{/each}}
+                {{!-- <div class="slide">
                 <img src="logo_circle.png" alt="" height="100%" width="100%">
                 <div class="info">
                     <h2>Room 02</h2>
@@ -39,31 +41,37 @@
                     <h2>Room 05</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                </div>
+                </div> --}}
+
+                
                 <div class="navigation">
+                    {{#each rooms}}
                 <div class="btn active"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
+                    {{/each}}
+                    {{!-- <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div> --}}
                 </div>
             </div>
         </div>
     </span>
     <span class="announcements_section">
+        {{#each posts}}
         <div class="border">
-            <div class="row title">Urgent announcements</div>
+            <div class="row title">{{ptitle}}</div>
             <div class="row w-100">
                 <div class="col-lg-5 col-md-12 p-2">
                     <div class="image">
-                        <img src="logo_circle.png" alt="Announcements photo" width="100%">
+                        <img class="card-img-top" src="data:{{pimagetype}};base64,{{ pimage }}" alt='Pic relevant to {{ptitle}}' width="100%">
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 p-4">
-                    <div class="info">Historians have done very well at</div>
+                    <div class="info">{{pcontent}}</div>
                 </div>
             </div>
         </div>
+        {{/each}}
     </span> 
 </div>
     
