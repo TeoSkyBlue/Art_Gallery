@@ -6,27 +6,27 @@ Some variable of express/node/mongo should be set to production
 CAP SIZE OF ALL INPUT FIELDS IN DB.
 }
 
-
-
 ->Validations Non Existant.
 
-{
-Edits: Dates are fucked.
-}
+
 
 Artwork - Room Relationship on artwork edit.
 
-{Posts:Everything.
+{Posts:Edit/Delete.
 Home->Rooms}
 
+Delete artist is fucked because you can 
+never select an artist individually since
+we never implicitly list them.
 
 Collection search{
 Should probably have names of creators stored in artwork anyways.(!)
 Group by, filter by functionalities.
 }
 
-Catch errors->return to front page.
+Home carousel.
 
+Catch errors->return to front page.
 I choose Thee as thy admin.
 
 Pagination
@@ -39,6 +39,9 @@ Date of artwork needs to be cohesive with life of artist.
 
 
 
-Bug reports:{
+Bug reports and aesthetic changes:{
     filters and NoArtworks get mixed up.
+    Posts content needs max height
+    min height on collection/posts.
+
 }

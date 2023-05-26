@@ -88,7 +88,10 @@ export async function fillArtFields(req, res){
         .findById(req.query['artwork_id'])
         .populate('image');//(req.body['id']);
         
-        // let creator_id = false;
+        let date;
+        if(piece.creation_date){
+            date = new Date(piece.creation_date).toISOString().slice(0, 10);
+        }
         for (let artist of artists){
             // JS SUCKS.
             if (artist.id.toString() === piece.creator.toString()){
@@ -103,7 +106,7 @@ export async function fillArtFields(req, res){
         res.render('edit_artwork', {artists,
             creator: piece.creator,
             name: piece.name,
-            date: piece.creation_date,
+            date: date,
             genre: piece.genre,
             summary: piece.summary,
             img_data: piece.image.image.data.toString('base64'),

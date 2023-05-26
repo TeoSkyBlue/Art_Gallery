@@ -116,12 +116,22 @@ export async function fillArtistFields(req, res){
         .findById(req.query['artistid'])
         .populate('profile_pic');
         let username = await req.session.username;
+        let born, died;
+        if(doc.born){
+            born = new Date(doc.born).toISOString().slice(0, 10);
+            //Dates are one more droplet in an already filled-to-the-brim glass
+            //of javascript pain, which could very well push me over the 
+            //edge. Still here though...Strange.
+        }
+        if(doc.died){
+            died = new Date(doc.died).toISOString().slice(0, 10);
+        }
         if(doc.profile_pic){
             res.render('edit_artist', {
                 session_username: username,
                 info: doc.info,
-                born: doc.born,
-                died: doc.died,
+                born: born,
+                died: died,
                 first_name: doc.first_name,
                 last_name: doc.last_name,
                 profile_pic : doc.profile_pic.image.data.toString('base64'),
@@ -135,8 +145,8 @@ export async function fillArtistFields(req, res){
             res.render('edit_artist', {
                 session_username: username,
                 info: doc.info,
-                born: doc.born,
-                died: doc.died,
+                born: born,
+                died: died,
                 first_name: doc.first_name,
                 last_name: doc.last_name,
                 artistid: doc._id,
