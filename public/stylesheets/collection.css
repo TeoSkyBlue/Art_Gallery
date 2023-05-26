@@ -275,14 +275,25 @@ a:hover{
 }
 
 .previous-page, .next-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80px;
     cursor: pointer;  
 }
 
 .current-page, .dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 45px;
     cursor: pointer;
 }
+.pagination .page-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
 
 .on{
     background: #dad6ba;
