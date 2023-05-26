@@ -19,6 +19,7 @@ import announcements_router from './routes/announcements_r.mjs';
 import multer from 'multer';
 import { my_session } from './models/mongo_conn.mjs';
 import edit_artist_router from './routes/edit_artist_r.mjs';
+import upload_post_router from './routes/upload_post.mjs';
 
 // import db from './models/mongo_conn.mjs';
 // import galleryModel from "./models/art_gallery_schema.mjs";
@@ -66,6 +67,7 @@ app.use(about_router);
 app.use(login_router);
 app.use(register_router);
 app.use(upload_router);
+app.use(upload_post_router);
 app.use(exhibition_router);
 app.use(upload_artist_router);
 app.use(edit_artist_router);

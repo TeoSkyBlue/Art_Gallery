@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="upload.css">
+    <h1> Add Exhibition Room</h1>
+    <form method = "post" action = "/upload_post" enctype="multipart/form-data">
+        
+        <label class = 'display-4' for="title">Title:</label>
+        <input type="text" id="title" name="title">
+
+        {{!-- subcategory <label for="genre">Genre/Style:</label>
+        <input type="text" id="genre" name="genre"> --}}
+        
+        <label for="post-content" class = 'display-4'>Content:</label>
+        <textarea class = 'max-height: 100%' id="post-content" name="content"></textarea>
+        
+        <label for='file'>Add Photo:</label>
+        <input type='file'  accept='image/*' name='postPic' id='file'>
+        <input type = 'submit'>
+    </form>

@@ -3,6 +3,7 @@
  Cookie secret
 Artist default profile pic(?).
 Some variable of express/node/mongo should be set to production
+CAP SIZE OF ALL INPUT FIELDS IN DB.
 }
 
 
@@ -11,13 +12,13 @@ Some variable of express/node/mongo should be set to production
 
 {
 Edits: Dates are fucked.
-Artist Edits-Updates.->Delete image and update.
 }
 
 Artwork - Room Relationship on artwork edit.
 
 {Posts:Everything.
 Home->Rooms}
+
 
 Collection search{
 Should probably have names of creators stored in artwork anyways.(!)
