@@ -3,6 +3,8 @@ import fs from 'fs';
 import { upload } from '../app.mjs';
 
 
+
+
 export function saveArtist(req, res){
     try{
         upload.single('artistImage')(req, res, (err) =>{
@@ -111,7 +113,7 @@ export async function showcaseArtist(req, res){
 export async function fillArtistFields(req, res){
     try{
         const doc = await galleryModel.artist
-        .findById(req.query['creatorid'])
+        .findById(req.query['artistid'])
         .populate('profile_pic');
         let username = await req.session.username;
         if(doc.profile_pic){
@@ -146,3 +148,76 @@ export async function fillArtistFields(req, res){
     }
 };
 
+export async function updateArtist(req, res){
+    try{
+        upload.single('artistImage')(req, res, (err)=>{
+            if(err){
+                console.log(err);
+            }
+            else{
+                if(req.file){
+                    let img = fs.readFileSync(req.file.path);
+                    let encoded_img = img.toString('base64');
+                    const newImg = new galleryModel.image(
+                        {
+                            name: req.file.originalname,
+                            image: {
+                                data: Buffer(encoded_img, 'base64'),
+                                contentType: req.file.mimetype,
+                            }
+
+                        }
+                    );
+                    deleteImgAndUpdateArtist(req, res, newImg);
+                }
+                else{ 
+                    /*Why does this need to be a callback when the whole website is 
+                    async/await? Well, it needs to be because it is part of the 
+                    callback-based middleware of multer.So, .then() it is. */
+                    
+                    const artist = galleryModel.artist.findOneAndUpdate(
+                        { _id: req.query['artistid'] },
+                        {
+                          first_name: req.body['artist-fname'],
+                          last_name: req.body['artist-lname'],
+                          born: req.body['birthyear'],
+                          died: req.body['deathyear'],
+                          info: req.body['summary'], 
+                        },
+                        {new: true}
+                      ).then(res.redirect('..'));
+                }
+            }
+        });
+
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+}
+
+
+
+async function deleteImgAndUpdateArtist(req, res, newImg) {
+    try {
+      const previous_image = await galleryModel.image.deleteOne({
+        _id: req.query['image_id']
+      });
+      const artist = await galleryModel.artist.findOneAndUpdate(
+        { _id: req.query['creatorid'] },
+        {
+          first_name: req.body['artist-fname'],
+          last_name: req.body['artist-lname'],
+          born: req.body['birthyear'],
+          died: req.body['deathyear'],
+          info: req.body['summary'],
+          profile_pic: newImg._id,
+
+        }
+      );
+      await newImg.save();
+      res.redirect('..');
+    } catch (err) {
+      console.log(err);
+    }
+  };

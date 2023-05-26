@@ -90,7 +90,7 @@ const artSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image'
     },
-
+    
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist'
