@@ -118,9 +118,8 @@
               <h1>Delete Art</h1>
               <p>Are you sure you want to delete {{ artname }}?</p>
               <div class="clearfix">
-                <button type="button" onclick="document.getElementById('{{artname}}').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="button" class="deletebtn" >Delete</button>
-                  {{!-- <a href = '/delete_artwork?artid={{artid}}'>Delete </a> --}}
+                <button type="button" onclick="document.getElementById('{{artname}}').style.display='none'" class="btn btn-secondary">Cancel</button>
+                <a type="button" class="btn btn-danger" href = '/delete_artwork?artid={{artid}}'>Delete </a>
                   
               </div>
           </div>
