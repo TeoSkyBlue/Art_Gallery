@@ -186,7 +186,7 @@ a:hover{
     font-weight: bold;
     border-radius: 100px;
     margin: auto;
-    background-color: rgb(236, 235, 235);;
+    background-color: rgb(236, 235, 235);
 }
   
 .select-menu{
@@ -196,7 +196,7 @@ a:hover{
 .select-menu .select-btn{
     display: flex;
     height: 55px;
-    background:rgb(236, 235, 235);;
+    background:rgb(236, 235, 235);
     padding: 10px;
     font-size: 15px;
     border-radius:200px;

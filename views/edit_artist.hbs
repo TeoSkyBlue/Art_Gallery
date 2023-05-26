@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="upload.css">
+    <h1 class="justify-content-center"> Upload Artist</h1>
+    <form method = "post" action = "/edit_artist?artistid={{artistid}}&imageid={{imageid}}" enctype="multipart/form-data">
+        <label for="artist-fname">Artist First Name:</label>
+        <input type="text" id="artist-fname" name="artist-fname" value = '{{first_name}}'>
+
+        <label for="artist-lname">Artist Last Name:</label>
+        <input type="text" id="artist-lname" name="artist-lname" value = '{{last_name}}'>
+        {{!-- Nickname? --}}
+
+        <label for="birthyear">Date of Birth:</label>
+        <input type="date" id="birthyear" name="birthyear">
+
+        <label for="deathyear">Date of Passing:</label>
+        <input type="date" id="deathyear" name="deathyear">
+
+
+        <label for="summary">Bio/info:</label>
+        <textarea id="summary" name="summary">{{info}}</textarea>
+
+        <label for="artistImage">Current Profile Picture:</label>
+        <img class="card-img-top" src="data:{{profile_pic_type}};base64,{{ profile_pic }}" alt="existing pic for '{{ last_name }}'">
+        <input type = 'file' id = "artistImage" accept = 'image/*' name = 'artistImage'>
+        <input type = 'submit'>
+    </form>

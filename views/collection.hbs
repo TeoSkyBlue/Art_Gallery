@@ -1,4 +1,5 @@
 
+
 <link rel="stylesheet" href="collection.css">
 <script src="collection.js" defer></script>
 
@@ -70,10 +71,14 @@
       {{#each artworks}}
         <div class="card-content col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
           <div class="card mb-4 w-100">
+            {{#if authenticated}}
             <a type="button" class="btn btn-sm btn-secondary edit" href = '/edit_artwork?artwork_id={{artid}}'>Edit</a>
             <a type="button" onclick="document.getElementById('{{artname}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
+            {{/if}}
             <div class = 'row d-flex justify-content-center card-title'>
+              <p class = 'd-flex justify-content-center card-title'>
               {{artname}}
+              </p>
             </div>
             <div class = 'card-img-container'>
               <img class="card-img-top" src="data:{{art_type}};base64,{{ artpiece }}" alt="{{ artname }}">
@@ -114,7 +119,9 @@
               <p>Are you sure you want to delete {{ artname }}?</p>
               <div class="clearfix">
                 <button type="button" onclick="document.getElementById('{{artname}}').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="button" class="deletebtn">Delete</button>
+                <button type="button" class="deletebtn" >Delete</button>
+                  {{!-- <a href = '/delete_artwork?artid={{artid}}'>Delete </a> --}}
+                  
               </div>
           </div>
         </div>
@@ -125,5 +132,6 @@
       <div class="list mx-auto"></div>
     </div>
   </div>
+    </div>
+  </div>
 </div>
-  

@@ -108,4 +108,41 @@ export async function showcaseArtist(req, res){
 };
 
 
+export async function fillArtistFields(req, res){
+    try{
+        const doc = await galleryModel.artist
+        .findById(req.query['creatorid'])
+        .populate('profile_pic');
+        let username = await req.session.username;
+        if(doc.profile_pic){
+            res.render('edit_artist', {
+                session_username: username,
+                info: doc.info,
+                born: doc.born,
+                died: doc.died,
+                first_name: doc.first_name,
+                last_name: doc.last_name,
+                profile_pic : doc.profile_pic.image.data.toString('base64'),
+                profile_pic_type: doc.profile_pic.image.contentType,
+                imageid : doc.profile_pic._id,
+                artistid: doc._id
+
+            });
+        }
+        else{
+            res.render('edit_artist', {
+                session_username: username,
+                info: doc.info,
+                born: doc.born,
+                died: doc.died,
+                first_name: doc.first_name,
+                last_name: doc.last_name,
+                artistid: doc._id,
+            });
+        }
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+};
 

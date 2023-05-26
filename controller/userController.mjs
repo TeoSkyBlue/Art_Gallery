@@ -22,6 +22,7 @@ export async function confirmLogin(req, res){
                         req.session.authenticated = true;
                         req.session.userId = user._id;
                         req.session.rights = user.adminStatus;
+                        req.session.username = user.first_name;
                         if(req.session.lastURL){
                             res.redirect(req.session.lastURL);
                         }
@@ -78,7 +79,7 @@ export async function registerUser(req, res){
             adminStatus: false
         });
         user.save();
-        res.redirect('..');
+        res.redirect('./login');
     }catch(err){
         console.log(err);
     }
