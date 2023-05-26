@@ -6,6 +6,17 @@
     background-attachment: fixed;
 }
 
+.admin-container .btn{
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    border:2px solid rgb(252,116,68);
+}
+
+.admin-container .btn:hover{
+    background-color: rgb(148,188,236);
+    cursor: pointer;
+}
+
 a:link{
     color: black;
     text-decoration: none;
@@ -37,8 +48,9 @@ a:hover{
     background-color: rgba(255, 255, 255, 0.9);
     margin-top: 40px;
     margin-bottom: 40px;
-    box-shadow: 5px 5px 10px;
+    box-shadow: 5px 5px 10px rgba(252,116,68);
     transition-delay: 3s;
+
 }
 
 .info{
@@ -58,3 +70,84 @@ a:hover{
     height: 30px;
     margin: 20px;
 }
+/* edit delete button */
+.border .edit{
+    position: relative;
+    right:0rem;
+    cursor: pointer;
+    font-size: 0.5rem;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  
+  .border .edit:hover{
+    background-color: rgb(231, 150, 56);
+  }
+  
+  .border .delete{
+    position: relative;
+    left:0rem;
+    cursor: pointer;
+    font-size: 0.5rem;
+    border-radius: 5px;
+    background-color: rgb(216, 118, 118);
+    z-index: 10;
+  }
+  
+  .border .delete:hover{
+    background-color: red;
+  }
+  
+/* modal */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 99; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal .container{
+    position: absolute;
+    background-color: #fefefe;
+    text-align: center;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  
+  .close-modal{
+    font-weight: bold;
+    color: #7a7a7a;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .close-modal:hover,
+  .close-modal:focus {
+  color: #363434;
+  cursor: pointer;
+  }
+  
+  .modal .deletebtn {
+    background-color: rgb(216, 118, 118);
+    border-radius: 5px;
+  }
+  
+  .modal .cancelbtn {
+    border-radius: 5px;
+  }
+  
+  .modal .deletebtn:hover {
+    background-color: red;
+  }
+  

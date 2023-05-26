@@ -4,7 +4,7 @@
           <ul class="menu nav nav-pills header-bg py-2 px-2 column-gap-2 justify-content-center shadow-lg d-none d-lg-inline-flex"  id = "header-container">
             <li class="nav-item m-0" ><a class="nav-link  m-auto py-1" aria-current="page" href = '/'>
             <img src = "logo_circle.png" class = "logo py-0" alt = "Logo"/></a></li>
-            <li class="nav-item "><a class="nav-link link-dark shadow-lg" href = '/exhibition'>EXHIBITIONS & EVENTS </a></li>
+            <li class="nav-item "><a class="nav-link link-dark shadow-lg" href = '/exhibition'>EXHIBITIONS</a></li>
             <div class="header-item-divider py-3"></div>
             <li class="nav-item"><a class="nav-link link-dark shadow-lg" href = '/collection'>COLLECTION</a></li>
             <div class="header-item-divider py-3"></div>
@@ -12,7 +12,7 @@
             <div class="header-item-divider py-3"></div>
             <li class="nav-item"><a class="nav-link link-dark shadow-lg" href="/about">ABOUT</a></li>
               {{#if session_username}}
-              <div title="Welcome back, {{session_username}}" class="login d-flex mx-2 py-2 justify-content-center">☑ <p class="text-muted">{{session_username}}</p></div>
+              <div title="Welcome back, {{session_username}}" class="login d-flex mx-2 align-items-center justify-content-center">☑ <div class="text-muted d-flex align-items-center justify-content-center">{{session_username}}</div></div>
               {{/if}}
             
           </ul>

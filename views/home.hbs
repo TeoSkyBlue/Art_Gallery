@@ -2,11 +2,11 @@
 <script src="home_js.js" defer></script>
 
 <div class="album py-4">
-    <span class="exhibits_section" id="exhibits_id">
+    <span class="rooms_slider" id="rooms_slider_id">
         <div class="border">
             <div class="img-slider">
                 {{#each rooms}}
-                <div class="slide active">
+                <div class="slide">
                 <img class="card-img-top" src="data:{{rimagetype}};base64,{{ rimage }}" alt='Display of room {{rname}}'>
                 <div class="info">
                     <h2>Room {{rnum}} {{rgenre}}</h2>
@@ -14,45 +14,16 @@
                 </div>
                 </div>
                 {{/each}}
-                {{!-- <div class="slide">
-                <img src="logo_circle.png" alt="" height="100%" width="100%">
-                <div class="info">
-                    <h2>Room 02</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="">
-                <div class="info">
-                    <h2>Room 03</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="">
-                <div class="info">
-                    <h2>Room 04</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-                <div class="slide">
-                <img src="logo_circle.png" alt="">
-                <div class="info">
-                    <h2>Room 05</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div> --}}
+                
 
                 
                 <div class="navigation">
                     {{#each rooms}}
                 <div class="btn active"></div>
                     {{/each}}
-                    {{!-- <div class="btn"></div>
-                    <div class="btn"></div>
-                    <div class="btn"></div>
-                    <div class="btn"></div> --}}
+                    
                 </div>
+                
             </div>
         </div>
     </span>
@@ -61,12 +32,13 @@
         <div class="border">
             <div class="row title">{{ptitle}}</div>
             <div class="row w-100">
-                <div class="col-lg-5 col-md-12 p-2">
+                <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
                     <div class="image">
                         <img class="card-img-top" src="data:{{pimagetype}};base64,{{ pimage }}" alt='Pic relevant to {{ptitle}}' width="100%">
+                        <div class="row p-3"><a href="/announcements">See more →</a></div>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-12 p-4">
+                <div class="col-lg-9 col-md-9 p-4">
                     <div class="info">{{pcontent}}</div>
                 </div>
             </div>
