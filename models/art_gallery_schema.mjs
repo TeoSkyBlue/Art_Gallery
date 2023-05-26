@@ -95,6 +95,11 @@ const artSchema = new mongoose.Schema({
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist'
+        //default Uknown.
+    },
+    creator_name: {
+        type: String,
+        default: 'Uknown'
     }
 });
 
@@ -122,9 +127,9 @@ const artistSchema = new mongoose.Schema({
 
 //Pre defined Indexes:
 //Should probably have names of creators stored in artwork anyways.(!)
-artSchema.index({name: 'text', genre: 'text', summary: 'text'},
+artSchema.index({name: 'text',creator_name: 'text', genre: 'text', summary: 'text'},
      {name: 'artworks_search_index',
- weights: {name: 2, genre: 1, summary: 1}});
+ weights: {name: 3, creator_name: 3, genre: 1, summary: 1}});
 
 
 const galleryModel = 

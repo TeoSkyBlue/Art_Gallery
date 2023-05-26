@@ -20,7 +20,6 @@ never select an artist individually since
 we never implicitly list them.
 
 Collection search{
-Should probably have names of creators stored in artwork anyways.(!)
 Group by, filter by functionalities.
 }
 

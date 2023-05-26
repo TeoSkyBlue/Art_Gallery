@@ -11,9 +11,10 @@ import { displayArtworks } from './collectionController.mjs';
 
 
 
-export function saveArtwork(req, res){
+export async function saveArtwork(req, res){
     try{
-        upload.single('imageName')(req, res, (err)=>{
+        
+        upload.single('imageName')(req, res, (err,)=>{
             if (err){
                 console.log(err);
             }
@@ -37,20 +38,33 @@ export function saveArtwork(req, res){
            }
             });
         
-    
+        
+        console.log(req.body['artist']);
+        const artist_doc = galleryModel.artist
+        .findById(req.body['artist'])
+        .then(function(artist_doc) {
+                let artist_name = artist_doc.first_name +' '+artist_doc.last_name;
+                const artPiece =  new galleryModel.art({
+                name: req.body['artwork-name'],
+                genre: req.body['genre'],
+                creation_date: req.body['year'],
+                summary: req.body['summary'],
+                image: newImg._id,
+                creator: req.body['artist'],
+                creator_name: artist_name
+            });
+            console.log(artist_name);
+            artPiece.save();
+            newImg.save();
+            res.redirect('..');
+            });
+        
+        
 
-        const artPiece =  new galleryModel.art({
-            name: req.body['artwork-name'],
-            genre: req.body['genre'],
-            creation_date: req.body['year'],
-            summary: req.body['summary'],
-            image: newImg._id,
-            creator: req.body['artist']
-        });
+        //THis is unfortunate but seems necessary for the search functionality to work proper
+        
     
-        artPiece.save();
-        newImg.save();
-        res.redirect('..');
+        
     }
 });
 
