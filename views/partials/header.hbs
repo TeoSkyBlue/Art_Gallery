@@ -12,7 +12,7 @@
             <div class="header-item-divider py-3"></div>
             <li class="nav-item"><a class="nav-link link-dark shadow-lg" href="/about">ABOUT</a></li>
               {{#if session_username}}
-              <div title="Welcome back, {{session_username}}" class="login d-flex mx-2 py-2 justify-content-center">☑ <p class="text-muted">{{session_username}}</p></div>
+              <div title="Welcome back, {{session_username}}" class="login d-flex mx-2 align-items-center justify-content-center">☑ <div class="text-muted d-flex align-items-center justify-content-center">{{session_username}}</div></div>
               {{/if}}
             
           </ul>

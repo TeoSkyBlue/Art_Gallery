@@ -32,7 +32,7 @@
                     <div class="card-image">
                         {{#if authenticated}}
                         <a class="btn btn-secondary edit" href = "./edit_room?roomid={{rid}}">Edit</a>
-                        <a type="button" onclick="document.getElementById('{{rid}}').style.display='inline-block'" class="btn btn-sm btn-secondary delete">Delete</a>
+                        <a type="button" onclick="document.getElementById('{{rid}}').style.display='inline-block'" class="btn btn-secondary delete">Delete</a>
                         {{/if}}
                         <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
                     </div>
