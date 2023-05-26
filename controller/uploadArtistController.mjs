@@ -204,7 +204,7 @@ async function deleteImgAndUpdateArtist(req, res, newImg) {
         _id: req.query['image_id']
       });
       const artist = await galleryModel.artist.findOneAndUpdate(
-        { _id: req.query['creatorid'] },
+        { _id: req.query['artistid'] },
         {
           first_name: req.body['artist-fname'],
           last_name: req.body['artist-lname'],
