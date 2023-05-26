@@ -9,21 +9,23 @@
         </div>
     </div>
 
+    {{#each posts}}
     <div class="border">
-        <div class="row title">announcement 1</div>
+        <div class="row title">{{title}}</div>
         <div class="row w-100">
             <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
                 <div class="image">
-                    <img src="logo_circle.png" alt="Announcements photo" width="100%">
+                    <img class="card-img-top" src="data:{{imagetype}};base64,{{ image }}" alt='Pic relevant to {{title}}'>
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 p-4">
-                <div class="info">Historians have done very well at</div>
+                <div class="info"><p>{{content}}</p></div>
+                <p class = 'text-muted'>Posted by: {{author.firstname}} {{author.lastname}} on {{edited}}</p>
             </div>
         </div>
     </div>
-
-    <div class="border">
+    {{/each}}
+    {{!-- <div class="border">
         <div class="row title">announcement 2</div>
         <div class="row w-100">
             <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
@@ -62,5 +64,5 @@
             </div>
         </div>
     </div>
-    
+     --}}
 </span> 

@@ -33,10 +33,11 @@ const postSchema = new mongoose.Schema({
         type: Date,
         required: true
     }],
-    images: [{
+    image: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image'
-    }],   // schema pic has 1 cardinality, needs update.
+    },   // schema pic has 1 cardinality, needs update.
+            //Or not.
     content: { 
         type: String,
         required: true
@@ -45,7 +46,7 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    post_type: Boolean, //looks and feels off. Will re-evaluate later.
+    // post_type: Boolean, //looks and feels off. Will re-evaluate later.
     authors: [{  //refers to editors too, author is editor[0].
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Admin',
