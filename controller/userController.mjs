@@ -79,7 +79,7 @@ export async function registerUser(req, res){
             adminStatus: false
         });
         user.save();
-        res.redirect('..');
+        res.redirect('./login');
     }catch(err){
         console.log(err);
     }

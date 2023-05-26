@@ -20,35 +20,7 @@
                 
                     {{/each}}
                 </div>
-                {{!-- <div class="slide">
-                    <img src="images/announcements.jpg" alt="" height="100%" width="100%">
-                    <div class="info">
-                        <h2>TITLE 02</h2>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/Zuck_sketch.jpg" alt="">
-                    <div class="info">
-                        <h2>TITLE 03</h2>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/background.jpg" alt="">
-                    <div class="info">
-                        <h2>TITLE 04</h2>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/Zuck_sketch.jpg" alt="">
-                    <div class="info">
-                        <h2>Room 05</h2>
-                    </div>
-                </div> --}}
                 
-                {{!-- <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div> --}}
                 
             </div>
         </div>
@@ -65,7 +37,10 @@
                         {{/if}}
                         <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
                     </div>
-                    <div class="room-text d-flex m-3">[Room {{room_num}}] {{room_genre}}: {{room_sum}} </div>
+                        <div class="room-text d-flex m-3">
+                            <a class= 'link-info p-2' href = './collection?genre={{room_genre}}'>
+                            [Room {{room_num}}] {{room_genre}}</a>: {{room_sum}} 
+                        </div>
                 </div>
             </div>
             {{/each}}

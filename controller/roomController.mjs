@@ -76,7 +76,8 @@ export async function displayRooms(req, res){
 
 
         }));
-        res.render('exhibition', {rooms: rooms});
+        let username = await req.session.username;
+        res.render('exhibition', {session_username: username, rooms: rooms});
 
     }catch(err){
         console.log(err);
@@ -91,11 +92,13 @@ export async function fillRoom(req, res){
         const doc = await galleryModel.room
         .findById(req.query['roomid']);
         res.render('edit_room', {
+            username: req.session.first_name,
             roomName: doc.name,
             roomNum: doc.number,
             genre: doc.genre,
             Description : doc.description,
             room_id : req.query['roomid'],
+            
 
         })
 

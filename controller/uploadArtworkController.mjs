@@ -207,3 +207,19 @@ async function deleteImgAndUpdate(req, res, newImg) {
   };
   
   
+
+
+export async function deleteArtwork(req, res){
+    try{
+        if(req.query.artid){
+            const doc = await galleryModel.art
+            .deleteOne({_id: req.query.artid});
+            res.redirect('./collection');
+        }
+        else{
+            res.redirect('..');
+        }
+    }catch(err){
+        console.log(err);
+    }
+}

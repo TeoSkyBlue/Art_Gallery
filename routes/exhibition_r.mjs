@@ -3,7 +3,6 @@ import { displayRooms } from '../controller/roomController.mjs';
 
 
 const exhibition_router = express.Router();
-
 exhibition_router.get('/exhibition', displayRooms);
 
 

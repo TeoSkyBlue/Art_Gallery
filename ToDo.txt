@@ -1,31 +1,30 @@
+{Production reminders
+ Cookie ONLY ON https setting!
+ Cookie secret
+Artist default profile pic(?).
+Some variable of express/node/mongo should be set to production
+}
 
-Reminder: Cookie ONLY ON https setting!
 
-Categories go from rooms.
 
 ->Validations Non Existant.
 
-
 {
 Edits: Dates are fucked.
-Artist Edits.
-Deletes?
+Artist Edits-Updates.->Delete image and update.
 }
-Artist default profile pic(?).
+
 Artwork - Room Relationship on artwork edit.
-{Posts:Everything.}
+
+{Posts:Everything.
+Home->Rooms}
+
 Collection search{
 Should probably have names of creators stored in artwork anyways.(!)
 Group by, filter by functionalities.
 }
 
-
-Rooms -> Collection -> Filters
-Room edit Form.
-
-
 Catch errors->return to front page.
-
 
 I choose Thee as thy admin.
 
@@ -39,3 +38,6 @@ Date of artwork needs to be cohesive with life of artist.
 
 
 
+Bug reports:{
+    filters and NoArtworks get mixed up.
+}

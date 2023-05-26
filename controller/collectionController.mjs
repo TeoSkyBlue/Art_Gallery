@@ -21,11 +21,18 @@ export async function displayImages(req, res){
 
 export async function displayArtworks(req, res){
     try{
-        const docs =  await galleryModel.art
-        .find()
-        .populate('image')
-        .populate('creator');
-        
+        let docs;
+        if(req.query.genre){
+             docs =  await galleryModel.art
+            .find({genre: req.query.genre})
+            .populate('image')
+            .populate('creator');
+        }else{
+            docs =  await galleryModel.art
+            .find()
+            .populate('image')
+            .populate('creator');
+        }
         // console.log(docs[0].image._id);
         
         
@@ -42,13 +49,11 @@ export async function displayArtworks(req, res){
                 artsum: doc.summary,
                 artdate: doc.creation_date,
                 artid: doc._id,
-                authenticated: req.session.rights
+                authenticated: req.session.rights,
                 
-
-
             }));
-
-        res.render('collection', { artworks: artworks });
+        let username = await req.session.username;
+        res.render('collection', { artworks: artworks , session_username: username});
     }catch(err){
         console.log(err);
         res.send(err);
@@ -102,7 +107,8 @@ export async function SearchAndDisplay(req, res){
                 artsum: doc.summary,
                 artdate: doc.creation_date,
                 artid: doc._id,
-                authenticated: req.session.rights
+                authenticated: req.session.rights,
+                username: req.session.first_name
             }));
         res.render('collection', { artworks: artworks });
     }catch(err){
