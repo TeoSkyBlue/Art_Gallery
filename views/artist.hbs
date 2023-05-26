@@ -18,7 +18,7 @@
             <div class="ms-3" style="margin-top: 130px;">
               <h5>{{first_name}} {{last_name}}</h5>
               <p>{{nationality}}</p>
-              <p>{{born}} - {{died}}</p>
+              <p>{{#if born}}{{born}}{{/if}} - {{#if died}}{{died}}{{/if}}</p>
             </div>
           </div>
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
