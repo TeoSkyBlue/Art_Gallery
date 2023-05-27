@@ -57,7 +57,13 @@ export async function displayArtworks(req, res){
                 
             }));
         let username = await req.session.username;
-        res.render('collection', { artworks: artworks , session_username: username});
+        let authenticated = await req.session.authenticated;
+        res.render('collection',
+         { 
+            artworks: artworks,
+            session_username: username,
+            authenticated: authenticated,
+        });
     }catch(err){
         console.log(err);
         res.send(err);
@@ -114,7 +120,15 @@ export async function SearchAndDisplay(req, res){
                 authenticated: req.session.rights,
                 username: req.session.first_name
             }));
-        res.render('collection', { artworks: artworks });
+            let username = await req.session.username;
+            let authenticated = await req.session.rights;
+
+        res.render('collection',
+         { 
+            artworks: artworks,
+            authenticated: authenticated,
+            session_username: username,
+         });
     }catch(err){
         console.log(err);
     }

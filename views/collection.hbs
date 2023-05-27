@@ -58,14 +58,14 @@
       </div>
   </div>
 
-{{!-- if admin --}}
+{{#if authenticated}}
   <div class="admin-container container">
     <div class="row d-flex align-items-center justify-content-center mb-2">
       <div class="col-md-6 d-flex align-items-center justify-content-center"><a type="button" class="btn btn-sm btn-secondary edit" href="/upload_art">Add artwork</a></div>
       <div class="col-md-6 d-flex align-items-center justify-content-center"><a type="button" class="btn btn-sm btn-secondary edit" href="/upload_artist">Add artist</a></div>
     </div>
   </div>
-  
+  {{/if}}
   <div class="container">
     <div class="row">
       {{#each artworks}}

@@ -2,19 +2,20 @@
 {{!-- <script defer src="about_js.js"></script> --}}
 
 <span class="album py-4">
-    {{!-- if admin --}}
+    {{#if authenticated}}
     <div class="admin-container container">
         <div class="row d-flex align-items-center justify-content-center">
         <div class="col-md-12 d-flex align-items-center justify-content-center"><a type="button" class="btn btn-sm btn-secondary edit" href="/upload_post">Add announcement</a></div>
         </div>
     </div>
+    {{/if}}
 
     {{#each posts}}
     <div class="border">
-        {{!-- {{#if authenticated}} --}}
+        {{#if authenticated}}
         <a type="button" onclick="document.getElementById('{{edited}}').style.display='inline-block'" class="btn btn-secondary mx-4 delete">Delete</a>
-        <a class="btn btn-secondary mx-4 edit" href = "./upload_post?posts={{edited}}">Edit</a>
-        {{!-- {{/if}} --}}
+        <a class="btn btn-secondary mx-4 edit" href = "./edit_post?postid={{postid}}&imageid={{imageid}}">Edit</a>
+        {{/if}}
         <div class="row title">{{title}}</div>
         <div class="row w-100">
             <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
@@ -28,7 +29,7 @@
             </div>
         </div>
     </div>
-    {{!-- {{#if authenticated}} --}}
+    {{#if authenticated}}
     <div id="{{edited}}" class="modal">
         <div class="container">
             <button onclick="document.getElementById('{{edited}}').style.display='none'" class="close-modal d-flex" title="Close Modal">&times;</button>  
@@ -40,6 +41,6 @@
             </div>
         </div>
     </div>
-    {{!-- {{/if}} --}}
+    {{/if}}
     {{/each}}
 </span> 

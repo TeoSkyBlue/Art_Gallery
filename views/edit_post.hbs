@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="upload.css">
+    <h1> Edit Post</h1>
+    <form method = "post" action = "/edit_post?postid={{postid}}&imageid={{imageid}}" enctype="multipart/form-data">
+        
+        <label class = 'display-4' for="title">Existing Title:</label>
+        <input type="text" id="title" name="title" value = '{{title}}'>
+
+        {{!-- subcategory <label for="genre">Genre/Style:</label>
+        <input type="text" id="genre" name="genre"> --}}
+        
+        <label for="post-content" class = 'display-4'>Existing Content:</label>
+        <textarea class = 'max-height: 100%' id="post-content" name="content">{{content}}</textarea>
+        
+
+        
+        <label for='file'>Current Photo:</label>
+        {{#if postpic}}
+        <img class="card-img-top" src="data:{{postpicType}};base64,{{ postpic }}" alt="existing pic for '{{ title }}'">
+        {{/if}}
+        <input type='file'  accept='image/*' name='postPic' id='file'>
+        <input type = 'submit'>
+    </form>

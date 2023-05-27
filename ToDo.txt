@@ -4,24 +4,21 @@
 Artist default profile pic(?).
 Some variable of express/node/mongo should be set to production
 CAP SIZE OF ALL INPUT FIELDS IN DB.
+->Validations Non Existant.
 }
 
-->Validations Non Existant.
 
-Home->Rooms}
-
-Artwork - Room Relationship on artwork edit.
 
 {Posts:Edit/Delete}
-
-
-Delete artist is almost fucked because you can 
-never select an artist individually since
-we never implicitly list them.
-
+{Rooms: Delete}
+Artwork - Room Relationship on artwork edit.
 Collection search{
 Group by, filter by functionalities.
 }
+
+remove photo?
+
+
 
 
 

@@ -6,7 +6,7 @@ export async function loadFrontPage(req, res){
     try{
         const docs = await galleryModel.post
         .find()
-        .limit(8)
+        .limit(2)
         .sort('-date')
         .populate('image');
 
