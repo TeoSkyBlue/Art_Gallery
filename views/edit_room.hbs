@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="upload.css">
     <h1> Edit Exhibition Room</h1>
-    <form method = "post" action = "/edit_room?roomid={{roomid}}" enctype="multipart/form-data">
+    <form method = "post" action = "/edit_room?roomid={{roomid}}&imageid={{imageid}}" enctype="multipart/form-data">
     
         <label for="room-num">Room Number:</label>
         <input type="number" id="room-num" name="roomNum" value = {{roomNum}}>
@@ -12,7 +12,8 @@
         <textarea id="room-description" name="roomDescription">{{Description}}</textarea>
         {{!-- INSERT EXISTING ROOM IMAGERY --}}
         <label for='file'>Room photos:</label>
-        <input type='file' multiple='multiple' accept='image/*' name='uploadedImages' id='file'>
+        <img class="card-img-top" src="data:{{rimageType}};base64,{{ rimage }}" alt="Existing photo of Room {{ roomNum }}">
+        <input type='file' accept='image/*' name='roomImage' id='file'>
         <p class='hint'>Supported files: jpg, jpeg, png.</p>
 
         <input type = 'submit'>

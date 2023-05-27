@@ -11,8 +11,10 @@ CAP SIZE OF ALL INPUT FIELDS IN DB.
 
 On delete cascade on mongoose Schema
 
-{Posts:Edit/Delete}
-{Rooms: Delete}
+
+{Rooms: Update(!), change photos to photo.}
+You fucked exhibition with login.
+
 Artwork - Room Relationship on artwork edit.
 Collection search{
 Group by, filter by functionalities.

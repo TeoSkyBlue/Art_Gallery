@@ -12,8 +12,8 @@
         <textarea id="room-description" name="roomDescription"></textarea>
         
         <label for='file'>Room photos:</label>
-        <input type='file' multiple='multiple' accept='image/*' name='uploadedImages' id='file'>
-        <p class='hint'>Supported files: jpg, jpeg, png.</p>
+        <input type='file' accept='image/*' name='roomImage' id='file' required>
+        {{!-- <p class='hint'>Supported files: jpg, jpeg, png.</p> --}}
 
         <input type = 'submit'>
     </form>

@@ -1,4 +1,4 @@
-import { multi_upload } from "../app.mjs";
+import { multi_upload, upload } from "../app.mjs";
 import galleryModel from "../models/art_gallery_schema.mjs";
 import multer from 'multer';
 import fs from 'fs';
@@ -7,7 +7,7 @@ import fs from 'fs';
 
 export async function addRoom(req, res){
     try{
-        multi_upload(req, res, function (err) {
+        upload.single('roomImage')(req, res, function (err) {
             if (err instanceof multer.MulterError) {
                 // A Multer error occurred when uploading.
                 res.status(500).send({ error: { message: `Multer uploading error: ${err.message}` } }).end();
@@ -25,24 +25,21 @@ export async function addRoom(req, res){
             // Everything went fine.
             // show file `req.files`
             // show body `req.body`
-            const images = req.files;
-            const imageIDs = []
-            for (let image of images){
-                image = fs.readFileSync(image.path);
-                let encoded_img = image.toString('base64');
-                let newImg = new galleryModel.image({name: image.originalname,
-                    image: {
-                   data: Buffer(encoded_img, 'base64'), contentType: image.mimetype
-                   }
-                    });
-                imageIDs.push(newImg._id);
-                newImg.save();
-            }
+            
+            let image = fs.readFileSync(req.file.path);
+            let encoded_img = image.toString('base64');
+            const newImg = new galleryModel.image({name: image.originalname,
+                image: {
+                data: Buffer(encoded_img, 'base64'), contentType: image.mimetype
+                }
+                });
+            newImg.save();
+           
             const roomInstance = new galleryModel.room({
                 number: req.body['roomNum'],
                 genre: req.body['genre'],
                 description: req.body['roomDescription'],
-                images: imageIDs
+                image: newImg._id,
                 
             });
             roomInstance.save();
@@ -59,14 +56,14 @@ export async function displayRooms(req, res){
     try{
         const rooms_doc = await galleryModel.room
         .find()
-        .populate('images');
+        .populate('image');
 
         // console.log(rooms_doc[0]);
         const rooms = rooms_doc.map(doc =>(
             {   
                 rid : doc._id,
-                rimg: doc.images[0].image.data.toString('base64'),
-                rimg_type: doc.images[0].image.contentType,
+                rimg: doc.image.image.data.toString('base64'),
+                rimg_type: doc.image.image.contentType,
                 rimg_name: "photo for :" + doc.genre + " room",
                 room_genre: doc.genre,
                 room_num: doc.number,
@@ -90,19 +87,103 @@ export async function displayRooms(req, res){
 export async function fillRoom(req, res){
     try{
         const doc = await galleryModel.room
-        .findById(req.query['roomid']);
+        .findById(req.query['roomid'])
+        .populate('image');
         res.render('edit_room', {
             username: req.session.first_name,
             roomName: doc.name,
             roomNum: doc.number,
             genre: doc.genre,
             Description : doc.description,
-            room_id : req.query['roomid'],
-            
+            roomid : req.query['roomid'],
+            rimage: doc.image.image.data.toString('base64'),
+            rimageType: doc.image.image.contentType,
+            imageid: doc.image._id,
 
-        })
+        });
 
     }catch(err){
         console.log(err);
+    }
+}
+
+
+export async function deleteRoom(req, res){
+    try{
+        if(req.query.roomid){
+            const doc = await galleryModel.room
+            .findByIdAndDelete(req.query.roomid);
+            res.redirect('./exhibition');
+        }
+        else{
+            res.redirect('..');
+        }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+
+export async function updateRoom(req, res){
+    try{
+        upload.single('roomImage')(req, res, (err, )=>{
+            if(err){
+                console.log(err);
+            }
+            else{
+                if (req.file){
+                    let img = fs.readFileSync(req.file.path);
+                    let encoded_img = img.toString('base64');
+                    const newImg = new galleryModel.image({name: req.file.originalname,
+                        image: {
+                            data: Buffer(encoded_img, 'base64'),
+                            contentType: req.file.mimetype
+                        }
+            
+                    });
+
+                    deleteImgAndUpdateRoom(req, res, newImg);
+                }
+                else {
+                    const roomInstance = galleryModel.room
+                    .findByIdAndUpdate(req.query['roomid'],
+                    {
+                        number: req.body['roomNum'],
+                        genre: req.body['genre'],
+                        description: req.body['roomDescription'],
+                        
+                    }, {new: true})
+                    .then(res.redirect('./exhibitions'));
+                }
+                
+            }
+        });
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+}
+
+
+async function deleteImgAndUpdateRoom(req, res, newImg){
+    try{
+        const previous_image = await galleryModel.image
+        .findByIdAndDelete(req.query['imageid']);
+
+          const roomInstance = await galleryModel.room
+          .findByIdAndUpdate(req.query['roomid'], 
+            {
+                number: req.body['roomNum'],
+                genre: req.body['genre'],
+                description: req.body['roomDescription'],
+                image: newImg._id,
+
+                    }, {new: true}
+          );
+          await newImg.save();
+          res.redirect('./exhibition');
+    }catch(err){
+        console.log(err);
+        res.send(err);
     }
 }

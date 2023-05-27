@@ -7,26 +7,23 @@ export async function loadFrontPage(req, res){
         const docs = await galleryModel.post
         .find()
         .limit(2)
-        .sort('-date')
+        .sort('-edited')
         .populate('image');
 
         const rooms_doc = await galleryModel.room
         .find()
-        .sort('-date')
-        .limit(8)
-        .populate('images');
+        .limit(6)
+        .populate('image');
 
 
         const rooms = rooms_doc.map(doc =>(
             {   
-                rimage: doc.images[0].image.data.toString('base64'),
-                rimagetype: doc.images[0].image.contentType,
+                rimage: doc.image.image.data.toString('base64'),
+                rimagetype: doc.image.image.contentType,
                 rgenre: doc.genre,
                 rnum: doc.number,
                 rdesc: doc.description,
                 
-                
-
 
         }));
 

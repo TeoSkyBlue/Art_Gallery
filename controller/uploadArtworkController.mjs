@@ -171,7 +171,7 @@ export async function updateArtwork(req, res){
             });
             
             
-            console.log(req.query);
+            
             
             deleteImgAndUpdate(req, res, newImg);
         }
