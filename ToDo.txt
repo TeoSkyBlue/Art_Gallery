@@ -5,10 +5,11 @@ Artist default profile pic(?).
 Some variable of express/node/mongo should be set to production
 CAP SIZE OF ALL INPUT FIELDS IN DB.
 ->Validations Non Existant.
+
 }
 
 
-
+On delete cascade on mongoose Schema
 {Posts:Edit/Delete}
 {Rooms: Delete}
 Artwork - Room Relationship on artwork edit.
@@ -39,5 +40,8 @@ Bug reports and aesthetic changes:{
     filters and NoArtworks get mixed up.
     Posts content needs max height
     min height on collection/posts.
+    Jquery image should be lowered
+    JQuery image on long text is killing me.
+    
 
 }

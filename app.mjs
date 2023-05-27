@@ -21,6 +21,7 @@ import { my_session } from './models/mongo_conn.mjs';
 import edit_artist_router from './routes/edit_artist_r.mjs';
 import upload_post_router from './routes/upload_post.mjs';
 import edit_post_router from './routes/edit_post_r.mjs';
+import delete_post_router from './routes/delete_post_r.mjs';
 
 // import db from './models/mongo_conn.mjs';
 // import galleryModel from "./models/art_gallery_schema.mjs";
@@ -76,6 +77,7 @@ app.use(edit_artist_router);
 app.use(upload_room_router);
 app.use(edit_artwork_router);
 app.use(delete_artwork_router);
+app.use(delete_post_router);
 app.use(edit_room_router);
 app.use(artist_router);
 app.use(announcements_router);

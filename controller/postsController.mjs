@@ -118,6 +118,7 @@ export async function fillPost(req, res){
                 session_username: username,
                 title: doc.title,
                 postid: doc._id,
+                // imageid: false,
                 content: doc.content,
 
             });
@@ -164,6 +165,48 @@ export async function updatePost(req, res){
                 }
             }
         });
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+}
+
+
+async function deleteImgAndUpdatePost(req, res, newImg){
+    try{
+        if(req.query['imageid']){
+            const previous_image = await galleryModel.image
+            .findByIdAndDelete(req.query['imageid']);
+        }
+        const post = await galleryModel.post
+        .findByIdAndUpdate(req.query['postid'],
+        {
+            title: req.body['title'],
+            content: req.body['content'],
+            edited: new Date(),
+            image: newImg._id,
+            //maybe author should return last author instead? 
+        });
+        await newImg.save();
+        res.redirect('./announcements');
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+}
+
+
+
+export async function deletePost(req, res){
+    try{
+        if(req.query.postid){
+            const doc = await galleryModel.post
+            .findByIdAndDelete(req.query.postid);
+            res.redirect('./announcements');
+        }
+        else{
+            res.redirect('./announcements');
+        }
     }catch(err){
         console.log(err);
         res.send(err);
