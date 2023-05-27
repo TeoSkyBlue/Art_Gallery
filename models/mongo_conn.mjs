@@ -1,9 +1,11 @@
 import mongoose from 'mongoose';
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
+import dotenv from 'dotenv';
+const config =  dotenv.config();
 
 
- mongoose.connect('mongodb://127.0.0.1:27017/ArtGallery', {useNewUrlParser: true});
+ mongoose.connect(process.env.MONGO_URL_PROD, {useNewUrlParser: true});
 const db = await mongoose.connection;
 db.on("error", console.error.bind(console, 'connection error'));
 db.once('open', function() {
@@ -12,11 +14,11 @@ db.once('open', function() {
 
 
 export const my_session = session({
-    secret: 'topsecret',
+    secret: process.env.SESSION_SECRET, //process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ 
-        mongoUrl: 'mongodb://127.0.0.1:27017/ArtGallery',
+        mongoUrl: process.env.MONGO_URL_PROD,
         ttl: 60 * 26, //26 mins cookie within db
         
     }), 
