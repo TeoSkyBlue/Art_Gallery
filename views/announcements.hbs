@@ -18,11 +18,15 @@
         {{/if}}
         <div class="row title">{{title}}</div>
         <div class="row w-100">
+            
             <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
+                {{#if image}}
                 <div class="image">
                     <img class="card-img-top" src="data:{{imagetype}};base64,{{ image }}" alt='Pic relevant to {{title}}'>
                 </div>
+                {{/if}}
             </div>
+            
             <div class="col-lg-9 col-md-9 p-4">
                 <div class="info"><p>{{content}}</p></div>
                 <p class = 'text-muted'>Posted by: {{author.firstname}} {{author.lastname}} on {{edited}}</p>

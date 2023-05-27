@@ -8,16 +8,15 @@ export async function loadPosts(req, res){
         const docs = await galleryModel.post
         .find()
         .limit(20)
-        .sort('-date')
+        .sort('-edited')
         .populate('image')
         .populate('authors');//most recent first.
-
         const posts = docs.map(doc => (
             {
                 postid: doc._id,
-                imageid: doc.image._id,
-                image: doc.image.image.data.toString('base64'),
-                imagetype: doc.image.image.contentType,
+                imageid: doc.image ? doc.image_id : Boolean(false),
+                image: doc.image? doc.image.image.data.toString('base64'): Boolean(false),
+                imagetype: doc.image ? doc.image.image.contentType : Boolean(false),
                 title: doc.title,
                 author: {
                     firstname : doc.authors[0].first_name,
