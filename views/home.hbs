@@ -29,17 +29,19 @@
     </span>
     <span class="announcements_section">
         {{#each posts}}
-        <div class="border">
-            <div class="row title">{{ptitle}}</div>
-            <div class="row w-100">
-                <div class="col-lg-3 col-md-3 d-flex justify-content-center p-4">
-                    <div class="image">
-                        <img class="card-img-top" src="data:{{pimagetype}};base64,{{ pimage }}" alt='Pic relevant to {{ptitle}}' width="100%">
-                        <div class="row p-3"><a href="/announcements">See more →</a></div>
+        <div class="border ann-border">
+            <div class="row title py-0">{{ptitle}}</div>
+            <div class="container-info">
+                <div class="row d-flex w-100">
+                    <div class="image-container col-lg-3 col-md-3">
+                        <div class="row image d-flex">
+                            <img class="col-12 card-img-top" src="data:{{pimagetype}};base64,{{ pimage }}" alt='Pic relevant to {{ptitle}}' width="100%">
+                            <div class="col-12 d-flex justify-content-center py-2"><a href="/announcements">See more →</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-9 col-md-9 p-4">
-                    <div class="info">{{pcontent}}</div>
+                    <div class="col-lg-9 col-md-9">
+                        <div class="info">{{pcontent}}</div>
+                    </div>
                 </div>
             </div>
         </div>
