@@ -11,9 +11,15 @@
     "mongoose": "^7.1.1",
     "multer": "^1.4.5-lts.1",
     "sharp": "^0.32.1"
-    
   },
   "scripts": {
     "start": "node app.mjs"
-  }
+  },
+  "name": "art_gallery_finalstretch",
+  "description": "Art Gallery website made by two undergrads",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "TeoSkyBlue&Mark",
+  "license": "ISC"
 }
