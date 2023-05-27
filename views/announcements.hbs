@@ -35,8 +35,8 @@
             <h1>Delete Art</h1>
             <p>Are you sure you want to delete {{ title }}?</p>
             <div class="clearfix">
-                <button type="button" onclick="document.getElementById('{{edited}}').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="button" class="deletebtn">Delete</button>
+                <button type="button" onclick="document.getElementById('{{edited}}').style.display='none'" class="btn btn-secondary">Cancel</button>
+                <a type="button" class="btn btn-danger" href = '/delete_announcement?edited={{edited}}'>Delete </a>
             </div>
         </div>
     </div>
