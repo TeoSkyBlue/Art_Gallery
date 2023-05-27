@@ -74,7 +74,8 @@ export async function displayRooms(req, res){
 
         }));
         let username = await req.session.username;
-        res.render('exhibition', {session_username: username, rooms: rooms});
+        let authenticated = await req.session.authenticated;
+        res.render('exhibition', {session_username: username, rooms: rooms, authenticated: authenticated});
 
     }catch(err){
         console.log(err);
