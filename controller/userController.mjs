@@ -84,3 +84,16 @@ export async function registerUser(req, res){
         console.log(err);
     }
 };
+
+
+export async function logoutUser(req, res){
+    try{
+        if(await req.session.authenticated){
+            await req.session.destroy();
+        }
+        res.redirect('..');
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+}

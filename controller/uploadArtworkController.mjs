@@ -19,16 +19,17 @@ export async function saveArtwork(req, res){
                 console.log(err);
             }
             else{
-                sharp(req.file.path)
-                .metadata()
-                .then((metadata) => {
-                    const { width, height } = metadata;
-                    const aspectRatio = width / height;
-                    console.log(`Aspect ratio: ${aspectRatio}`);
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                        });
+                // sharp(req.file.path)
+                // .metadata()
+                // .then((metadata) => {
+                //     const { width, height } = metadata;
+                //     const aspectRatio = width / height;
+                //     console.log(`Aspect ratio: ${aspectRatio}`);
+                //     })
+                //     .catch((err) => {
+                //         console.error(err);
+                //         });
+                //We handle aspect ratios on frontend for now.
                 
                 let img = fs.readFileSync(req.file.path);
                 let encoded_img = img.toString('base64');

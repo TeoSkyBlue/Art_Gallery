@@ -12,7 +12,10 @@
             <div class="header-item-divider py-3"></div>
             <li class="nav-item"><a class="nav-link link-dark shadow-lg" href="/about">ABOUT</a></li>
               {{#if session_username}}
-              <div title="Welcome back, {{session_username}}" class="login d-flex mx-2 align-items-center justify-content-center">☑ <div class="text-muted d-flex align-items-center justify-content-center">{{session_username}}</div></div>
+              <div title="Welcome back, {{session_username}}" class="login d-flex mx-2 align-items-center justify-content-center">☑ 
+                <div class="text-muted d-flex align-items-center justify-content-center">{{session_username}}</div>
+                <a type = 'button' class = "text-muted d-flex align-items-center justify-content-center" href = '/logout'>❌</a>
+              </div>
               {{/if}}
             
           </ul>

@@ -1,5 +1,5 @@
 import express from 'express'
-import { checkAuthenticatedStrict, confirmLogin } from '../controller/userController.mjs';
+import { checkAuthenticatedStrict, confirmLogin, logoutUser } from '../controller/userController.mjs';
 
 const login_router = express.Router();
 
@@ -10,6 +10,7 @@ login_router.get('/login', (req, res) => {
 
 login_router.post('/login', confirmLogin);
 
+login_router.get('/logout', logoutUser);
 
 
 export default login_router;

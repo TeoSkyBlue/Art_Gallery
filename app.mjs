@@ -1,6 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import path from 'path';
+import dotenv from 'dotenv/config';
 import { fileURLToPath } from 'url';
 import home_router from './routes/home_r.mjs';
 import collection_router from './routes/collection_r.mjs';
