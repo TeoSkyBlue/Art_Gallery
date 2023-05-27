@@ -16,7 +16,7 @@ a:hover{
   text-decoration: underline;
 }
 
-
+/* 
 .image{
   overflow: hidden;
 }
@@ -27,7 +27,7 @@ a:hover{
 
 .image:hover img{
   transform: scale(1.2);
-}
+} */
 
 .border{
   display: flex;
@@ -139,3 +139,37 @@ a:hover{
   background: rgb(22, 178, 184);
   border: 2px solid rgb(0, 0, 0);
 }
+
+/* announcements section */
+
+.ann-border .container-info{
+  max-height: 300px;
+}
+
+.ann-border .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 300px;
+}
+
+.ann-border .image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 300px;
+}
+.ann-border .card-img-top{
+  max-height: 200px;
+  max-width: fit-content;
+}
+
+.ann-border .info{
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+
