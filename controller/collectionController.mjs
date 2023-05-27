@@ -57,7 +57,7 @@ export async function displayArtworks(req, res){
                 
             }));
         let username = await req.session.username;
-        let authenticated = await req.session.authenticated;
+        let authenticated = await req.session.rights;
         res.render('collection',
          { 
             artworks: artworks,

@@ -24,11 +24,11 @@ export async function loadPosts(req, res){
                 },
                 content: doc.content,
                 edited: doc.edited[0],
-                authenticated: req.session.authenticated,
+                authenticated: req.session.rights,
             }
         ));
         let username = await req.session.username;
-        let authenticated = await req.session.authenticated;
+        let authenticated = await req.session.rights;
         res.render('announcements',
             {
                 posts: posts,
