@@ -115,7 +115,7 @@ export async function SearchAndDisplay(req, res){
                 artist_lname: doc.creator.last_name,
                 creatorid : doc.creator._id,
                 artsum: doc.summary,
-                artdate: doc.creation_date,
+                artdate: doc.creation_date? (new Date(doc.creation_date).toISOString().slice(0, 4)): Boolean(false),
                 artid: doc._id,
                 authenticated: req.session.rights,
                 username: req.session.first_name

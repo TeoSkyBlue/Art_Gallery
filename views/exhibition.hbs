@@ -36,7 +36,7 @@
                         {{/if}}
                         <img class="card-img-top" src="data:{{rimg_type}};base64,{{ rimg }}" alt='{{rimg_name}}'>
                     </div>
-                    <div class="room-text d-flex m-3">Room {{room_num}} : {{room_genre}} . {{room_sum}} </div>
+                    <div class="room-text d-flex m-3"><a class = 'btn btn-secondary' href = '/collection?genre={{room_genre}}'>Room {{room_num}} : {{room_genre}} . {{room_sum}} </a></a></div>
                 </div>
             </div>
             {{#if authenticated}}
