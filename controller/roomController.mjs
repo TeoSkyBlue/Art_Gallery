@@ -7,49 +7,41 @@ import fs from 'fs';
 
 export async function addRoom(req, res){
     try{
-        upload.single('roomImage')(req, res, function (err) {
-            if (err instanceof multer.MulterError) {
-                // A Multer error occurred when uploading.
-                res.status(500).send({ error: { message: `Multer uploading error: ${err.message}` } }).end();
-                return;
-            } else if (err) {
-                // An unknown error occurred when uploading.
-                if (err.name == 'ExtensionError') {
-                    res.status(413).send({ error: { message: err.message } }).end();
-                } else {
-                    res.status(500).send({ error: { message: `unknown uploading error: ${err.message}` } }).end();
-                }
-                return;
+        upload.single('roomImage')(req, res, (err)=> {
+            if(err){
+                console.log(err);
             }
+            else{
     
             // Everything went fine.
             // show file `req.files`
             // show body `req.body`
             
-            let image = fs.readFileSync(req.file.path);
-            let encoded_img = image.toString('base64');
-            const newImg = new galleryModel.image({name: image.originalname,
-                image: {
-                data: Buffer(encoded_img, 'base64'), contentType: image.mimetype
-                }
-                });
-            newImg.save();
-           
-            const roomInstance = new galleryModel.room({
-                number: req.body['roomNum'],
-                genre: req.body['genre'],
-                description: req.body['roomDescription'],
-                image: newImg._id,
-                
-            });
-            roomInstance.save();
+                let image = fs.readFileSync(req.file.path);
+                let encoded_img = image.toString('base64');
+                const newImg = new galleryModel.image({name: image.originalname,
+                    image: {
+                    data: Buffer(encoded_img, 'base64'), contentType: image.mimetype
+                    }
+                    });
+                newImg.save();
             
-        });
-        res.redirect('../exhibition');
+                const roomInstance = new galleryModel.room({
+                    number: req.body['roomNum'],
+                    genre: req.body['genre'],
+                    description: req.body['roomDescription'],
+                    image: newImg._id,
+                    
+                });
+                roomInstance.save();
+            }
+            res.redirect('./exhibition');
+            });
+        
     }catch(err){
         console.log(err);
     }
-};
+}
 
 
 export async function displayRooms(req, res){
