@@ -20,9 +20,7 @@ export const my_session = session({
     store: new MongoStore({ 
         mongoUrl: process.env.MONGO_URL_PROD,
         ttl: 60 * 26, //26 mins cookie within db
-        crypto: {
-            secret: process.env.MONGO_STORE_SECRET
-        }
+        
     }), 
     cookie: {
         secure: true
