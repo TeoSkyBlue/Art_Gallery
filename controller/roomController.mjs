@@ -111,9 +111,9 @@ export async function fillRoom(req, res){
 
 export async function deleteRoom(req, res){
     try{
-        if(req.query.roomid){
+        if(req.query['roomid']){
             const doc = await galleryModel.room
-            .findByIdAndDelete(req.query.roomid);
+            .findByIdAndDelete(req.query['roomid']);
             res.redirect('./exhibition');
         }
         else{
@@ -154,7 +154,7 @@ export async function updateRoom(req, res){
                         description: req.body['roomDescription'],
                         
                     }, {new: true})
-                    .then(res.redirect('./exhibitions'));
+                    .then(res.redirect('./exhibition'));
                 }
                 
             }

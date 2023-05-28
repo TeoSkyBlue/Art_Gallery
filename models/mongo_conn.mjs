@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 const config =  dotenv.config();
 
 
- mongoose.connect(process.env.MONGO_URL_PROD, {useNewUrlParser: true});
+ mongoose.connect(process.env.MONGO_URL_TEST, {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, 'connection error'));
 db.once('open', function() {
@@ -18,7 +18,7 @@ export const my_session = session({
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ 
-        mongoUrl: process.env.MONGO_URL_PROD,
+        mongoUrl: process.env.MONGO_URL_TEST,
         ttl: 60 * 26, //26 mins cookie within db
         
     }), 
