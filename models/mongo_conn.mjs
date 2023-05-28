@@ -22,6 +22,9 @@ export const my_session = session({
         ttl: 60 * 26, //26 mins cookie within db
         
     }), 
+    cookie: {
+        secure: true
+    }
 });
 
 
