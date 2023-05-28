@@ -39,7 +39,11 @@ Date of artwork needs to be cohesive with life of artist.
 
 
 Bug reports and aesthetic changes:{
+	Room->Collection does not work.
     filters and NoArtworks get mixed up.
+	Artworks in Gallery:  sample number typo fix
+	Footer Typo Fix.
+	Paintings dates should just really be years lol.
     Posts content needs max height
     min height on collection/posts.
     Jquery image should be lowered
